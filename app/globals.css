@@ -40,6 +40,11 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* `.bleed` spans 100vw, which counts the vertical scrollbar and would
+     otherwise trigger a horizontal one. `clip` (unlike `hidden`) does not
+     create a scroll container, so the sticky header keeps working. It has to
+     sit on `html` — `clip` on `body` does not propagate to the viewport. */
+  overflow-x: clip;
 }
 
 body {
@@ -379,16 +384,21 @@ p {
 }
 
 /* Three square product shots plus a brand tile, so the grid reads as designed
-   rather than as three photos that happened to be cropped. */
+   rather than as three photos that happened to be cropped.
+   The square comes from the container, not the items: `aspect-ratio` on a
+   stretched grid item is circular (the row sizes to the item, the item sizes
+   to the row) and collapses the implicit rows, so the tiles would overlap. */
 .hero-collage {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  aspect-ratio: 1;
   gap: 12px;
 }
 
 .hero-collage figure {
   position: relative;
-  aspect-ratio: 1;
+  min-height: 0;
   margin: 0;
   overflow: hidden;
   background: var(--tile);
@@ -406,7 +416,7 @@ p {
   flex-direction: column;
   justify-content: space-between;
   gap: 14px;
-  aspect-ratio: 1;
+  min-height: 0;
   padding: 22px;
   background: var(--ink);
   color: #fff;
@@ -1302,8 +1312,11 @@ p {
     grid-template-columns: 1fr;
   }
 
+  /* The hero stacks here, so cap the collage rather than stretching it across
+     the full column and making each tile enormous. */
   .hero-collage {
-    aspect-ratio: 16 / 9;
+    max-width: 520px;
+    margin-inline: auto;
   }
 
   .footer-inner {
@@ -1390,10 +1403,6 @@ p {
   .product-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 12px;
-  }
-
-  .hero-collage {
-    aspect-ratio: 4 / 3;
   }
 
   .form-grid {
