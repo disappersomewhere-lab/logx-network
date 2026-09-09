@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LOGX NETWORK
 
-## Getting Started
+Bilingual (English / Arabic) product catalogue for LOGX connectivity products, built with
+Next.js 16, React 19 and next-intl.
 
-First, run the development server:
+## Local development
 
 ```bash
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000/en` or `http://localhost:3000/ar`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Catalogue pipeline
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The catalogue is generated from two sources, and both steps are reproducible:
 
-## Learn More
+| Source | Command | Output |
+| --- | --- | --- |
+| Original product photography | `npm run build:images` | `public/products/photos/*.webp` |
+| LOGX price list (`.xls`) | `npm run import-products` | `data/products.json` |
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build:catalog   # runs both, in order
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Photography
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`scripts/build-images.mjs` reads the original photographs from `logx oreginal image/`
+and writes uniform 1400×1400 WebP catalogue assets. For each photo it applies the EXIF
+rotation, decides whether the shot sits on a seamless backdrop or in-situ, and then either
 
-## Deploy on Vercel
+- neutralises the backdrop's colour cast, lifts it to white, trims the dead space and pads
+  the product back to square; or
+- keeps the scene and squares it off around the subject.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`scripts/photo-map.mjs` maps part numbers to photographs. Where a photograph shows a legible
+part-number label it is assigned to that exact part; families without their own labelled shot
+reuse an unlabelled photograph of the same product line rather than a mismatched label.
+Every run writes `data/photo-sources.json` recording which original file produced which asset.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The originals are large and stay out of the repository (see `.gitignore`) — the processed
+WebP files are committed, so a clone builds without them. You only need the source folder to
+regenerate the imagery.
+
+### Product data
+
+`scripts/import-products.mjs` reads the price list, matches each part number to a builder
+that produces a bilingual title, summary and specification table, and keeps the verbatim
+spreadsheet text on every record as `raw`. To refresh from a new price list:
+
+```bash
+npm run import-products -- "C:\path\to\Logx product's.xls"
+```
+
+A part number that no builder claims still appears in the catalogue, using the spreadsheet
+text, and the import logs a warning — so a new SKU is never silently dropped, and the warning
+tells you a builder is needed.
+
+Review the generated [data/products.json](data/products.json) before publishing.
+
+## Quote requests
+
+The contact form posts to `/api/quote` and sends through Resend. Set these values in
+`.env.local` and in the hosting provider:
+
+- `NEXT_PUBLIC_SITE_URL`: canonical public URL
+- `RESEND_API_KEY`: Resend API key
+- `RESEND_FROM_EMAIL`: sender on a verified domain
+- `CONTACT_EMAIL`: sales inbox
+
+Without these values the API intentionally returns a configuration error rather than silently
+dropping enquiries.
+
+## Checks
+
+```bash
+npm run lint
+npm run build
+```
+
+The build prerenders every product page in both locales as static HTML, plus `sitemap.xml`
+and `robots.txt`. Static rendering depends on `setRequestLocale()` being called in each
+localized layout and page — without it next-intl falls back to rendering on demand.
+
+## Deployment checklist
+
+1. Verify the production domain and DNS.
+2. Verify the sender domain in Resend.
+3. Configure all environment variables.
+4. Review imported product data, claims, images, privacy policy and terms.
+5. Run the build in CI and test `/en`, `/ar`, `/en/products`, `/en/contact`, `/sitemap.xml`
+   and `/robots.txt`.

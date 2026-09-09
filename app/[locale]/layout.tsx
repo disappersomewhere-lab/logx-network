@@ -1,0 +1,151 @@
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages, getTranslations, setRequestLocale} from 'next-intl/server';
+import {notFound} from 'next/navigation';
+import Link from 'next/link';
+import type {Metadata} from 'next';
+import Logo from '@/components/Logo';
+import {locales} from '@/i18n';
+import type {Locale} from '@/lib/catalog';
+import '../globals.css';
+
+type Props = {
+  children: React.ReactNode;
+  params: Promise<{locale: string}>;
+};
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({locale}));
+}
+
+export async function generateMetadata({params}: Props): Promise<Metadata> {
+  const {locale} = await params;
+  const isArabic = locale === 'ar';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
+  return {
+    metadataBase: new URL(siteUrl),
+    title: {
+      default: isArabic
+        ? 'LOGX NETWORK | حلول الاتصال والشبكات'
+        : 'LOGX NETWORK | Connectivity Solutions',
+      template: '%s | LOGX NETWORK'
+    },
+    description: isArabic
+      ? 'كابلات نحاسية CAT6 وCAT6A، أنظمة ألياف بصرية، لوحات توصيل وملحقات بنية الشبكات من LOGX NETWORK.'
+      : 'CAT6 and CAT6A copper cabling, fiber optic systems, patch panels and network infrastructure accessories from LOGX NETWORK.',
+    alternates: {canonical: `/${locale}`, languages: {en: '/en', ar: '/ar'}},
+    openGraph: {
+      siteName: 'LOGX NETWORK',
+      type: 'website',
+      locale: isArabic ? 'ar' : 'en'
+    }
+  };
+}
+
+export default async function LocaleLayout({children, params}: Props) {
+  const {locale} = await params;
+  if (!locales.includes(locale as (typeof locales)[number])) notFound();
+
+  // Opts every descendant into static rendering; without it next-intl falls
+  // back to rendering each request on demand.
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
+  const t = await getTranslations();
+  const isRTL = locale === 'ar';
+  const other: Locale = locale === 'en' ? 'ar' : 'en';
+
+  const nav = [
+    {href: `/${locale}`, label: t('nav.home')},
+    {href: `/${locale}/products`, label: t('nav.products')},
+    {href: `/${locale}/about`, label: t('nav.about')},
+    {href: `/${locale}/contact`, label: t('nav.contact')}
+  ];
+
+  return (
+    <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'}>
+      <body className="min-h-screen flex flex-col">
+        <NextIntlClientProvider messages={messages}>
+          <header className="site-header">
+            <div className="shell header-inner">
+              <Link href={`/${locale}`} aria-label="LOGX NETWORK">
+                <Logo />
+              </Link>
+
+              <nav className="main-nav" aria-label={t('nav.primary')}>
+                {nav.map((item) => (
+                  <Link key={item.href} href={item.href}>
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+
+              <div className="header-actions">
+                <Link href={`/${other}`} className="language-switch" lang={other} hrefLang={other}>
+                  {other === 'ar' ? 'عربي' : 'EN'}
+                </Link>
+              </div>
+            </div>
+          </header>
+
+          <main className="page-shell">{children}</main>
+
+          <footer className="site-footer">
+            <div className="shell">
+              <div className="footer-inner">
+                <div className="footer-brand">
+                  <Logo size="1.5rem" />
+                  <p>{t('footer.tagline')}</p>
+                </div>
+
+                <div className="footer-col">
+                  <h3>{t('nav.products')}</h3>
+                  <ul>
+                    <li>
+                      <Link href={`/${locale}/products?category=copper`}>
+                        {t('categories.copper')}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={`/${locale}/products?category=fiber`}>
+                        {t('categories.fiber')}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={`/${locale}/products?category=accessories`}>
+                        {t('categories.accessories')}
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="footer-col">
+                  <h3>{t('nav.contact')}</h3>
+                  <ul>
+                    <li>
+                      <Link href={`/${locale}/contact`}>{t('contact.cta')}</Link>
+                    </li>
+                    <li>
+                      <a href="mailto:sales@logxconnect.com">sales@logxconnect.com</a>
+                    </li>
+                    <li>
+                      <Link href={`/${locale}/about`}>{t('nav.about')}</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="footer-bar">
+                <span>© {new Date().getFullYear()} LOGX NETWORK · {t('footer.disclaimer')}</span>
+                <nav aria-label={t('footer.legal')}>
+                  <Link href={`/${locale}/privacy`}>{t('footer.privacy')}</Link>
+                  <Link href={`/${locale}/terms`}>{t('footer.terms')}</Link>
+                </nav>
+              </div>
+            </div>
+          </footer>
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
+}

@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# original product photography (source for `npm run build:images`)
+# the processed WebP output under public/products/photos/ is committed instead
+/logx oreginal image/

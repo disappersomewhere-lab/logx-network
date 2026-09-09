@@ -1,0 +1,522 @@
+{
+  "cat6-cable": [
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٠٧٥٥_6.jpg",
+      "output": "/products/photos/cat6-cable-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٠٩٣٨_5.jpg",
+      "output": "/products/photos/cat6-cable-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٠٧١١_4.jpg",
+      "output": "/products/photos/cat6-cable-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٠٧٤٠.jpg",
+      "output": "/products/photos/cat6-cable-04.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٠٦٢٢_3.jpg",
+      "output": "/products/photos/cat6-cable-05.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٠٦٥٦_1.jpg",
+      "output": "/products/photos/cat6-cable-06.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٠٩٠٧_2.jpg",
+      "output": "/products/photos/cat6-cable-07.webp"
+    }
+  ],
+  "cat6a-cable": [
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٠٩٣٨_5.jpg",
+      "output": "/products/photos/cat6a-cable-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٠٩٠٧_2.jpg",
+      "output": "/products/photos/cat6a-cable-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٠٧٥٥_6.jpg",
+      "output": "/products/photos/cat6a-cable-03.webp"
+    }
+  ],
+  "patch-cord-cat6-short": [
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٣٦٣٩_4.jpg",
+      "output": "/products/photos/patch-cord-cat6-short-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٣٦٤٥_3.jpg",
+      "output": "/products/photos/patch-cord-cat6-short-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٤٣٧_3.jpg",
+      "output": "/products/photos/patch-cord-cat6-short-03.webp"
+    }
+  ],
+  "patch-cord-cat6-half": [
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٤٣٧_3.jpg",
+      "output": "/products/photos/patch-cord-cat6-half-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٤٥٨_4.jpg",
+      "output": "/products/photos/patch-cord-cat6-half-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٣٦٣٩_4.jpg",
+      "output": "/products/photos/patch-cord-cat6-half-03.webp"
+    }
+  ],
+  "patch-cord-cat6-1m": [
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٥٣٨_3.jpg",
+      "output": "/products/photos/patch-cord-cat6-1m-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٥٤١_2.jpg",
+      "output": "/products/photos/patch-cord-cat6-1m-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٣٦٤٥_3.jpg",
+      "output": "/products/photos/patch-cord-cat6-1m-03.webp"
+    }
+  ],
+  "patch-cord-cat6-long": [
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٤٠٦_6.jpg",
+      "output": "/products/photos/patch-cord-cat6-long-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٤١٧_5.jpg",
+      "output": "/products/photos/patch-cord-cat6-long-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٥٤١_2.jpg",
+      "output": "/products/photos/patch-cord-cat6-long-03.webp"
+    }
+  ],
+  "patch-cord-cat6a": [
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٤١٧_5.jpg",
+      "output": "/products/photos/patch-cord-cat6a-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٥٤١_2.jpg",
+      "output": "/products/photos/patch-cord-cat6a-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٤٠٦_6.jpg",
+      "output": "/products/photos/patch-cord-cat6a-03.webp"
+    }
+  ],
+  "faceplate": [
+    {
+      "source": "٢٠٢٥٠٣١٣_٢١٥٦٤٤_2.jpg",
+      "output": "/products/photos/faceplate-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢١٥٧٠٥_1.jpg",
+      "output": "/products/photos/faceplate-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢١٥٤٤٦_5.jpg",
+      "output": "/products/photos/faceplate-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢١٥٥٠٦_6.jpg",
+      "output": "/products/photos/faceplate-04.webp"
+    }
+  ],
+  "keystone-cat6": [
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٠٥٣٤_8.jpg",
+      "output": "/products/photos/keystone-cat6-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٠٨٤١_3.jpg",
+      "output": "/products/photos/keystone-cat6-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢١٥٩٢٩_6.jpg",
+      "output": "/products/photos/keystone-cat6-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢١٥٩٣٨_7.jpg",
+      "output": "/products/photos/keystone-cat6-04.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٠٠٥٨_1.jpg",
+      "output": "/products/photos/keystone-cat6-05.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٠١٣٨.jpg",
+      "output": "/products/photos/keystone-cat6-06.webp"
+    }
+  ],
+  "keystone-cat6a": [
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٠٦٤٣_4.jpg",
+      "output": "/products/photos/keystone-cat6a-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٠٧٣٠.jpg",
+      "output": "/products/photos/keystone-cat6a-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٠٣٢١_4.jpg",
+      "output": "/products/photos/keystone-cat6a-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٠٣١٣_3.jpg",
+      "output": "/products/photos/keystone-cat6a-04.webp"
+    }
+  ],
+  "cable-manager-1u": [
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠١٧٠٩_3.jpg",
+      "output": "/products/photos/cable-manager-1u-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠١٦٤٧.jpg",
+      "output": "/products/photos/cable-manager-1u-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠١٧٣٨_2.jpg",
+      "output": "/products/photos/cable-manager-1u-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠١٤٤٠_2.jpg",
+      "output": "/products/photos/cable-manager-1u-04.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠١٥٠٥_1.jpg",
+      "output": "/products/photos/cable-manager-1u-05.webp"
+    }
+  ],
+  "cable-manager-2u": [
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠١٥٤٦_5.jpg",
+      "output": "/products/photos/cable-manager-2u-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠١٧٣٨_2.jpg",
+      "output": "/products/photos/cable-manager-2u-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠١٧٠٩_3.jpg",
+      "output": "/products/photos/cable-manager-2u-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠١٦٤٧.jpg",
+      "output": "/products/photos/cable-manager-2u-04.webp"
+    }
+  ],
+  "patch-panel-24": [
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٣٣٢٦.jpg",
+      "output": "/products/photos/patch-panel-24-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٣٣٢٣_1.jpg",
+      "output": "/products/photos/patch-panel-24-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٣٤٣٨_2.jpg",
+      "output": "/products/photos/patch-panel-24-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٣٧١٠_4.jpg",
+      "output": "/products/photos/patch-panel-24-04.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠١٩٣٤.jpg",
+      "output": "/products/photos/patch-panel-24-05.webp"
+    }
+  ],
+  "patch-panel-48": [
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٢٥١٦_3.jpg",
+      "output": "/products/photos/patch-panel-48-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٢٧٠٩_3.jpg",
+      "output": "/products/photos/patch-panel-48-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٢٧٥٠_6.jpg",
+      "output": "/products/photos/patch-panel-48-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٢٤٣٢_5.jpg",
+      "output": "/products/photos/patch-panel-48-04.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٠٠٢٠٢٩_5.jpg",
+      "output": "/products/photos/patch-panel-48-05.webp"
+    }
+  ],
+  "rj45-plug": [
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٥٥٨.jpg",
+      "output": "/products/photos/rj45-plug-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٦١١_1.jpg",
+      "output": "/products/photos/rj45-plug-02.webp"
+    }
+  ],
+  "drop-fiber-4": [
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢١٦٢١.jpg",
+      "output": "/products/photos/drop-fiber-4-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٢٢٤١_1.jpg",
+      "output": "/products/photos/drop-fiber-4-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٢٢٥٤_3.jpg",
+      "output": "/products/photos/drop-fiber-4-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٢٦١٨_4.jpg",
+      "output": "/products/photos/drop-fiber-4-04.webp"
+    }
+  ],
+  "drop-fiber-8": [
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢١٦٤٥_1.jpg",
+      "output": "/products/photos/drop-fiber-8-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٢٥٣٣_5.jpg",
+      "output": "/products/photos/drop-fiber-8-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٢٨٥٣_3.jpg",
+      "output": "/products/photos/drop-fiber-8-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٣٠٥١_1.jpg",
+      "output": "/products/photos/drop-fiber-8-04.webp"
+    }
+  ],
+  "drop-fiber-12": [
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٢٦٠٢_2.jpg",
+      "output": "/products/photos/drop-fiber-12-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٣١٠٦_2.jpg",
+      "output": "/products/photos/drop-fiber-12-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٢٢٠٨.jpg",
+      "output": "/products/photos/drop-fiber-12-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٢١٠٥.jpg",
+      "output": "/products/photos/drop-fiber-12-04.webp"
+    }
+  ],
+  "fiber-panel-06": [
+    {
+      "source": "٢٠٢٥٠٣٠٣_٢٣٥٩٣٩.jpg",
+      "output": "/products/photos/fiber-panel-06-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٢٣٥٩٣٩_7.jpg",
+      "output": "/products/photos/fiber-panel-06-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٢٣٥٢٤٤.jpg",
+      "output": "/products/photos/fiber-panel-06-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٢٣٥٢٤٤_8.jpg",
+      "output": "/products/photos/fiber-panel-06-04.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٢٣٥٦٠١_1.jpg",
+      "output": "/products/photos/fiber-panel-06-05.webp"
+    }
+  ],
+  "fiber-panel-12": [
+    {
+      "source": "٢٠٢٥٠٣٠٣_٢٣٥٩٥٤_3.jpg",
+      "output": "/products/photos/fiber-panel-12-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٣_٢٣٥٩٥٤_5.jpg",
+      "output": "/products/photos/fiber-panel-12-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٤_٠٠٠٠١٧_1.jpg",
+      "output": "/products/photos/fiber-panel-12-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٤_٠٠٠٠١٧_9.jpg",
+      "output": "/products/photos/fiber-panel-12-04.webp"
+    }
+  ],
+  "fiber-panel-24": [
+    {
+      "source": "٢٠٢٥٠٣٠٤_٠٠٠٤٢٢_13.jpg",
+      "output": "/products/photos/fiber-panel-24-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٤_٠٠٠٤٢٢_3.jpg",
+      "output": "/products/photos/fiber-panel-24-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٤_٠٠٠٠٥٦_2.jpg",
+      "output": "/products/photos/fiber-panel-24-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٤_٠٠٠٠٥٦_4.jpg",
+      "output": "/products/photos/fiber-panel-24-04.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٤_٠٠٠٠٣٥.jpg",
+      "output": "/products/photos/fiber-panel-24-05.webp"
+    }
+  ],
+  "fiber-panel-48": [
+    {
+      "source": "٢٠٢٥٠٣٠٤_٠٠٠٥٥٨.jpg",
+      "output": "/products/photos/fiber-panel-48-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٤_٠٠٠٥٥٨_4.jpg",
+      "output": "/products/photos/fiber-panel-48-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٤_٠٠٠٦١٤_1.jpg",
+      "output": "/products/photos/fiber-panel-48-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٤_٠٠٠٦١٤_6.jpg",
+      "output": "/products/photos/fiber-panel-48-04.webp"
+    }
+  ],
+  "fiber-cord-sm": [
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٢١٧_6.jpg",
+      "output": "/products/photos/fiber-cord-sm-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٢٤٥_5.jpg",
+      "output": "/products/photos/fiber-cord-sm-02.webp"
+    }
+  ],
+  "fiber-cord-om3": [
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٣٢٦_5.jpg",
+      "output": "/products/photos/fiber-cord-om3-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٣٣٣_4.jpg",
+      "output": "/products/photos/fiber-cord-om3-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٣٨٢٦.jpg",
+      "output": "/products/photos/fiber-cord-om3-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٣٩١٨_2.jpg",
+      "output": "/products/photos/fiber-cord-om3-04.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٠١٥_1.jpg",
+      "output": "/products/photos/fiber-cord-om3-05.webp"
+    }
+  ],
+  "pigtail-sm": [
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢١٢١٢_2.jpg",
+      "output": "/products/photos/pigtail-sm-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢١٣٠٢_4.jpg",
+      "output": "/products/photos/pigtail-sm-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢١٣٢٠_6.jpg",
+      "output": "/products/photos/pigtail-sm-03.webp"
+    }
+  ],
+  "pigtail-om3": [
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٠٩٣٨_5.jpg",
+      "output": "/products/photos/pigtail-om3-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢١٠٣٢_3.jpg",
+      "output": "/products/photos/pigtail-om3-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢١٠٤٠_4.jpg",
+      "output": "/products/photos/pigtail-om3-03.webp"
+    }
+  ],
+  "tools-bag": [
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٤٤١١.jpg",
+      "output": "/products/photos/tools-bag-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣١٣_٢٢٤٤٤٤_1.jpg",
+      "output": "/products/photos/tools-bag-02.webp"
+    }
+  ],
+  "media-converter": [
+    {
+      "source": "32950.jpg",
+      "output": "/products/photos/media-converter-01.webp"
+    }
+  ],
+  "terminal-box-4": [
+    {
+      "source": "32953.jpg",
+      "output": "/products/photos/terminal-box-4-01.webp"
+    }
+  ],
+  "terminal-box-8": [
+    {
+      "source": "32949.jpg",
+      "output": "/products/photos/terminal-box-8-01.webp"
+    }
+  ],
+  "pdu": [
+    {
+      "source": "32951.jpg",
+      "output": "/products/photos/pdu-01.webp"
+    },
+    {
+      "source": "32952.jpg",
+      "output": "/products/photos/pdu-02.webp"
+    }
+  ],
+  "brand-packaging": [
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٣٤٤٩_1.jpg",
+      "output": "/products/photos/brand-packaging-01.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٣٤٢١_2.jpg",
+      "output": "/products/photos/brand-packaging-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٣٤١٤.jpg",
+      "output": "/products/photos/brand-packaging-03.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٣٥٣٦.jpg",
+      "output": "/products/photos/brand-packaging-04.webp"
+    }
+  ]
+}

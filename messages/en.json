@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "primary": "Primary navigation",
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "tagline": "Structured cabling, fiber optic distribution and rack infrastructure — supplied as one connected range.",
+    "contactNote": "Request pricing, lead times and full datasheets.",
+    "disclaimer": "Specifications subject to change without notice.",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "hero": {
+    "eyebrow": "Connectivity solutions",
+    "title": "Reliable infrastructure for modern networks",
+    "subtitle": "CAT6 and CAT6A copper, single-mode and OM3 fiber, patch panels and rack accessories — specified for clean installation and dependable performance.",
+    "cta": "Explore the catalog",
+    "secondary": "Why LOGX"
+  },
+  "home": {
+    "stats": {
+      "parts": "part numbers",
+      "families": "product families",
+      "tested": "Fluke-tested copper"
+    },
+    "featured": {
+      "eyebrow": "Across the range",
+      "title": "One product line per system."
+    }
+  },
+  "catalog": {
+    "eyebrow": "Product systems",
+    "title": "Built for the rack, ready for the field.",
+    "description": "From copper runs to optical distribution, every LOGX component is selected to make network infrastructure easier to install, manage and trust.",
+    "link": "View all products ↗",
+    "items": "items",
+    "all": "All products",
+    "filterLabel": "Filter products",
+    "searchPlaceholder": "Search part number or product…",
+    "view": "View product",
+    "emptyTitle": "Nothing matches that search.",
+    "emptyBody": "Try a part number such as LXC6UUPVG305, or clear the filters to see the full range.",
+    "clearFilter": "← View all categories"
+  },
+  "categories": {
+    "copper": "Copper cabling",
+    "fiber": "Fiber optic",
+    "accessories": "Racks & accessories"
+  },
+  "proof": {
+    "tested": "of copper cable ships Fluke channel tested",
+    "standards": "one range covering every layer of the run",
+    "support": "sales and technical support on live projects",
+    "range": "stocked part numbers across copper, fiber and rack"
+  },
+  "contact": {
+    "eyebrow": "Sales / technical enquiries",
+    "title": "Let us specify the right connection.",
+    "description": "Send your bill of materials, project scope or product question. Our team will review it and respond with the right next step.",
+    "cta": "Request a quotation",
+    "form": {
+      "name": "Full name",
+      "email": "Work email",
+      "company": "Company",
+      "product": "Product or part number",
+      "message": "How can we help?",
+      "submit": "Send request",
+      "sending": "Sending…",
+      "success": "Your request has been sent. We will be in touch shortly.",
+      "error": "We could not send your request. Please try again or email sales@logxconnect.com."
+    }
+  },
+  "productDetail": {
+    "back": "Back to products",
+    "specifications": "Product specifications",
+    "sourceLabel": "As listed by the manufacturer",
+    "viewPhoto": "View photo",
+    "related": "Related products",
+    "included": "Included",
+    "quote": "Request a quotation"
+  },
+  "about": {
+    "eyebrow": "The LOGX standard",
+    "title": "Infrastructure should disappear into the work.",
+    "description": "LOGX NETWORK supplies the physical layer behind modern connectivity: practical products, clear specifications and the confidence to build cleanly.",
+    "qualityTitle": "Consistency first",
+    "quality": "Every product is specified around repeatable installation, dependable materials and the realities of the network room.",
+    "rangeTitle": "One connected range",
+    "range": "Copper, fiber, patching and rack accessories are designed to work together across enterprise and data center environments.",
+    "contactTitle": "Talk to a specialist",
+    "contact": "Need a bill of materials, lead time or a full data sheet? Our sales team can help shape the right kit."
+  }
+}

@@ -1,0 +1,5 @@
+export default async function PrivacyPage({params}: {params: Promise<{locale: string}>}) {
+  const {locale} = await params;
+  const arabic = locale === 'ar';
+  return <article className="legal-page"><p className="eyebrow">{arabic ? 'السياسة' : 'Policy'}</p><h1>{arabic ? 'سياسة الخصوصية' : 'Privacy policy'}</h1><p>{arabic ? 'نستخدم البيانات التي ترسلها عبر نموذج التواصل للرد على استفسارك وتقديم المعلومات المطلوبة فقط.' : 'We use information submitted through the contact form only to respond to your enquiry and provide the requested information.'}</p><h2>{arabic ? 'البيانات التي نجمعها' : 'Information we collect'}</h2><p>{arabic ? 'قد نجمع الاسم والبريد المهني واسم الشركة ومحتوى الرسالة. لا نبيع هذه البيانات أو نشاركها لأغراض تسويقية غير مصرح بها.' : 'We may collect your name, work email, company and message. We do not sell this information or share it for unrelated marketing.'}</p><h2>{arabic ? 'التواصل' : 'Contact'}</h2><p>sales@logxconnect.com</p></article>;
+}
