@@ -158,7 +158,7 @@ function wordmark({x, y, size, subdued = false}) {
 
 // The default card, used by every page that does not set its own image.
 async function buildBrandCard(outputPath) {
-  const strip = ['fiber-panel-06', 'keystone-cat6a', 'patch-cord-cat6-long', 'fiber-cord-om3'];
+  const strip = ['fiber-panel-24', 'keystone-cat6a', 'patch-cord-cat6-long', 'fiber-cord-om3'];
   const thumbs = [];
 
   for (let i = 0; i < strip.length; i++) {

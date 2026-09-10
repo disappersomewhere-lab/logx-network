@@ -27,7 +27,6 @@ export const families = {
   'drop-fiber-4': [106, 111, 112, 115],
   'drop-fiber-8': [107, 113, 116, 117],
   'drop-fiber-12': [114, 118, 110, 109],
-  'fiber-panel-06': [68, 69, 55, 56, 63],
   'fiber-panel-12': [70, 71, 72, 73],
   'fiber-panel-24': [78, 79, 76, 77, 74],
   'fiber-panel-48': [80, 81, 82, 83],
@@ -70,7 +69,6 @@ const rules = [
   [/^LXFHS087ALS$/, 'drop-fiber-8'],
   [/^LXFHS127ALS$/, 'drop-fiber-12'],
 
-  [/^LXFPRDLC06$/, 'fiber-panel-06'],
   [/^LXFPRDLC12$/, 'fiber-panel-12'],
   [/^LXFPRDLC24$/, 'fiber-panel-24'],
   [/^LXFPRDLC48$/, 'fiber-panel-48'],

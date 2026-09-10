@@ -16,6 +16,15 @@ import {familyFor, imagesFor, ogImageFor} from './photo-map.mjs';
 const ROOT = path.join(import.meta.dirname, '..');
 const DEFAULT_SOURCE = String.raw`c:\Users\NSEA ITSM\OneDrive\Desktop\logx\Logx product's.xls`;
 
+/**
+ * Part numbers that appear in the price list but must not reach the site.
+ * Keeping the exclusion here rather than editing data/products.json means it
+ * survives the next import from the same spreadsheet.
+ */
+const EXCLUDED = new Map([
+  ['LXFPRDLC06', 'not a real product — confirmed 2026-09-10']
+]);
+
 const clean = (value) => String(value).replace(/\s+/g, ' ').trim();
 
 const t = (en, ar) => ({en, ar});
@@ -526,6 +535,12 @@ function main() {
     if (!row[0] || !row[1]) continue;
     const raw = clean(row[0]);
     const partNumber = clean(row[1]);
+
+    if (EXCLUDED.has(partNumber)) {
+      console.log(`  - skipping ${partNumber}: ${EXCLUDED.get(partNumber)}`);
+      continue;
+    }
+
     if (seen.has(partNumber)) {
       console.warn(`  ! duplicate part number ${partNumber} — keeping the first row`);
       continue;

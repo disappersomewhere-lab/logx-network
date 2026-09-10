@@ -7,7 +7,7 @@ import {catalog, categories, countByCategory, featuredProducts, type Locale} fro
 
 // Editorial picks: the shots that best represent each part of the range.
 const HERO_SHOTS = [
-  '/products/photos/fiber-panel-06-01.webp',
+  '/products/photos/fiber-panel-24-01.webp',
   '/products/photos/keystone-cat6a-01.webp',
   '/products/photos/cat6-cable-01.webp'
 ];

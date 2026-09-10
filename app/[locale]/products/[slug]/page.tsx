@@ -12,6 +12,14 @@ type Props = {
   params: Promise<{locale: string; slug: string}>;
 };
 
+/**
+ * The catalogue is fixed at build time, so a slug that was not generated is a
+ * real 404 rather than a page to render on demand. Without this, an unknown
+ * slug renders the not-found page with a 200 status — a soft 404, which search
+ * engines may index.
+ */
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
     catalog.map((product) => ({locale, slug: product.slug}))
