@@ -10,7 +10,7 @@
 import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
-import {families} from './photo-map.mjs';
+import {families, rotations} from './photo-map.mjs';
 
 const ROOT = path.join(import.meta.dirname, '..');
 const SRC = process.argv[2] || path.join(ROOT, 'logx oreginal image');
@@ -77,8 +77,11 @@ async function backdrop(buffer) {
   };
 }
 
-async function processPhoto(sourcePath, outputPath) {
-  const upright = await sharp(sourcePath).rotate().toBuffer();
+async function processPhoto(sourcePath, outputPath, rotation = 0) {
+  // EXIF orientation first, then any correction carried by the photo map.
+  let upright = await sharp(sourcePath).rotate().toBuffer();
+  if (rotation) upright = await sharp(upright).rotate(rotation).toBuffer();
+
   const {luma, brightFraction, brightSpread, rgb} = await backdrop(upright);
 
   // A seamless backdrop fills most of the frame, is bright, and is even.
@@ -241,7 +244,7 @@ async function main() {
         continue;
       }
       const name = `${family}-${String(position + 1).padStart(2, '0')}.webp`;
-      await processPhoto(path.join(SRC, sourceName), path.join(OUT, name));
+      await processPhoto(path.join(SRC, sourceName), path.join(OUT, name), rotations[indices[position]] ?? 0);
       manifest[family].push({source: sourceName, output: `/products/photos/${name}`});
       written++;
     }

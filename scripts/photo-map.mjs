@@ -43,6 +43,40 @@ export const families = {
   'brand-packaging': [8, 7, 6, 9]
 };
 
+/**
+ * Extra rotation, in degrees clockwise, applied after the EXIF orientation.
+ * These photographs were taken with the product lying on its side or upside
+ * down, so the printed LOGX branding did not read horizontally on the site.
+ *
+ * Keyed by source index, same as `families` above.
+ *
+ * Deliberately NOT listed: the keystone jacks (96–99). Their LOGX sits on a
+ * hinged dust cap that is printed to read when the cap is closed, while the
+ * moulded CAT.6 / CAT.6A on the body already reads correctly in the photo.
+ * Rotating those would fix the cap and break the body text — the reversal is
+ * the product, not the photograph.
+ */
+export const rotations = {
+  // 0 (terminal box, 8 port) is deliberately left alone. Its LOGX is upside
+  // down, but the shot is in-situ: rotating it turns the whole shop scene
+  // over, so the box appears to hang from the ceiling and the signage behind
+  // it reads upside down. That photograph needs re-shooting, not rotating.
+  1: 90, // media converter, stood on end
+  6: 180, // packaging
+  9: 180, // packaging
+  16: 180, // SM fiber patch cord bag
+  17: 180, // OM3 fiber patch cord bag
+  18: 180, // OM3 fiber patch cord bag
+  19: 90, // CAT6 patch cord bag, on its side
+  20: 90, // CAT6 patch cord bag, on its side
+  21: 90, // CAT6 patch cord bag, on its side
+  22: 180, // CAT6 patch cord bag, upside down
+  25: 90, // RJ45 plug carton, on its side
+  26: 90, // RJ45 plug carton, on its other side
+  33: 180, // bulk cable coil, jacket print upside down
+  74: 270 // fiber patch panel, on its side
+};
+
 // Resolves a part number to a family key. First match wins, so order matters.
 const rules = [
   [/^LXC6UUPVG305$/, 'cat6-cable'],
