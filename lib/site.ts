@@ -18,6 +18,21 @@ if (process.env.NODE_ENV === 'production' && !process.env.NEXT_PUBLIC_SITE_URL) 
 }
 
 /**
+ * Public contact details. Kept here so changing the sales address is one edit
+ * rather than a search across pages, metadata and both message catalogues.
+ */
+export const contact = {
+  email: 'sales@logxconnect.com'
+} as const;
+
+/** `mailto:` link to sales, optionally pre-filling the subject. */
+export function mailto(subject?: string) {
+  return subject
+    ? `mailto:${contact.email}?subject=${encodeURIComponent(subject)}`
+    : `mailto:${contact.email}`;
+}
+
+/**
  * Canonical + hreflang for one page, in every locale.
  *
  * Next merges metadata by replacing whole fields, so a page that returns

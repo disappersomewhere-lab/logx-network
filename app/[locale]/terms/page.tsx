@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {setRequestLocale} from 'next-intl/server';
-import {alternatesFor} from '@/lib/site';
+import {alternatesFor, contact} from '@/lib/site';
 
 type Props = {params: Promise<{locale: string}>};
 
@@ -39,7 +39,7 @@ export default async function TermsPage({params}: Props) {
       </p>
 
       <h2>{arabic ? 'التواصل' : 'Contact'}</h2>
-      <p>sales@logxconnect.com</p>
+      <p>{contact.email}</p>
     </article>
   );
 }

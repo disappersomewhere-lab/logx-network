@@ -71,7 +71,7 @@
       "submit": "Send request",
       "sending": "Sending…",
       "success": "Your request has been sent. We will be in touch shortly.",
-      "error": "We could not send your request. Please try again or email sales@logxconnect.com."
+      "error": "We could not send your request. Please try again or email {email}."
     }
   },
   "productDetail": {

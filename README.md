@@ -19,8 +19,9 @@ The catalogue is generated from two sources, and both steps are reproducible:
 
 | Source | Command | Output |
 | --- | --- | --- |
-| Original product photography | `npm run build:images` | `public/products/photos/*.webp` |
+| Original product photography | `npm run build:images` | `public/products/photos/*.webp`, link-preview cards |
 | LOGX price list (`.xls`) | `npm run import-products` | `data/products.json` |
+| `app/icon.svg` | `npm run build:icons` | `app/favicon.ico`, `app/apple-icon.png` |
 
 ```bash
 npm run build:catalog   # runs both, in order
@@ -60,6 +61,21 @@ text, and the import logs a warning — so a new SKU is never silently dropped, 
 tells you a builder is needed.
 
 Review the generated [data/products.json](data/products.json) before publishing.
+
+## Icons
+
+`app/icon.svg` is the source of truth for the mark. `npm run build:icons` derives
+`favicon.ico` (16/32/48) and `apple-icon.png` (180, flattened onto the brand ink because iOS
+ignores transparency). Re-run it after changing the SVG.
+
+## Security headers
+
+Set in [next.config.ts](next.config.ts) and applied to every route. The Content-Security
+Policy allows `'unsafe-inline'` for scripts and styles because Next injects inline bootstrap
+code and there is no nonce plumbing; the rest of the policy still constrains where scripts,
+frames, forms and connections may point. Development additionally allows `'unsafe-eval'` and
+`ws:` for Turbopack's hot-reload socket. Tightening the script policy means threading a nonce
+through the proxy — worth doing, not done here.
 
 ## Quote requests
 

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "build:images": "node scripts/build-images.mjs",
+    "build:icons": "node scripts/build-icons.mjs",
     "import-products": "node scripts/import-products.mjs",
     "build:catalog": "npm run build:images && npm run import-products"
   },

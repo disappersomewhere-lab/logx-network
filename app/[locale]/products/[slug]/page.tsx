@@ -5,7 +5,7 @@ import Link from 'next/link';
 import ProductGallery from '@/components/ProductGallery';
 import ProductCard from '@/components/ProductCard';
 import {catalog, getProduct, relatedProducts, type Locale} from '@/lib/catalog';
-import {alternatesFor} from '@/lib/site';
+import {alternatesFor, contact, mailto} from '@/lib/site';
 import {locales} from '@/i18n';
 
 type Props = {
@@ -123,12 +123,10 @@ export default async function ProductPage({params}: Props) {
               {t('productDetail.quote')}
             </Link>
             <a
-              href={`mailto:sales@logxconnect.com?subject=${encodeURIComponent(
-                `${product.partNumber} — ${product.name.en}`
-              )}`}
+              href={mailto(`${product.partNumber} — ${product.name.en}`)}
               className="button button-quiet"
             >
-              sales@logxconnect.com
+              {contact.email}
             </a>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import {getTranslations} from 'next-intl/server';
 import type {Metadata} from 'next';
 import QuoteForm from '@/components/QuoteForm';
-import {alternatesFor} from '@/lib/site';
+import {alternatesFor, contact} from '@/lib/site';
 
 type Props = {
   params: Promise<{locale: string}>;
@@ -41,7 +41,7 @@ export default async function ContactPage({searchParams}: Props) {
           submit: t('contact.form.submit'),
           sending: t('contact.form.sending'),
           success: t('contact.form.success'),
-          error: t('contact.form.error')
+          error: t('contact.form.error', {email: contact.email})
         }}
       />
     </div>
