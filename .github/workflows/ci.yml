@@ -19,5 +19,5 @@ jobs:
       - run: npm run build
         env:
           # Canonical links, hreflang and sitemap.xml are absolute, so the build
-          # needs an origin. Replace with the production domain once it is live.
-          NEXT_PUBLIC_SITE_URL: https://logx-network.example
+          # needs an origin to produce output representative of production.
+          NEXT_PUBLIC_SITE_URL: https://logxnetwork.com

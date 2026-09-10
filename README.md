@@ -103,10 +103,15 @@ localized layout and page — without it next-intl falls back to rendering on de
 
 ## Search and social
 
-`NEXT_PUBLIC_SITE_URL` is read at **build** time. Canonical links, hreflang, Open Graph
-images, `sitemap.xml` and `robots.txt` are all absolute URLs, so if it is unset the build
-publishes `http://localhost:3000` throughout and the site is uncrawlable. The build prints a
-warning when that happens; CI sets a placeholder so builds stay representative.
+The production domain is **logxnetwork.com**, declared once as `productionUrl` in
+[lib/site.ts](lib/site.ts).
+
+`NEXT_PUBLIC_SITE_URL` is read at **build** time — canonical links, hreflang, Open Graph
+images, `sitemap.xml` and `robots.txt` are all absolute URLs. A production build with it
+unset falls back to the production domain and warns, so a build can never ship
+`localhost`. Set it explicitly anyway on **preview and staging** deployments: left unset
+there, they publish canonical links pointing at the live site and ask search engines to
+index production in their place.
 
 Every page carries `en`, `ar` and `x-default` alternates via `alternatesFor()` in
 [lib/site.ts](lib/site.ts). Use it in each page's `generateMetadata` rather than writing
