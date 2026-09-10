@@ -37,10 +37,24 @@ rotation, decides whether the shot sits on a seamless backdrop or in-situ, and t
   the product back to square; or
 - keeps the scene and squares it off around the subject.
 
-`scripts/photo-map.mjs` maps part numbers to photographs. Where a photograph shows a legible
-part-number label it is assigned to that exact part; families without their own labelled shot
-reuse an unlabelled photograph of the same product line rather than a mismatched label.
-Every run writes `data/photo-sources.json` recording which original file produced which asset.
+`scripts/photo-map.mjs` maps part numbers to photographs, **keyed by filename**. It also
+carries two per-photo corrections:
+
+- `rotations` — extra rotation for originals shot on their side or upside down, so the
+  printed LOGX reads horizontally.
+- `crops` — a fractional crop for in-situ shots, framing the product so the warehouse behind
+  it falls outside the frame. A cropped photo is fitted and padded rather than re-cropped
+  square, which would zoom into a fragment of a wide subject like the PDU.
+
+Background *cutout* is deliberately not attempted. These products are dark and the blurred
+racking behind them contains regions darker still, so no luminance threshold separates the
+two without eating the product or keeping half the shelf; cropping is the honest tool.
+
+Where a photograph shows a legible part-number label it is assigned to that exact part;
+families without their own labelled shot reuse an unlabelled photograph of the same product
+line rather than a mismatched label. Every run writes `data/photo-sources.json` recording
+which original file produced which asset, and a mapped file that is missing from the source
+folder fails the run rather than silently leaving a product without photography.
 
 The originals are large and stay out of the repository (see `.gitignore`) — the processed
 WebP files are committed, so a clone builds without them. You only need the source folder to

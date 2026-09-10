@@ -1,80 +1,230 @@
 // Maps LOGX product families to the original photographs in `logx oreginal image/`.
 //
-// Indices refer to the source folder listed alphabetically (see `sourceFiles()`),
-// which is stable for a fixed folder. `build-images.mjs` writes the resolved
-// filenames into `data/photo-sources.json` so the mapping stays auditable.
+// Keyed by filename, deliberately. An earlier version keyed on the file's index
+// in the sorted folder, which silently re-pointed every product the moment a
+// photograph was added.
 //
 // Where a photograph shows a legible part-number label it is assigned to that
 // exact part; families without their own labelled shot reuse an unlabelled
 // photograph of the same product line rather than a mismatched label.
 
 export const families = {
-  'cat6-cable': [31, 33, 29, 30, 27, 28, 32],
-  'cat6a-cable': [33, 32, 31],
-  'patch-cord-cat6-short': [10, 11, 21],
-  'patch-cord-cat6-half': [21, 22, 10],
-  'patch-cord-cat6-1m': [23, 24, 11],
-  'patch-cord-cat6-long': [19, 20, 24],
-  'patch-cord-cat6a': [20, 24, 19],
-  'faceplate': [86, 87, 84, 85],
-  'keystone-cat6': [96, 99, 88, 89, 91, 92],
-  'keystone-cat6a': [97, 98, 94, 93],
-  'cable-manager-1u': [38, 37, 39, 34, 35],
-  'cable-manager-2u': [36, 39, 38, 37],
-  'patch-panel-24': [50, 49, 51, 52, 40],
-  'patch-panel-48': [45, 46, 47, 44, 42],
-  'rj45-plug': [25, 26],
-  'drop-fiber-4': [106, 111, 112, 115],
-  'drop-fiber-8': [107, 113, 116, 117],
-  'drop-fiber-12': [114, 118, 110, 109],
-  'fiber-panel-12': [70, 71, 72, 73],
-  'fiber-panel-24': [78, 79, 76, 77, 74],
-  'fiber-panel-48': [80, 81, 82, 83],
-  'fiber-cord-sm': [15, 16],
-  'fiber-cord-om3': [17, 18, 12, 13, 14],
-  'pigtail-sm': [103, 104, 105],
-  'pigtail-om3': [100, 101, 102],
-  'tools-bag': [119, 120],
-  'media-converter': [1],
-  'terminal-box-4': [4],
-  'terminal-box-8': [0],
-  'pdu': [2, 3],
-  // Brand / editorial imagery used outside the catalogue grid.
-  'brand-packaging': [8, 7, 6, 9]
+  "cat6-cable": [
+    "٢٠٢٥٠٣٠٣_٠٠٠٧٥٥_6.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٠٩٣٨_5.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٠٧١١_4.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٠٧٤٠.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٠٦٢٢_3.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٠٦٥٦_1.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٠٩٠٧_2.jpg"
+  ],
+  "cat6a-cable": [
+    "٢٠٢٥٠٣٠٣_٠٠٠٩٣٨_5.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٠٩٠٧_2.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٠٧٥٥_6.jpg"
+  ],
+  "patch-cord-cat6-short": [
+    "٢٠٢٥٠٣٠٢_٢٣٣٦٣٩_4.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٣٦٤٥_3.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٤٤٣٧_3.jpg"
+  ],
+  "patch-cord-cat6-half": [
+    "٢٠٢٥٠٣٠٢_٢٣٤٤٣٧_3.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٤٤٥٨_4.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٣٦٣٩_4.jpg"
+  ],
+  "patch-cord-cat6-1m": [
+    "٢٠٢٥٠٣٠٢_٢٣٤٥٣٨_3.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٤٥٤١_2.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٣٦٤٥_3.jpg"
+  ],
+  "patch-cord-cat6-long": [
+    "٢٠٢٥٠٣٠٢_٢٣٤٤٠٦_6.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٤٤١٧_5.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٤٥٤١_2.jpg"
+  ],
+  "patch-cord-cat6a": [
+    "٢٠٢٥٠٣٠٢_٢٣٤٤١٧_5.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٤٥٤١_2.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٤٤٠٦_6.jpg"
+  ],
+  "faceplate": [
+    "٢٠٢٥٠٣١٣_٢١٥٦٤٤_2.jpg",
+    "٢٠٢٥٠٣١٣_٢١٥٧٠٥_1.jpg",
+    "٢٠٢٥٠٣١٣_٢١٥٤٤٦_5.jpg",
+    "٢٠٢٥٠٣١٣_٢١٥٥٠٦_6.jpg"
+  ],
+  "keystone-cat6": [
+    "٢٠٢٥٠٣١٣_٢٢٠٥٣٤_8.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٠٨٤١_3.jpg",
+    "٢٠٢٥٠٣١٣_٢١٥٩٢٩_6.jpg",
+    "٢٠٢٥٠٣١٣_٢١٥٩٣٨_7.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٠٠٥٨_1.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٠١٣٨.jpg"
+  ],
+  "keystone-cat6a": [
+    "٢٠٢٥٠٣١٣_٢٢٠٦٤٣_4.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٠٧٣٠.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٠٣٢١_4.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٠٣١٣_3.jpg"
+  ],
+  "cable-manager-1u": [
+    "٢٠٢٥٠٣٠٣_٠٠١٧٠٩_3.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠١٦٤٧.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠١٧٣٨_2.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠١٤٤٠_2.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠١٥٠٥_1.jpg"
+  ],
+  "cable-manager-2u": [
+    "٢٠٢٥٠٣٠٣_٠٠١٥٤٦_5.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠١٧٣٨_2.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠١٧٠٩_3.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠١٦٤٧.jpg"
+  ],
+  "patch-panel-24": [
+    "٢٠٢٥٠٣٠٣_٠٠٣٣٢٦.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٣٣٢٣_1.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٣٤٣٨_2.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٣٧١٠_4.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠١٩٣٤.jpg"
+  ],
+  "patch-panel-48": [
+    "٢٠٢٥٠٣٠٣_٠٠٢٥١٦_3.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٢٧٠٩_3.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٢٧٥٠_6.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٢٤٣٢_5.jpg",
+    "٢٠٢٥٠٣٠٣_٠٠٢٠٢٩_5.jpg"
+  ],
+  "rj45-plug": [
+    "٢٠٢٥٠٣٠٢_٢٣٤٥٥٨.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٤٦١١_1.jpg"
+  ],
+  "drop-fiber-4": [
+    "٢٠٢٥٠٣١٣_٢٢١٦٢١.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٢٢٤١_1.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٢٢٥٤_3.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٢٦١٨_4.jpg"
+  ],
+  "drop-fiber-8": [
+    "٢٠٢٥٠٣١٣_٢٢١٦٤٥_1.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٢٥٣٣_5.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٢٨٥٣_3.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٣٠٥١_1.jpg"
+  ],
+  "drop-fiber-12": [
+    "٢٠٢٥٠٣١٣_٢٢٢٦٠٢_2.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٣١٠٦_2.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٢٢٠٨.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٢١٠٥.jpg"
+  ],
+  "fiber-panel-12": [
+    "٢٠٢٥٠٣٠٣_٢٣٥٩٥٤_3.jpg",
+    "٢٠٢٥٠٣٠٣_٢٣٥٩٥٤_5.jpg",
+    "٢٠٢٥٠٣٠٤_٠٠٠٠١٧_1.jpg",
+    "٢٠٢٥٠٣٠٤_٠٠٠٠١٧_9.jpg"
+  ],
+  "fiber-panel-24": [
+    "٢٠٢٥٠٣٠٤_٠٠٠٤٢٢_13.jpg",
+    "٢٠٢٥٠٣٠٤_٠٠٠٤٢٢_3.jpg",
+    "٢٠٢٥٠٣٠٤_٠٠٠٠٥٦_2.jpg",
+    "٢٠٢٥٠٣٠٤_٠٠٠٠٥٦_4.jpg",
+    "٢٠٢٥٠٣٠٤_٠٠٠٠٣٥.jpg"
+  ],
+  "fiber-panel-48": [
+    "٢٠٢٥٠٣٠٤_٠٠٠٥٥٨.jpg",
+    "٢٠٢٥٠٣٠٤_٠٠٠٥٥٨_4.jpg",
+    "٢٠٢٥٠٣٠٤_٠٠٠٦١٤_1.jpg",
+    "٢٠٢٥٠٣٠٤_٠٠٠٦١٤_6.jpg"
+  ],
+  "fiber-cord-sm": [
+    "٢٠٢٥٠٣٠٢_٢٣٤٢١٧_6.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٤٢٤٥_5.jpg"
+  ],
+  "fiber-cord-om3": [
+    "٢٠٢٥٠٣٠٢_٢٣٤٣٢٦_5.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٤٣٣٣_4.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٣٨٢٦.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٣٩١٨_2.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٤٠١٥_1.jpg"
+  ],
+  "pigtail-sm": [
+    "٢٠٢٥٠٣١٣_٢٢١٢١٢_2.jpg",
+    "٢٠٢٥٠٣١٣_٢٢١٣٠٢_4.jpg",
+    "٢٠٢٥٠٣١٣_٢٢١٣٢٠_6.jpg"
+  ],
+  "pigtail-om3": [
+    "٢٠٢٥٠٣١٣_٢٢٠٩٣٨_5.jpg",
+    "٢٠٢٥٠٣١٣_٢٢١٠٣٢_3.jpg",
+    "٢٠٢٥٠٣١٣_٢٢١٠٤٠_4.jpg"
+  ],
+  "tools-bag": [
+    "٢٠٢٥٠٣١٣_٢٢٤٤١١.jpg",
+    "٢٠٢٥٠٣١٣_٢٢٤٤٤٤_1.jpg"
+  ],
+  "media-converter": [
+    "SFP Media converter.jpeg"
+  ],
+  "terminal-box-4": [
+    "fiber D 4 port.jpeg"
+  ],
+  "terminal-box-8": [
+    "fiber D 8 port.jpeg prot.jpeg"
+  ],
+  "pdu": [
+    "PDU.jpeg",
+    "PDU..jpeg"
+  ],
+  "brand-packaging": [
+    "٢٠٢٥٠٣٠٢_٢٣٣٤٤٩_1.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٣٤٢١_2.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٣٤١٤.jpg",
+    "٢٠٢٥٠٣٠٢_٢٣٣٥٣٦.jpg"
+  ]
 };
 
 /**
  * Extra rotation, in degrees clockwise, applied after the EXIF orientation.
- * These photographs were taken with the product lying on its side or upside
- * down, so the printed LOGX branding did not read horizontally on the site.
+ * These were shot with the product lying on its side or upside down, so the
+ * printed LOGX branding did not read horizontally on the site.
  *
- * Keyed by source index, same as `families` above.
- *
- * Deliberately NOT listed: the keystone jacks (96–99). Their LOGX sits on a
- * hinged dust cap that is printed to read when the cap is closed, while the
- * moulded CAT.6 / CAT.6A on the body already reads correctly in the photo.
- * Rotating those would fix the cap and break the body text — the reversal is
- * the product, not the photograph.
+ * Two cases are deliberately absent. The keystone jacks read LOGX in reverse
+ * because the logo sits on a hinged dust cap printed to read when closed, while
+ * the moulded CAT.6 / CAT.6A on the body already reads correctly — rotating
+ * would fix the cap and break the body text. The old 8 port terminal box shot
+ * was in-situ, so rotating turned the whole shop scene over; it has since been
+ * replaced with a better photograph.
  */
 export const rotations = {
-  // 0 (terminal box, 8 port) is deliberately left alone. Its LOGX is upside
-  // down, but the shot is in-situ: rotating it turns the whole shop scene
-  // over, so the box appears to hang from the ceiling and the signage behind
-  // it reads upside down. That photograph needs re-shooting, not rotating.
-  1: 90, // media converter, stood on end
-  6: 180, // packaging
-  9: 180, // packaging
-  16: 180, // SM fiber patch cord bag
-  17: 180, // OM3 fiber patch cord bag
-  18: 180, // OM3 fiber patch cord bag
-  19: 90, // CAT6 patch cord bag, on its side
-  20: 90, // CAT6 patch cord bag, on its side
-  21: 90, // CAT6 patch cord bag, on its side
-  22: 180, // CAT6 patch cord bag, upside down
-  25: 90, // RJ45 plug carton, on its side
-  26: 90, // RJ45 plug carton, on its other side
-  33: 180, // bulk cable coil, jacket print upside down
-  74: 270 // fiber patch panel, on its side
+  "٢٠٢٥٠٣٠٢_٢٣٣٤١٤.jpg": 180, // packaging
+  "٢٠٢٥٠٣٠٢_٢٣٣٥٣٦.jpg": 180, // packaging
+  "٢٠٢٥٠٣٠٢_٢٣٤٢٤٥_5.jpg": 180, // SM fiber patch cord bag
+  "٢٠٢٥٠٣٠٢_٢٣٤٣٢٦_5.jpg": 180, // OM3 fiber patch cord bag
+  "٢٠٢٥٠٣٠٢_٢٣٤٣٣٣_4.jpg": 180, // OM3 fiber patch cord bag
+  "٢٠٢٥٠٣٠٢_٢٣٤٤٠٦_6.jpg": 90, // CAT6 patch cord bag, on its side
+  "٢٠٢٥٠٣٠٢_٢٣٤٤١٧_5.jpg": 90, // CAT6 patch cord bag, on its side
+  "٢٠٢٥٠٣٠٢_٢٣٤٤٣٧_3.jpg": 90, // CAT6 patch cord bag, on its side
+  "٢٠٢٥٠٣٠٢_٢٣٤٤٥٨_4.jpg": 180, // CAT6 patch cord bag, upside down
+  "٢٠٢٥٠٣٠٢_٢٣٤٥٥٨.jpg": 90, // RJ45 plug carton, on its side
+  "٢٠٢٥٠٣٠٢_٢٣٤٦١١_1.jpg": 90, // RJ45 plug carton, on its other side
+  "٢٠٢٥٠٣٠٣_٠٠٠٩٣٨_5.jpg": 180, // bulk cable coil, jacket print upside down
+  "٢٠٢٥٠٣٠٤_٠٠٠٠٣٥.jpg": 270, // fiber patch panel, on its side
+};
+
+/**
+ * Crop applied before anything else, as [left, top, width, height] fractions
+ * of the source. Used on the in-situ photographs so the product fills the frame
+ * and the warehouse behind it falls outside the crop, which is honest where a
+ * background cutout is not: these products are dark, and the blurred racking
+ * behind them contains regions darker still, so no luminance threshold
+ * separates the two without eating the product or keeping half the shelf.
+ */
+export const crops = {
+  'SFP Media converter.jpeg': [0.235, 0.455, 0.5, 0.3],
+  // Stops short of the bottom edge: a shoe is in frame below the connectors.
+  'fiber D 4 port.jpeg': [0.03, 0.02, 0.8, 0.91],
+  'fiber D 8 port.jpeg prot.jpeg': [0.175, 0.15, 0.635, 0.83],
+  'PDU.jpeg': [0.03, 0.45, 0.94, 0.19],
+  'PDU..jpeg': [0.02, 0.44, 0.96, 0.19]
 };
 
 // Resolves a part number to a family key. First match wins, so order matters.
@@ -128,11 +278,13 @@ export function familyFor(partNumber) {
 export function imagesFor(partNumber) {
   const family = familyFor(partNumber);
   if (!family) return [];
-  return families[family].map((_, index) => `/products/photos/${family}-${String(index + 1).padStart(2, '0')}.webp`);
+  return families[family].map(
+    (_, index) => `/products/photos/${family}-${String(index + 1).padStart(2, '0')}.webp`
+  );
 }
 
 /** The 1200x630 JPEG link-preview card for a part, shared across its family. */
 export function ogImageFor(partNumber) {
   const family = familyFor(partNumber);
-  return family ? `/products/photos/${family}-og.jpg` : '/opengraph-image.png';
+  return family ? `/products/photos/${family}-og.jpg` : '/og-default.png';
 }

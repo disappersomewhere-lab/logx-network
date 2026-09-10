@@ -10,7 +10,7 @@
 import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
-import {families, rotations} from './photo-map.mjs';
+import {crops, families, rotations} from './photo-map.mjs';
 
 const ROOT = path.join(import.meta.dirname, '..');
 const SRC = process.argv[2] || path.join(ROOT, 'logx oreginal image');
@@ -77,10 +77,39 @@ async function backdrop(buffer) {
   };
 }
 
-async function processPhoto(sourcePath, outputPath, rotation = 0) {
-  // EXIF orientation first, then any correction carried by the photo map.
+async function processPhoto(sourcePath, outputPath, {rotation = 0, crop} = {}) {
+  // EXIF orientation, then the crop, then any rotation carried by the photo map.
   let upright = await sharp(sourcePath).rotate().toBuffer();
+
+  if (crop) {
+    const {width, height} = await sharp(upright).metadata();
+    const [left, top, boxWidth, boxHeight] = crop;
+    upright = await sharp(upright)
+      .extract({
+        left: Math.round(width * left),
+        top: Math.round(height * top),
+        width: Math.round(width * boxWidth),
+        height: Math.round(height * boxHeight)
+      })
+      .toBuffer();
+  }
+
   if (rotation) upright = await sharp(upright).rotate(rotation).toBuffer();
+
+  // A cropped photo is already framed on the product, so fit and pad it rather
+  // than letting the in-situ branch crop it square again — that would zoom into
+  // a fragment of a wide subject like the PDU.
+  if (crop) {
+    const inner = Math.round(SIZE * (1 - MARGIN * 2));
+    await sharp(upright)
+      .resize(inner, inner, {fit: 'inside'})
+      .flatten({background: CANVAS})
+      .resize(SIZE, SIZE, {fit: 'contain', background: CANVAS})
+      .modulate({saturation: 1.04, brightness: 1.02})
+      .webp({quality: 82, effort: 5})
+      .toFile(outputPath);
+    return;
+  }
 
   const {luma, brightFraction, brightSpread, rgb} = await backdrop(upright);
 
@@ -229,26 +258,38 @@ async function main() {
     process.exit(1);
   }
 
-  const files = sourceFiles();
+  const available = new Set(sourceFiles());
   fs.mkdirSync(OUT, {recursive: true});
 
   const manifest = {};
   let written = 0;
+  let missing = 0;
 
-  for (const [family, indices] of Object.entries(families)) {
+  for (const [family, sources] of Object.entries(families)) {
     manifest[family] = [];
-    for (let position = 0; position < indices.length; position++) {
-      const sourceName = files[indices[position]];
-      if (!sourceName) {
-        console.warn(`  ! ${family}[${position}] -> index ${indices[position]} is out of range`);
+    for (let position = 0; position < sources.length; position++) {
+      const sourceName = sources[position];
+      if (!available.has(sourceName)) {
+        console.warn(`  ! ${family}[${position}] -> "${sourceName}" is not in the source folder`);
+        missing++;
         continue;
       }
       const name = `${family}-${String(position + 1).padStart(2, '0')}.webp`;
-      await processPhoto(path.join(SRC, sourceName), path.join(OUT, name), rotations[indices[position]] ?? 0);
+      await processPhoto(path.join(SRC, sourceName), path.join(OUT, name), {
+        rotation: rotations[sourceName] ?? 0,
+        crop: crops[sourceName]
+      });
       manifest[family].push({source: sourceName, output: `/products/photos/${name}`});
       written++;
     }
     console.log(`  ${family.padEnd(24)} ${manifest[family].length} photo(s)`);
+  }
+
+  // A renamed or deleted original silently drops a product's photography, so
+  // make it a build failure rather than a quiet gap in the catalogue.
+  if (missing) {
+    console.error(`\n${missing} mapped photograph(s) missing from ${SRC}`);
+    process.exitCode = 1;
   }
 
   // Link-preview cards: one per family, plus the site-wide default.

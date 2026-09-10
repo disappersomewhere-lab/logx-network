@@ -453,29 +453,29 @@
   ],
   "media-converter": [
     {
-      "source": "32950.jpg",
+      "source": "SFP Media converter.jpeg",
       "output": "/products/photos/media-converter-01.webp"
     }
   ],
   "terminal-box-4": [
     {
-      "source": "32953.jpg",
+      "source": "fiber D 4 port.jpeg",
       "output": "/products/photos/terminal-box-4-01.webp"
     }
   ],
   "terminal-box-8": [
     {
-      "source": "32949.jpg",
+      "source": "fiber D 8 port.jpeg prot.jpeg",
       "output": "/products/photos/terminal-box-8-01.webp"
     }
   ],
   "pdu": [
     {
-      "source": "32951.jpg",
+      "source": "PDU.jpeg",
       "output": "/products/photos/pdu-01.webp"
     },
     {
-      "source": "32952.jpg",
+      "source": "PDU..jpeg",
       "output": "/products/photos/pdu-02.webp"
     }
   ],
