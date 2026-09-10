@@ -1,11 +1,27 @@
 import type {MetadataRoute} from 'next';
 import {catalog} from '@/lib/catalog';
+import {siteUrl} from '@/lib/site';
+import {defaultLocale, locales} from '@/i18n';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const STATIC_PATHS = ['', '/products', '/about', '/contact', '/privacy', '/terms'];
+
+// Each entry lists its translations so search engines pair the locales instead
+// of treating them as competing duplicates.
+function entry(path: string, priority: number): MetadataRoute.Sitemap[number] {
+  const languages: Record<string, string> = {};
+  for (const locale of locales) languages[locale] = `${siteUrl}/${locale}${path}`;
+
+  return {
+    url: `${siteUrl}/${defaultLocale}${path}`,
+    changeFrequency: 'monthly',
+    priority,
+    alternates: {languages}
+  };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ['', '/products', '/about', '/contact'];
-  const localizedPages = ['en', 'ar'].flatMap((locale) => pages.map((page) => ({url: `${siteUrl}/${locale}${page}`, changeFrequency: 'monthly' as const, priority: page === '' ? 1 : .7})));
-  const products = ['en', 'ar'].flatMap((locale) => catalog.map((product) => ({url: `${siteUrl}/${locale}/products/${product.slug}`, changeFrequency: 'monthly' as const, priority: .6})));
-  return [...localizedPages, ...products];
+  return [
+    ...STATIC_PATHS.map((path) => entry(path, path === '' ? 1 : 0.7)),
+    ...catalog.map((product) => entry(`/products/${product.slug}`, 0.6))
+  ];
 }

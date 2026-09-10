@@ -17,3 +17,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+        env:
+          # Canonical links, hreflang and sitemap.xml are absolute, so the build
+          # needs an origin. Replace with the production domain once it is live.
+          NEXT_PUBLIC_SITE_URL: https://logx-network.example

@@ -11,7 +11,7 @@
 import XLSX from 'xlsx';
 import fs from 'node:fs';
 import path from 'node:path';
-import {familyFor, imagesFor} from './photo-map.mjs';
+import {familyFor, imagesFor, ogImageFor} from './photo-map.mjs';
 
 const ROOT = path.join(import.meta.dirname, '..');
 const DEFAULT_SOURCE = String.raw`c:\Users\NSEA ITSM\OneDrive\Desktop\logx\Logx product's.xls`;
@@ -545,6 +545,7 @@ function main() {
       summary,
       specs: [...specs, spec('Part number', 'رقم القطعة', partNumber, partNumber)],
       images,
+      ogImage: ogImageFor(partNumber),
       raw
     });
   }

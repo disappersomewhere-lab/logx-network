@@ -98,3 +98,9 @@ export function imagesFor(partNumber) {
   if (!family) return [];
   return families[family].map((_, index) => `/products/photos/${family}-${String(index + 1).padStart(2, '0')}.webp`);
 }
+
+/** The 1200x630 JPEG link-preview card for a part, shared across its family. */
+export function ogImageFor(partNumber) {
+  const family = familyFor(partNumber);
+  return family ? `/products/photos/${family}-og.jpg` : '/opengraph-image.png';
+}

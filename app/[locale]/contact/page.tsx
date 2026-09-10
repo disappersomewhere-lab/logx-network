@@ -1,6 +1,7 @@
 import {getTranslations} from 'next-intl/server';
 import type {Metadata} from 'next';
 import QuoteForm from '@/components/QuoteForm';
+import {alternatesFor} from '@/lib/site';
 
 type Props = {
   params: Promise<{locale: string}>;
@@ -13,7 +14,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   return {
     title: t('nav.contact'),
     description: t('contact.description'),
-    alternates: {canonical: `/${locale}/contact`}
+    alternates: alternatesFor(locale, '/contact')
   };
 }
 

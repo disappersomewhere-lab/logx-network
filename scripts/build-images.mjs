@@ -130,6 +130,96 @@ async function processPhoto(sourcePath, outputPath) {
     .toFile(outputPath);
 }
 
+// ---------------------------------------------------------------- Open Graph
+//
+// Link previews need a 1200x630 raster. WhatsApp and LinkedIn do not reliably
+// render WebP, so these are JPEG/PNG rather than reusing the page assets.
+
+const OG = {width: 1200, height: 630};
+const FONT = 'Arial, Helvetica, sans-serif';
+
+// The LOGX wordmark, drawn as SVG so it renders identically without a webfont.
+// The X is skewed about its own baseline origin: skewX() alone shears the whole
+// coordinate system, which would drag the glyph left over the G.
+function wordmark({x, y, size, subdued = false}) {
+  const sub = size * 0.17;
+  return `
+    <text x="${x}" y="${y}" font-family="${FONT}" font-size="${size}" font-weight="900"
+          letter-spacing="${-size * 0.045}" fill="#141414">LOG</text>
+    <g transform="translate(${x + size * 2.02} ${y}) skewX(-11)">
+      <text x="0" y="0" font-family="${FONT}" font-size="${size * 1.18}" font-weight="900"
+            fill="#d3131b">X</text>
+    </g>
+    <text x="${x + size * 0.06}" y="${y + sub * 1.9}" font-family="${FONT}" font-size="${sub}"
+          font-weight="700" letter-spacing="${sub * 0.42}"
+          fill="${subdued ? '#8b8b8b' : '#5d5d5d'}">NETWORK</text>
+  `;
+}
+
+// The default card, used by every page that does not set its own image.
+async function buildBrandCard(outputPath) {
+  const strip = ['fiber-panel-06', 'keystone-cat6a', 'patch-cord-cat6-long', 'fiber-cord-om3'];
+  const thumbs = [];
+
+  for (let i = 0; i < strip.length; i++) {
+    const source = path.join(OUT, `${strip[i]}-01.webp`);
+    if (!fs.existsSync(source)) continue;
+    const buffer = await sharp(source).resize(170, 170, {fit: 'contain', background: CANVAS}).toBuffer();
+    thumbs.push({input: buffer, left: 640 + i * 140, top: 230});
+  }
+
+  const overlay = Buffer.from(`
+    <svg width="${OG.width}" height="${OG.height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="${OG.width}" height="${OG.height}" fill="#fafafa"/>
+      <rect width="${OG.width}" height="14" fill="#d3131b"/>
+      ${wordmark({x: 80, y: 250, size: 92})}
+      <text x="82" y="360" font-family="${FONT}" font-size="34" font-weight="700" fill="#141414">
+        Connectivity solutions
+      </text>
+      <text x="82" y="410" font-family="${FONT}" font-size="25" fill="#5d5d5d">
+        CAT6 · CAT6A copper · OS2 · OM3 fiber · racks
+      </text>
+      <rect x="82" y="450" width="120" height="5" fill="#d3131b"/>
+    </svg>
+  `);
+
+  await sharp({
+    create: {width: OG.width, height: OG.height, channels: 3, background: CANVAS}
+  })
+    .composite([{input: overlay, left: 0, top: 0}, ...thumbs])
+    .png()
+    .toFile(outputPath);
+}
+
+// One card per family: the product on white, branded. Deliberately carries no
+// part number -- a family's card is shared by every length in it, so a printed
+// part number would be wrong for all but one of them. The exact name and part
+// number reach the preview through og:title and og:description.
+async function buildProductCard(sourcePath, outputPath) {
+  const photo = await sharp(sourcePath)
+    .resize(470, 470, {fit: 'contain', background: CANVAS})
+    .toBuffer();
+
+  const overlay = Buffer.from(`
+    <svg width="${OG.width}" height="${OG.height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="${OG.width}" height="${OG.height}" fill="#fafafa"/>
+      <rect width="${OG.width}" height="14" fill="#d3131b"/>
+      ${wordmark({x: 80, y: 130, size: 48})}
+      <rect x="80" y="560" width="110" height="5" fill="#d3131b"/>
+    </svg>
+  `);
+
+  await sharp({
+    create: {width: OG.width, height: OG.height, channels: 3, background: CANVAS}
+  })
+    .composite([
+      {input: overlay, left: 0, top: 0},
+      {input: photo, left: Math.round((OG.width - 470) / 2), top: 90}
+    ])
+    .jpeg({quality: 86})
+    .toFile(outputPath);
+}
+
 async function main() {
   if (!fs.existsSync(SRC)) {
     console.error(`Source folder not found: ${SRC}`);
@@ -158,12 +248,24 @@ async function main() {
     console.log(`  ${family.padEnd(24)} ${manifest[family].length} photo(s)`);
   }
 
+  // Link-preview cards: one per family, plus the site-wide default.
+  const ogNames = new Set();
+  for (const [family, entries] of Object.entries(manifest)) {
+    if (family.startsWith('brand-') || !entries.length) continue;
+    const name = `${family}-og.jpg`;
+    await buildProductCard(path.join(OUT, path.basename(entries[0].output)), path.join(OUT, name));
+    ogNames.add(name);
+  }
+  await buildBrandCard(path.join(ROOT, 'public', 'og-default.png'));
+  console.log(`  ${'open graph'.padEnd(24)} ${ogNames.size} product card(s) + 1 default`);
+
   // Drop files left behind by a family that shrank or was renamed.
-  const expected = new Set(
-    Object.values(manifest)
+  const expected = new Set([
+    ...Object.values(manifest)
       .flat()
-      .map((entry) => path.basename(entry.output))
-  );
+      .map((entry) => path.basename(entry.output)),
+    ...ogNames
+  ]);
   const orphans = fs.readdirSync(OUT).filter((name) => !expected.has(name));
   for (const orphan of orphans) fs.unlinkSync(path.join(OUT, orphan));
 

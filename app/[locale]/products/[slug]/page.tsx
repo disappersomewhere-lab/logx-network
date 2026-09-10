@@ -5,6 +5,7 @@ import Link from 'next/link';
 import ProductGallery from '@/components/ProductGallery';
 import ProductCard from '@/components/ProductCard';
 import {catalog, getProduct, relatedProducts, type Locale} from '@/lib/catalog';
+import {alternatesFor} from '@/lib/site';
 import {locales} from '@/i18n';
 
 type Props = {
@@ -26,11 +27,13 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   return {
     title: product.name[language],
     description: product.summary[language],
-    alternates: {canonical: `/${locale}/products/${slug}`},
+    alternates: alternatesFor(locale, `/products/${slug}`),
     openGraph: {
       title: product.name[language],
       description: product.summary[language],
-      images: product.images.slice(0, 1)
+      // A dedicated 1200x630 JPEG: link previews on WhatsApp and LinkedIn do
+      // not reliably render the WebP used on the page itself.
+      images: [{url: product.ogImage, width: 1200, height: 630, alt: product.name[language]}]
     }
   };
 }

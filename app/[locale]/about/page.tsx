@@ -2,6 +2,7 @@ import {getTranslations, setRequestLocale} from 'next-intl/server';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import {alternatesFor} from '@/lib/site';
 
 const SHOWCASE = [
   '/products/photos/fiber-panel-48-01.webp',
@@ -20,7 +21,7 @@ export async function generateMetadata({
   return {
     title: t('nav.about'),
     description: t('about.description'),
-    alternates: {canonical: `/${locale}/about`}
+    alternates: alternatesFor(locale, '/about')
   };
 }
 

@@ -2,6 +2,7 @@ import {getTranslations} from 'next-intl/server';
 import type {Metadata} from 'next';
 import CatalogBrowser from '@/components/CatalogBrowser';
 import {catalog, isCategory, type Locale} from '@/lib/catalog';
+import {alternatesFor} from '@/lib/site';
 
 type Props = {
   params: Promise<{locale: string}>;
@@ -14,7 +15,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   return {
     title: t('nav.products'),
     description: t('catalog.description'),
-    alternates: {canonical: `/${locale}/products`}
+    alternates: alternatesFor(locale, '/products')
   };
 }
 
