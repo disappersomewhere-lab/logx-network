@@ -62,12 +62,20 @@ regenerate the imagery.
 
 ### Product data
 
-`scripts/import-products.mjs` reads the price list, matches each part number to a builder
-that produces a bilingual title, summary and specification table, and keeps the verbatim
-spreadsheet text on every record as `raw`. To refresh from a new price list:
+The price list is committed at `data/source/Logx product's.xls` — it holds only descriptions
+and part numbers, no prices — so a fresh clone can regenerate the catalogue. Edit that file in
+Excel, then rebuild:
 
 ```bash
-npm run import-products -- "C:\path\to\Logx product's.xls"
+npm run import-products
+```
+
+`scripts/import-products.mjs` matches each part number to a builder that produces a
+bilingual title, summary and specification table, and keeps the verbatim spreadsheet text
+on every record as `raw`. To import a workbook from somewhere else instead, pass its path:
+
+```bash
+npm run import-products -- "path/to/other-list.xls"
 ```
 
 A part number that no builder claims still appears in the catalogue, using the spreadsheet

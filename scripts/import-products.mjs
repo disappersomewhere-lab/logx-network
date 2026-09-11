@@ -1,6 +1,7 @@
 // Builds data/products.json from the LOGX price list.
 //
-//   npm run import-products -- "path/to/Logx product's.xls"
+//   npm run import-products                       # reads data/source/Logx product's.xls
+//   npm run import-products -- "other/list.xls"   # or an explicit workbook
 //
 // The spreadsheet carries only a description and a part number, both written
 // for internal use. Each part number is matched to a builder below that turns
@@ -14,7 +15,9 @@ import path from 'node:path';
 import {familyFor, imagesFor, ogImageFor} from './photo-map.mjs';
 
 const ROOT = path.join(import.meta.dirname, '..');
-const DEFAULT_SOURCE = String.raw`c:\Users\NSEA ITSM\OneDrive\Desktop\logx\Logx product's.xls`;
+// The price list lives in the repo beside the catalogue it produces, so a fresh
+// clone can regenerate data/products.json without hunting for the workbook.
+const DEFAULT_SOURCE = path.join(ROOT, 'data', 'source', "Logx product's.xls");
 
 /**
  * Part numbers that appear in the price list but must not reach the site.
