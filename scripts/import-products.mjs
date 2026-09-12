@@ -13,7 +13,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {familyFor, imagesFor, ogImageFor} from './photo-map.mjs';
 import {PRICE_LIST, readRows} from './price-list.mjs';
-import {datasheetFor} from './datasheets.mjs';
 
 const ROOT = path.join(import.meta.dirname, '..');
 
@@ -514,15 +513,10 @@ function slugify(value) {
 function main() {
   const source = process.argv[2] || PRICE_LIST;
   const products = [];
-  let withoutDatasheet = [];
-
   for (const {raw, partNumber} of readRows(source)) {
     const {category, name, summary, specs} = describe(partNumber, raw);
     const images = imagesFor(partNumber);
     if (!images.length) console.warn(`  ! no photography mapped for ${partNumber}`);
-
-    const datasheet = datasheetFor(partNumber);
-    if (!datasheet) withoutDatasheet.push(partNumber);
 
     products.push({
       slug: `${slugify(name.en)}-${slugify(partNumber)}`,
@@ -534,13 +528,8 @@ function main() {
       specs: [...specs, spec('Part number', 'رقم القطعة', partNumber, partNumber)],
       images,
       ogImage: ogImageFor(partNumber),
-      datasheet,
       raw
     });
-  }
-
-  if (withoutDatasheet.length) {
-    console.log(`  - no datasheet in public/datasheets/ for: ${withoutDatasheet.join(', ')}`);
   }
 
   fs.writeFileSync(

@@ -94,5 +94,15 @@
     "range": "Copper, fiber, patching and rack accessories are designed to work together across enterprise and data center environments.",
     "contactTitle": "Talk to a specialist",
     "contact": "Need a bill of materials, lead time or a full data sheet? Our sales team can help shape the right kit."
+  },
+  "datasheet": {
+    "backToProduct": "Back to product",
+    "print": "Print",
+    "download": "Download PDF",
+    "index": "Datasheets",
+    "indexTitle": "Technical datasheets",
+    "indexIntro": "A4 engineering datasheet for every LOGX part: specifications, standards, mechanical and electrical characteristics, and ordering information. View in the browser or download the PDF.",
+    "view": "View",
+    "parts": "parts"
   }
 }

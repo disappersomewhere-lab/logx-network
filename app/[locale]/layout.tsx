@@ -127,6 +127,9 @@ export default async function LocaleLayout({children, params}: Props) {
                         {t('categories.accessories')}
                       </Link>
                     </li>
+                    <li>
+                      <Link href={`/${locale}/datasheets`}>{t('datasheet.index')}</Link>
+                    </li>
                   </ul>
                 </div>
 

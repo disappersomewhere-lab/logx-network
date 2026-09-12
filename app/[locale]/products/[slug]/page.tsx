@@ -7,6 +7,8 @@ import ProductCard from '@/components/ProductCard';
 import {catalog, getProduct, relatedProducts, type Locale} from '@/lib/catalog';
 import {alternatesFor, contact, mailto} from '@/lib/site';
 import {formatBytes} from '@/lib/format';
+import {datasheetFor} from '@/lib/datasheets';
+import {contentFor} from '@/lib/families';
 import {locales} from '@/i18n';
 
 type Props = {
@@ -57,6 +59,8 @@ export default async function ProductPage({params}: Props) {
   const t = await getTranslations();
   const language = locale as Locale;
   const related = relatedProducts(product);
+  const hasSheet = Boolean(contentFor(product.partNumber));
+  const pdf = datasheetFor(product.partNumber);
 
   // Structured data so the part shows up correctly in search results.
   const jsonLd = {
@@ -68,13 +72,13 @@ export default async function ProductPage({params}: Props) {
     mpn: product.partNumber,
     brand: {'@type': 'Brand', name: 'LOGX NETWORK'},
     image: product.images,
-    ...(product.datasheet
+    ...(pdf
       ? {
           subjectOf: {
             '@type': 'DigitalDocument',
             name: `${product.partNumber} datasheet`,
             encodingFormat: 'application/pdf',
-            url: product.datasheet.url
+            url: pdf.url
           }
         }
       : {})
@@ -141,20 +145,21 @@ export default async function ProductPage({params}: Props) {
             >
               {t('productDetail.quote')}
             </Link>
-            {product.datasheet ? (
-              <a
-                href={product.datasheet.url}
+            {hasSheet ? (
+              <Link
+                href={`/${locale}/products/${product.slug}/datasheet`}
                 className="button button-quiet button-datasheet"
-                target="_blank"
-                rel="noopener"
-                type="application/pdf"
               >
-                <span className="pdf-badge" aria-hidden="true">
-                  PDF
-                </span>
                 {t('productDetail.datasheet')}
-                <small>{formatBytes(product.datasheet.bytes, language)}</small>
-              </a>
+                {pdf ? (
+                  <small>
+                    <span className="pdf-badge" aria-hidden="true">
+                      PDF
+                    </span>{' '}
+                    {formatBytes(pdf.bytes, language)}
+                  </small>
+                ) : null}
+              </Link>
             ) : null}
             <a
               href={mailto(`${product.partNumber} — ${product.name.en}`)}

@@ -1,6 +1,6 @@
-// Where a part's PDF datasheet lives once imported, and whether it exists.
+// Where the generated PDF datasheets live and how they are named. The site
+// reads them through lib/datasheets.ts, which mirrors the filename rule.
 
-import fs from 'node:fs';
 import path from 'node:path';
 
 const ROOT = path.join(import.meta.dirname, '..');
@@ -12,15 +12,4 @@ export const DATASHEET_DIR = path.join(ROOT, 'public', 'datasheets');
  */
 export function datasheetFileFor(partNumber) {
   return `${String(partNumber).replace(/\+/g, '-plus')}.pdf`;
-}
-
-/**
- * `{url, bytes}` for the part's datasheet if one has been imported, else null.
- * The size is recorded so the page can say "PDF · 420 KB" without a request.
- */
-export function datasheetFor(partNumber) {
-  const file = datasheetFileFor(partNumber);
-  const full = path.join(DATASHEET_DIR, file);
-  if (!fs.existsSync(full)) return null;
-  return {url: `/datasheets/${file}`, bytes: fs.statSync(full).size};
 }

@@ -1,5 +1,6 @@
 import {getTranslations} from 'next-intl/server';
 import type {Metadata} from 'next';
+import Link from 'next/link';
 import CatalogBrowser from '@/components/CatalogBrowser';
 import {catalog, isCategory, type Locale} from '@/lib/catalog';
 import {alternatesFor} from '@/lib/site';
@@ -31,7 +32,12 @@ export default async function ProductsPage({params, searchParams}: Props) {
           <p className="eyebrow">{t('catalog.eyebrow')}</p>
           <h1>{t('nav.products')}</h1>
         </div>
-        <p>{t('catalog.description')}</p>
+        <div>
+          <p>{t('catalog.description')}</p>
+          <Link href={`/${locale}/datasheets`} className="text-link">
+            {t('datasheet.indexTitle')} ↗
+          </Link>
+        </div>
       </div>
 
       <CatalogBrowser

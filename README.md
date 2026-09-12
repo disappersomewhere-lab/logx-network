@@ -19,35 +19,48 @@ The catalogue is generated from two sources, and both steps are reproducible:
 
 | Source | Command | Output |
 | --- | --- | --- |
-| Rendered PDF datasheets | `npm run import-datasheets` | `public/datasheets/<PART>.pdf` |
 | LOGX price list (`.xls`) | `npm run import-products` | `data/products.json` |
 | Original product photography | `npm run build:images` | `public/products/photos/*.webp`, link-preview cards |
+| Family engineering content | `npm run import-family-content` | `data/families.json` |
+| The built datasheet pages | `npm run build:datasheets` | `public/datasheets/<PART>.pdf` |
 | `app/icon.svg` | `npm run build:icons` | `app/favicon.ico`, `app/apple-icon.png` |
 
 ```bash
-npm run build:catalog   # datasheets → products → images, in that order
+npm run build:catalog   # products → images
 ```
 
-The order matters once: `import-products` records which parts have a datasheet by
-looking in `public/datasheets/`, so the datasheets must be imported first. Both importers
-read the price list through `scripts/price-list.mjs`, which is the one place the excluded
-part numbers live.
+Both the product importer and the datasheet generator read the price list through
+`scripts/price-list.mjs`, which is the one place the excluded part numbers live.
 
 ### Datasheets
 
-The per-part A4 sheets are rendered by a separate PowerShell tool (documented in
-`README-DATASHEETS.md` beside the price list's original folder) as `NNN_PARTNUMBER.pdf`.
-`import-datasheets` drops the numeric prefix so the URL is the part number, refuses to copy a
-sheet whose part is not in the price list (so a removed product's PDF can never become a live
-URL), and removes copies whose product has gone. A `+` in a part number becomes `-plus` in
-the filename. The copies are committed — 64 sheets, about 42 MB — so a clone serves them
-without the generator.
+Every part with authored engineering content has a datasheet **page** at
+`/[locale]/products/<slug>/datasheet` — an A4 technical sheet built from
+[data/families.json](data/families.json) (description, standards, features, applications,
+specification and characteristic tables, ordering information) and the part's own
+photograph. The sheet is an English document regardless of the site locale, as vendor
+datasheets conventionally are; only the toolbar around it is localised. `/[locale]/datasheets`
+lists every sheet by family.
 
-Two known gaps, both inherited from the generator: the RJ45 boot (`LXCPPTC6`) has no sheet,
-and the sheets predate the current photography, so some carry the placeholder images the
-generator's README describes. Regenerating them with the photos in
-`public/products/photos/` would fix that and, with JPEG rather than raw bitmaps, shrink
-them considerably.
+The **PDF** is that same page printed by headless Edge/Chrome, so what a customer downloads
+is exactly what they saw. Regenerate after changing content, photography or the sheet's
+layout:
+
+```bash
+npm run build              # the sheets are pages, so the site must be built first
+npm run build:datasheets   # starts the built site, prints every sheet, shuts it down
+```
+
+The generator finds Edge or Chrome on its own (set `BROWSER_PATH` to override), renders
+three sheets at a time, and refuses to delete existing PDFs if any render fails. The pages
+show each PDF's size, read from disk at build time, so a local preview built *before*
+generating shows no download button until you build again; a deploy build always sees the
+committed files. All 64 sheets fit on one page — the fibre patch cord family (24 lengths)
+does so by laying its ordering table out as two side-by-side halves.
+
+`data/families.json` is the file to edit for copy changes; `import-family-content` only
+re-imports it from the original generator's catalogue. The RJ45 boot (`LXCPPTC6`) has no
+authored content and therefore no sheet.
 
 ### Photography
 

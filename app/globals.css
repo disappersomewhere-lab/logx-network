@@ -646,11 +646,12 @@ p {
   max-width: 14ch;
 }
 
-.catalog-intro > p {
+.catalog-intro > p,
+.catalog-intro > div:last-child > p {
   color: var(--ink-soft);
   line-height: 1.7;
   max-width: 46ch;
-  margin: 0;
+  margin: 0 0 10px;
 }
 
 .catalog-toolbar {
@@ -977,6 +978,460 @@ p {
   font-weight: 900;
   letter-spacing: 0.08em;
   line-height: 1.2;
+}
+
+/* ------------------------------------------------------------------ datasheet
+   An A4 technical sheet rendered in the page. Sizes are in pt so the screen
+   preview and the printed/PDF output share one geometry. The sheet is always
+   LTR English; the toolbar around it follows the site locale. */
+
+.ds-page {
+  --ds-ink: #1d1d1d;
+  --ds-muted: #5a5a5a;
+  --ds-rule: #d9d9d6;
+  --ds-fill: #f4f4f2;
+  --ds-fill-alt: #fafaf9;
+  --ds-red: #d3131b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.ds-toolbar {
+  width: min(210mm, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ds-toolbar .back-link {
+  margin: 0;
+}
+
+.ds-toolbar-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ds-size {
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0.85;
+  direction: ltr;
+}
+
+.ds-sheet {
+  box-sizing: border-box;
+  width: min(210mm, 100%);
+  min-height: 297mm;
+  padding: 12mm 13mm 11mm;
+  background: #fff;
+  color: var(--ds-ink);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font);
+  font-size: 8.4pt;
+  line-height: 1.32;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-sheet h1,
+.ds-sheet h2,
+.ds-sheet p,
+.ds-sheet ul,
+.ds-sheet figure,
+.ds-sheet table {
+  margin: 0;
+}
+
+.ds-sheet section + section {
+  margin-top: 6.5pt;
+}
+
+.ds-sheet h2 {
+  color: var(--ds-red);
+  font-size: 7.4pt;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-bottom: 2pt;
+  margin-bottom: 3pt;
+  border-bottom: 1px solid var(--ds-rule);
+  line-height: 1.2;
+}
+
+/* header band */
+
+.ds-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 6pt;
+  border-bottom: 2.5pt solid var(--ds-red);
+}
+
+.ds-head .brand-logo {
+  color: var(--ds-ink);
+}
+
+.ds-doc-type {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 1pt;
+}
+
+.ds-doc-type span {
+  font-size: 8pt;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.ds-doc-type small {
+  color: var(--ds-muted);
+  font-size: 7pt;
+  letter-spacing: 0.06em;
+}
+
+/* title block */
+
+.ds-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16pt;
+  padding: 6pt 0 6pt;
+  border-bottom: 1px solid var(--ds-rule);
+  margin-bottom: 7pt;
+}
+
+.ds-family {
+  color: var(--ds-red);
+  font-size: 7pt;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 2pt;
+}
+
+.ds-title h1 {
+  font-size: 13.5pt;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  max-width: 110mm;
+}
+
+.ds-model {
+  color: var(--ds-muted);
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 6.8pt;
+  margin-top: 3pt;
+  max-width: 112mm;
+}
+
+.ds-part {
+  flex: 0 0 auto;
+  text-align: right;
+  border: 1px solid var(--ds-rule);
+  border-left: 3pt solid var(--ds-red);
+  padding: 5pt 8pt 5pt 9pt;
+  background: var(--ds-fill-alt);
+}
+
+.ds-part span {
+  display: block;
+  color: var(--ds-muted);
+  font-size: 6.4pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ds-part strong {
+  display: block;
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 12.5pt;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-top: 1pt;
+}
+
+/* two-column body */
+
+.ds-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(0, 0.72fr);
+  gap: 9pt;
+  align-items: start;
+}
+
+.ds-characteristics {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 6.5pt;
+}
+
+/* Side-by-side blocks share a baseline; the stacked-section spacing above
+   must not push the second one down. Scoped under .ds-sheet so it outranks
+   the `section + section` rule. */
+.ds-sheet .ds-characteristics > section {
+  margin-top: 0;
+}
+
+.ds-list {
+  padding-left: 9pt;
+}
+
+.ds-list li {
+  margin: 0 0 1pt;
+  padding-left: 1pt;
+}
+
+.ds-list li::marker {
+  color: var(--ds-red);
+}
+
+.ds-checks {
+  list-style: none;
+  padding: 0;
+}
+
+.ds-checks li {
+  position: relative;
+  padding-left: 10pt;
+  margin-bottom: 1pt;
+}
+
+.ds-checks li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ds-red);
+  font-weight: 900;
+}
+
+.ds-photo {
+  position: relative;
+  aspect-ratio: 1;
+  /* Identification, not a hero: kept small so the side column does not
+     set the sheet height and push a one-page family onto two. */
+  max-width: 48mm;
+  margin: 0 auto 6.5pt;
+  background: var(--tile);
+  border: 1px solid var(--ds-rule);
+  overflow: hidden;
+}
+
+.ds-photo img {
+  object-fit: contain;
+  padding: 6pt;
+}
+
+/* tables */
+
+.ds-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 7.5pt;
+}
+
+.ds-table th,
+.ds-table td {
+  padding: 2.2pt 4.5pt;
+  border: 1px solid var(--ds-rule);
+  vertical-align: top;
+  text-align: left;
+}
+
+.ds-table th {
+  font-weight: 700;
+  background: var(--ds-fill);
+  width: 34%;
+  white-space: nowrap;
+}
+
+.ds-table thead th {
+  background: var(--ds-ink);
+  color: #fff;
+  font-size: 6.8pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.ds-table tbody tr:nth-child(even) td {
+  background: var(--ds-fill-alt);
+}
+
+.ds-table-pairs th {
+  width: 19%;
+}
+
+.ds-table-pairs td {
+  width: 31%;
+}
+
+.ds-table-compact th,
+.ds-table-compact td {
+  padding: 2pt 4pt;
+  font-size: 7.4pt;
+}
+
+.ds-block {
+  margin-top: 6.5pt;
+}
+
+.ds-ordering thead th:first-child {
+  width: 28%;
+}
+
+.ds-ordering thead th:last-child {
+  width: 26%;
+}
+
+.ds-ordering-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9pt;
+  align-items: start;
+}
+
+.ds-ordering-split thead th:first-child {
+  width: 46%;
+}
+
+.ds-ordering-split thead th:last-child {
+  width: auto;
+}
+
+.ds-ordering td a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--ds-rule);
+  text-underline-offset: 2px;
+}
+
+.ds-ordering td a:hover {
+  color: var(--ds-red);
+}
+
+.ds-current td {
+  background: #fdecec !important;
+  font-weight: 700;
+}
+
+.ds-current td:first-child {
+  box-shadow: inset 3pt 0 0 var(--ds-red);
+}
+
+.ds-mono {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 0.95em;
+}
+
+/* footer band, pushed to the bottom of the sheet on screen */
+
+.ds-foot {
+  margin-top: auto;
+  padding-top: 6pt;
+  border-top: 1px solid var(--ds-rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12pt;
+  color: var(--ds-muted);
+  font-size: 6.6pt;
+  letter-spacing: 0.02em;
+}
+
+.ds-foot span:first-child {
+  flex: 1 1 auto;
+}
+
+.ds-foot span:last-child {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+/* datasheet index */
+
+.ds-index {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.ds-index td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+.ds-index tr:last-child td {
+  border-bottom: 0;
+}
+
+.ds-index tr:hover td {
+  background: var(--tile);
+}
+
+.ds-index-part {
+  width: 22%;
+  white-space: nowrap;
+}
+
+.ds-index-name a:hover {
+  color: var(--brand);
+}
+
+.ds-index-actions {
+  width: 30%;
+  text-align: end;
+  white-space: nowrap;
+}
+
+.ds-index-actions .text-link {
+  margin-inline-end: 18px;
+}
+
+.ds-index-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-soft);
+  font-size: 0.74rem;
+  font-weight: 700;
+  direction: ltr;
+}
+
+.ds-index-pdf:hover {
+  color: var(--brand);
+}
+
+@media (max-width: 720px) {
+  .ds-index-part {
+    display: none;
+  }
+
+  .ds-index-actions {
+    width: auto;
+  }
+
+  .ds-index-actions .text-link {
+    margin-inline-end: 10px;
+  }
 }
 
 /* ---------------------------------------------------------------- proof band */
@@ -1463,6 +1918,97 @@ p {
 
   .main-nav {
     gap: 12px;
+  }
+}
+
+/* ------------------------------------------------------------------- print
+   Only the datasheet is designed to be printed. The site chrome and the
+   on-screen toolbar disappear; the sheet takes the page. */
+
+@page {
+  size: A4;
+  margin: 10mm 12mm 11mm;
+}
+
+@media print {
+  html {
+    overflow: visible;
+  }
+
+  body {
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .site-header,
+  .site-footer,
+  .ds-toolbar {
+    display: none !important;
+  }
+
+  .page-shell {
+    width: auto;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ds-page {
+    display: block;
+  }
+
+  .ds-sheet {
+    width: auto;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    display: block;
+  }
+
+  .ds-sheet section,
+  .ds-photo,
+  .ds-part,
+  .ds-table tr {
+    break-inside: avoid;
+  }
+
+  .ds-table thead {
+    display: table-header-group;
+  }
+
+  .ds-foot {
+    margin-top: 9pt;
+  }
+
+  .ds-ordering td a {
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .ds-sheet {
+    padding: 8mm 6mm;
+    font-size: 8.5pt;
+  }
+
+  .ds-columns,
+  .ds-characteristics {
+    grid-template-columns: 1fr;
+  }
+
+  .ds-title {
+    flex-direction: column;
+  }
+
+  .ds-part {
+    text-align: left;
+    align-self: flex-start;
+  }
+
+  .ds-table th {
+    white-space: normal;
   }
 }
 

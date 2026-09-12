@@ -1,0 +1,2639 @@
+[
+  {
+    "key": "cat6-patch-cord",
+    "title": "LOGX CAT 6 UTP PATCH CORD",
+    "modelLine": "LOGX CAT6 UTP, 4PX28AWG+CROSS+PVC+RJ45, GOLD PLATED PINS, PASS FLUKE TEST",
+    "description": "LOGX CAT 6 UTP patch cords are specifically manufactured with 4-pair 28AWG stranded copper conductors, an integrated central cross divider (+cross) for optimum pair separation and crosstalk suppression, high-durability PVC jacket, and RJ45 plugs with gold-plated pins. Factory certified to 100% Pass Fluke Test, ensuring superior network transmission performance and signal integrity.",
+    "compliance": [
+      "ANSI/TIA 568.2-D Category 6",
+      "ISO/IEC 11801 Class E",
+      "IEC 61156-6 | EN 50173-1 & EN 50399",
+      "100% Pass Fluke Test Certified",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "100% Pass Fluke Test",
+        "text": "guaranteed electrical performance"
+      },
+      {
+        "lead": "4PX28AWG Stranded Conductors",
+        "text": "for high flexibility and slim profile"
+      },
+      {
+        "lead": "Central Cross Separator (+cross)",
+        "text": "to optimize pair isolation & NEXT"
+      },
+      {
+        "lead": "RJ45 Connectors with Gold Plated Pins",
+        "text": "for superior contact"
+      },
+      {
+        "lead": "Durable PVC Outer Jacket",
+        "text": "(Grey)"
+      },
+      {
+        "lead": null,
+        "text": "Slim, compact design ideal for high-density data centers and server racks"
+      },
+      {
+        "lead": null,
+        "text": "Molded snagless strain-relief boot for latch and cable protection"
+      },
+      {
+        "lead": null,
+        "text": "≥ 1000 Mating / Insertion Cycles Durability"
+      }
+    ],
+    "applications": [
+      "1000BASE-T Gigabit Ethernet / 100BASE-TX Fast Ethernet",
+      "High-Density Server Racks & Switch Patching",
+      "Power over Ethernet (PoE / PoE+ / PoE++ IEEE 802.3af/at/bt)",
+      "VoIP Telephony, CCTV IP Cameras, and Digital High-Speed Data"
+    ],
+    "sideTable": {
+      "title": "COLOR CODING",
+      "rows": [
+        [
+          "Pair 1",
+          "White-Blue / Blue"
+        ],
+        [
+          "Pair 2",
+          "White-Orange / Orange"
+        ],
+        [
+          "Pair 3",
+          "White-Green / Green"
+        ],
+        [
+          "Pair 4",
+          "White-Brown / Brown"
+        ]
+      ]
+    },
+    "specsTitle": "SPECIFICATIONS & CONSTRUCTION",
+    "specs": [
+      [
+        "Product Model",
+        "LOGX Category 6 (CAT6)"
+      ],
+      [
+        "Central Separator",
+        "PE Cross Separator (+cross)"
+      ],
+      [
+        "Shielding Type",
+        "UTP (Unshielded)"
+      ],
+      [
+        "Connector Type",
+        "RJ45 (8P8C)"
+      ],
+      [
+        "Conductor Structure",
+        "4PX28AWG Stranded Copper"
+      ],
+      [
+        "Contacts Plating",
+        "Gold Plated Pins"
+      ],
+      [
+        "Jacket Sheath",
+        "PVC (Polyvinyl Chloride)"
+      ],
+      [
+        "Quality Standard",
+        "Pass Fluke Test (100%)"
+      ],
+      [
+        "Jacket Color",
+        "Grey (G)"
+      ],
+      [
+        "Assembly Type",
+        "Injection Molding Snagless Boot"
+      ],
+      [
+        "Outer Diameter",
+        "4.8 ± 0.2 mm"
+      ],
+      [
+        "Durability",
+        "≥ 1000 Insertion Cycles"
+      ],
+      [
+        "Installation Temp.",
+        "0°C ~ +50°C"
+      ],
+      [
+        "Operating Temp.",
+        "-20°C ~ +60°C"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Min. Tension",
+          "≥ 100 N"
+        ],
+        [
+          "Conductor Elongation",
+          "≥ 15%"
+        ],
+        [
+          "Jacket Tensile Strength",
+          "≥ 10 MPa"
+        ],
+        [
+          "Jacket Elongation",
+          "≥ 125%"
+        ],
+        [
+          "Min. Bend Radius",
+          "4 × Overall Diameter"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ELECTRICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Quality Test",
+          "100% Pass Fluke Test"
+        ],
+        [
+          "DC Resistance Unbal.",
+          "≤ 2.0%"
+        ],
+        [
+          "Dielectric Strength",
+          "1.0 kV, 1 Min (No breakdown)"
+        ],
+        [
+          "Delay Skew / Delay",
+          "≤ 45 ns/100m | ≤ 555 ns/100m"
+        ],
+        [
+          "Insulation Resistance",
+          "≥ 5000 MΩ·km"
+        ]
+      ]
+    },
+    "variantHeader": "Length",
+    "parts": [
+      {
+        "partNumber": "LXPC6UUPVG0.25",
+        "description": "Logx 0.25M cat6, UTP, 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test",
+        "variant": "0.25 Meter"
+      },
+      {
+        "partNumber": "LXPC6UUPVG0.5",
+        "description": "Logx 0.5M cat6, UTP, 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test",
+        "variant": "0.5 Meter"
+      },
+      {
+        "partNumber": "LXPC6UUPVG1",
+        "description": "Logx 1M cat6, UTP, 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test",
+        "variant": "1 Meter"
+      },
+      {
+        "partNumber": "LXPC6UUPVG3",
+        "description": "Logx 3M cat6, UTP, 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test",
+        "variant": "3 Meters"
+      },
+      {
+        "partNumber": "LXPC6UUPVG5",
+        "description": "Logx 5M cat6, UTP, 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test",
+        "variant": "5 Meters"
+      },
+      {
+        "partNumber": "LXPC6UUPVG10",
+        "description": "Logx 10M cat6, UTP, 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test",
+        "variant": "10 Meters"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "cat6a-patch-cord",
+    "title": "LOGX CAT 6A UTP PATCH CORD",
+    "modelLine": "LOGX CAT6A UTP, STRANDED 4PX28AWG+CROSS+PVC+RJ45, GOLD PLATED PINS, PASS FLUKE TEST",
+    "description": "LOGX CAT 6A UTP patch cords are high-performance Category 6A assemblies constructed with stranded 4-pair 28AWG copper conductors, an integrated central cross divider (+cross) for enhanced alien crosstalk (ANEXT) suppression and pair separation, premium PVC outer jacket, and RJ45 connectors with gold-plated pins. Factory tested and certified to 100% Pass Fluke Test for high-speed 10G networks.",
+    "compliance": [
+      "ANSI/TIA 568.2-D Category 6A",
+      "ISO/IEC 11801 Class EA",
+      "IEC 61156-6 | EN 50173-1 & EN 50399",
+      "100% Pass Fluke Test Certified",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "100% Pass Fluke Test",
+        "text": "guaranteed electrical performance"
+      },
+      {
+        "lead": "4PX28AWG Stranded Conductors",
+        "text": "for high flexibility and slim profile"
+      },
+      {
+        "lead": "Central Cross Separator (+cross)",
+        "text": "to optimize pair isolation & NEXT"
+      },
+      {
+        "lead": "RJ45 Connectors with Gold Plated Pins",
+        "text": "for superior contact"
+      },
+      {
+        "lead": "Durable PVC Outer Jacket",
+        "text": "(Grey)"
+      },
+      {
+        "lead": null,
+        "text": "Slim, compact design ideal for high-density data centers and server racks"
+      },
+      {
+        "lead": null,
+        "text": "Molded snagless strain-relief boot for latch and cable protection"
+      },
+      {
+        "lead": null,
+        "text": "≥ 1000 Mating / Insertion Cycles Durability"
+      }
+    ],
+    "applications": [
+      "10GBASE-T 10-Gigabit Ethernet Applications",
+      "High-Density Server Racks & Switch Patching",
+      "Power over Ethernet (PoE / PoE+ / PoE++ IEEE 802.3af/at/bt)",
+      "VoIP Telephony, CCTV IP Cameras, and Digital High-Speed Data"
+    ],
+    "sideTable": {
+      "title": "COLOR CODING",
+      "rows": [
+        [
+          "Pair 1",
+          "White-Blue / Blue"
+        ],
+        [
+          "Pair 2",
+          "White-Orange / Orange"
+        ],
+        [
+          "Pair 3",
+          "White-Green / Green"
+        ],
+        [
+          "Pair 4",
+          "White-Brown / Brown"
+        ]
+      ]
+    },
+    "specsTitle": "SPECIFICATIONS & CONSTRUCTION",
+    "specs": [
+      [
+        "Product Model",
+        "LOGX Category 6A (CAT6A)"
+      ],
+      [
+        "Central Separator",
+        "PE Cross Separator (+cross)"
+      ],
+      [
+        "Shielding Type",
+        "UTP (Unshielded)"
+      ],
+      [
+        "Connector Type",
+        "RJ45 (8P8C)"
+      ],
+      [
+        "Conductor Structure",
+        "4PX28AWG Stranded Copper"
+      ],
+      [
+        "Contacts Plating",
+        "Gold Plated Pins"
+      ],
+      [
+        "Jacket Sheath",
+        "PVC (Polyvinyl Chloride)"
+      ],
+      [
+        "Quality Standard",
+        "Pass Fluke Test (100%)"
+      ],
+      [
+        "Jacket Color",
+        "Grey (G)"
+      ],
+      [
+        "Assembly Type",
+        "Injection Molding Snagless Boot"
+      ],
+      [
+        "Outer Diameter",
+        "5.0 ± 0.2 mm"
+      ],
+      [
+        "Durability",
+        "≥ 1000 Insertion Cycles"
+      ],
+      [
+        "Installation Temp.",
+        "0°C ~ +50°C"
+      ],
+      [
+        "Operating Temp.",
+        "-20°C ~ +60°C"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Min. Tension",
+          "≥ 100 N"
+        ],
+        [
+          "Conductor Elongation",
+          "≥ 15%"
+        ],
+        [
+          "Jacket Tensile Strength",
+          "≥ 10 MPa"
+        ],
+        [
+          "Jacket Elongation",
+          "≥ 125%"
+        ],
+        [
+          "Min. Bend Radius",
+          "4 × Overall Diameter"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ELECTRICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Quality Test",
+          "100% Pass Fluke Test"
+        ],
+        [
+          "DC Resistance Unbal.",
+          "≤ 2.0%"
+        ],
+        [
+          "Dielectric Strength",
+          "1.0 kV, 1 Min (No breakdown)"
+        ],
+        [
+          "Delay Skew / Delay",
+          "≤ 45 ns/100m | ≤ 555 ns/100m"
+        ],
+        [
+          "Insulation Resistance",
+          "≥ 5000 MΩ·km"
+        ]
+      ]
+    },
+    "variantHeader": "Length",
+    "parts": [
+      {
+        "partNumber": "LXPC6AUUPVG0.5",
+        "description": "Logx 0.5M CAT6a UTP, Stranded 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test",
+        "variant": "0.5 Meter"
+      },
+      {
+        "partNumber": "LXPC6AUUPVG1",
+        "description": "Logx 1M CAT6a UTP, Stranded 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test",
+        "variant": "1 Meter"
+      },
+      {
+        "partNumber": "LXPC6AUUPVG3",
+        "description": "Logx 3M CAT6a UTP, Stranded 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test",
+        "variant": "3 Meters"
+      },
+      {
+        "partNumber": "LXPC6AUUPVG5",
+        "description": "Logx 5M CAT6a UTP, Stranded 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test",
+        "variant": "5 Meters"
+      },
+      {
+        "partNumber": "LXPC6AUUPVG10",
+        "description": "Logx 10M CAT6a UTP, Stranded 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test",
+        "variant": "10 Meters"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "cat6-lan-cable",
+    "title": "LOGX CAT 6 U/UTP SOLID LAN CABLE",
+    "modelLine": "LOGX CAT6 UTP LAN CABLE (305M) 24AWG, BARE COPPER 0.52MM, PASS FLUKE TEST, GREY",
+    "description": "LOGX CAT 6 U/UTP Solid LAN Cable is engineered for high-performance Gigabit network cabling. Built with 24AWG solid bare copper conductors (0.52mm), HDPE insulation, internal PE cross separator, and flame-retardant PVC sheath. Exceeds Category 6 transmission standards and guaranteed 100% Pass Fluke Test.",
+    "compliance": [
+      "ANSI/TIA-568.2-D Category 6",
+      "ISO/IEC 11801 Class E | IEC 61156-5",
+      "EN 50173-1 & EN 50288-6-1",
+      "100% Pass Fluke Test Certified",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "Solid 24AWG Bare Copper (0.52mm)",
+        "text": "for maximum signal conductivity"
+      },
+      {
+        "lead": "Integrated PE Central Cross Separator",
+        "text": "to minimize internal crosstalk (NEXT)"
+      },
+      {
+        "lead": "250MHz Performance Bandwidth",
+        "text": "tested and certified"
+      },
+      {
+        "lead": "100% Pass Fluke Test",
+        "text": "guaranteed quality standard"
+      },
+      {
+        "lead": null,
+        "text": "Durable, easy-strip PVC outer sheath (Grey)"
+      },
+      {
+        "lead": null,
+        "text": "305 Meter (1000 ft) Easy-Pull Reel in Box packaging"
+      }
+    ],
+    "applications": [
+      "1000BASE-T Gigabit Ethernet & 100BASE-TX Fast Ethernet",
+      "Horizontal Cabling in Structured Telecommunications Networks",
+      "High-Speed VoIP, IP CCTV Surveillance, and Smart Building Systems",
+      "Power over Ethernet (PoE / PoE+ IEEE 802.3af/at)"
+    ],
+    "sideTable": {
+      "title": "COLOR CODING",
+      "rows": [
+        [
+          "Pair 1",
+          "White-Blue / Blue"
+        ],
+        [
+          "Pair 2",
+          "White-Orange / Orange"
+        ],
+        [
+          "Pair 3",
+          "White-Green / Green"
+        ],
+        [
+          "Pair 4",
+          "White-Brown / Brown"
+        ]
+      ]
+    },
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Standard",
+        "LOGX CAT6 U/UTP Solid Cable"
+      ],
+      [
+        "Conductor Material",
+        "Solid Bare Copper 0.52mm (24 AWG)"
+      ],
+      [
+        "Insulation",
+        "High-Density Polyethylene (HDPE)"
+      ],
+      [
+        "Central Cross Member",
+        "PE Cross Separator (Internal Spline)"
+      ],
+      [
+        "Outer Jacket",
+        "Durable PVC (Grey Color)"
+      ],
+      [
+        "Overall Diameter",
+        "5.8 ± 0.3 mm"
+      ],
+      [
+        "Packaging",
+        "305M (1000ft) Easy-Pull Box"
+      ],
+      [
+        "Test Performance",
+        "100% Pass Fluke Test (250 MHz)"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Bending Radius",
+          "4 × Cable Diameter (Installed)"
+        ],
+        [
+          "Max. Pulling Force",
+          "100 N | Elongation ≥ 100%"
+        ],
+        [
+          "Temperature Range",
+          "-20°C to +60°C (Operating)"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ELECTRICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Frequency Bandwidth",
+          "Up to 250 MHz (Exceeds ANSI/TIA-568.2-D)"
+        ],
+        [
+          "DC Resistance Unbal.",
+          "≤ 2.5% | Velocity of Prop. 68%"
+        ],
+        [
+          "Quality Test",
+          "100% Pass Fluke Channel / Link Test"
+        ]
+      ]
+    },
+    "variantHeader": "Packaging",
+    "parts": [
+      {
+        "partNumber": "LXC6UUPVG305",
+        "description": "Logx CAT6 UTP LAN CABLE (305M) 24 AWG, BARE COPPER 0.52 MM, PASS FLUKE TEST, UTP, SOLID CABLE GREY",
+        "variant": "305M Box"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "cat6a-utp-lan-cable",
+    "title": "LOGX CAT 6A U/UTP SOLID LAN CABLE",
+    "modelLine": "LOGX CAT6A UTP LAN CABLE (305M) COPPER 0.54MM, 4 PAIR U/UTP, 23 AWG SOLID",
+    "description": "LOGX CAT 6A U/UTP Solid Cable is designed for enterprise data centers and next-generation 10-Gigabit Ethernet networks. Utilizing 23AWG (0.54mm) solid bare copper conductors with high-frequency skin-foam insulation and enhanced internal cross-separator to minimize alien crosstalk up to 500MHz bandwidth.",
+    "compliance": [
+      "ANSI/TIA-568.2-D Category 6A",
+      "ISO/IEC 11801 Class EA | IEC 61156-5",
+      "EN 50173-1 & EN 50288-10-1",
+      "100% Pass Fluke Test Certified",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "Solid 23AWG Bare Copper Conductors",
+        "text": "(0.54mm)"
+      },
+      {
+        "lead": null,
+        "text": "Supports 10GBASE-T 10-Gigabit Ethernet transmission up to 100 meters"
+      },
+      {
+        "lead": "Extended 500MHz Bandwidth",
+        "text": "with high signal-to-noise ratio"
+      },
+      {
+        "lead": "Enhanced Central Cross Spline",
+        "text": "for maximum Alien Crosstalk (ANEXT) protection"
+      },
+      {
+        "lead": null,
+        "text": "100% Pass Fluke Channel / Permanent Link Test certified"
+      },
+      {
+        "lead": null,
+        "text": "305 Meter (1000 ft) Easy-Pull Dispenser Box"
+      }
+    ],
+    "applications": [
+      "10GBASE-T 10-Gigabit Ethernet Applications",
+      "Data Center Backbone & Server Room Structured Horizontal Cabling",
+      "High-Power PoE / PoE+ / PoE++ (IEEE 802.3af/at/bt up to 90W)",
+      "Ultra-HD 4K/8K Video Streaming and Cloud Computing"
+    ],
+    "sideTable": {
+      "title": "COLOR CODING",
+      "rows": [
+        [
+          "Pair 1",
+          "White-Blue / Blue"
+        ],
+        [
+          "Pair 2",
+          "White-Orange / Orange"
+        ],
+        [
+          "Pair 3",
+          "White-Green / Green"
+        ],
+        [
+          "Pair 4",
+          "White-Brown / Brown"
+        ]
+      ]
+    },
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Standard",
+        "LOGX CAT6A U/UTP Solid Cable"
+      ],
+      [
+        "Conductor Material",
+        "Solid Bare Copper 0.54mm (23 AWG)"
+      ],
+      [
+        "Insulation",
+        "Skin-Foam-Skin PE Insulation"
+      ],
+      [
+        "Central Cross Member",
+        "Enhanced PE Cross Separator (Spline)"
+      ],
+      [
+        "Outer Jacket",
+        "Durable PVC (Grey Color)"
+      ],
+      [
+        "Overall Diameter",
+        "7.2 ± 0.4 mm"
+      ],
+      [
+        "Packaging",
+        "305M (1000ft) Easy-Pull Box"
+      ],
+      [
+        "Test Performance",
+        "100% Pass Fluke Test (500 MHz)"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Bending Radius",
+          "4 × Cable Diameter (Installed)"
+        ],
+        [
+          "Max. Pulling Force",
+          "110 N | Elongation ≥ 100%"
+        ],
+        [
+          "Temperature Range",
+          "-20°C to +60°C (Operating)"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ELECTRICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Frequency Bandwidth",
+          "Up to 500 MHz (10GBASE-T High Speed)"
+        ],
+        [
+          "DC Resistance Unbal.",
+          "≤ 2.0% | Delay Skew ≤ 45 ns/100m"
+        ],
+        [
+          "Alien Crosstalk",
+          "Optimized suppression of ANEXT & AFEXT"
+        ]
+      ]
+    },
+    "variantHeader": "Packaging",
+    "parts": [
+      {
+        "partNumber": "LXC6AUUPVG305",
+        "description": "Logx CAT6A UTP LAN CABLE (305M) COPPER CABLE 0.54MM, CATEGORY 6A, 4 PAIR, U/UTP, 23 AWG SOLID",
+        "variant": "305M Box"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "cat6a-sftp-lan-cable",
+    "title": "LOGX CAT 6A S/FTP SHIELDED LAN CABLE",
+    "modelLine": "LOGX CAT6A S/FTP LAN CABLE (305M) COPPER 0.54MM, 4 PAIR S/FTP, 23 AWG",
+    "description": "LOGX CAT 6A S/FTP Solid LAN Cable is engineered for maximum electromagnetic interference (EMI) protection in enterprise 10-Gigabit Ethernet deployments. Features 23AWG (0.54mm) solid bare copper conductors, individual foil shielding around each pair (AL-Foil), and an overall tinned copper braid shield.",
+    "compliance": [
+      "ANSI/TIA-568.2-D Category 6A",
+      "ISO/IEC 11801 Class EA | IEC 61156-5",
+      "EN 50173-1 & EN 50288-10-1",
+      "100% Pass Fluke Test Certified",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "Double Shielding (S/FTP):",
+        "text": "Individual Foil per pair + Overall Tinned Braid"
+      },
+      {
+        "lead": "Solid 23AWG Bare Copper",
+        "text": "(0.54mm) for superior 10GBASE-T performance"
+      },
+      {
+        "lead": "Extended 500MHz Bandwidth",
+        "text": "with high signal-to-noise ratio"
+      },
+      {
+        "lead": "Ultimate Alien Crosstalk (ANEXT) & EMI Immunity",
+        "text": ""
+      },
+      {
+        "lead": null,
+        "text": "100% Pass Fluke Channel / Permanent Link certified"
+      },
+      {
+        "lead": null,
+        "text": "305 Meter (1000 ft) Wooden Drum / Dispenser packaging"
+      }
+    ],
+    "applications": [
+      "10GBASE-T 10-Gigabit Ethernet Data Center Infrastructure",
+      "High EMI Industrial & Mission-Critical Server Racks",
+      "High-Power PoE / PoE+ / PoE++ (IEEE 802.3bt up to 90W)"
+    ],
+    "sideTable": {
+      "title": "COLOR CODING",
+      "rows": [
+        [
+          "Pair 1",
+          "White-Blue / Blue"
+        ],
+        [
+          "Pair 2",
+          "White-Orange / Orange"
+        ],
+        [
+          "Pair 3",
+          "White-Green / Green"
+        ],
+        [
+          "Pair 4",
+          "White-Brown / Brown"
+        ]
+      ]
+    },
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Standard",
+        "LOGX CAT6A S/FTP Shielded LAN Cable"
+      ],
+      [
+        "Conductor Material",
+        "Solid Bare Copper 0.54mm (23 AWG)"
+      ],
+      [
+        "Individual Shield",
+        "Each Pair Aluminum / Mylar Foil Shield (100% Coverage)"
+      ],
+      [
+        "Overall Shield",
+        "Tinned Copper Wire Braiding Shield"
+      ],
+      [
+        "Outer Sheath",
+        "Flame-Retardant PVC / LSZH (Grey Color)"
+      ],
+      [
+        "Overall Diameter",
+        "7.6 ± 0.4 mm"
+      ],
+      [
+        "Packaging",
+        "305M (1000ft) Wooden Drum / Dispenser Reel"
+      ],
+      [
+        "Test Performance",
+        "100% Pass Fluke Test (500 MHz)"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Bending Radius",
+          "8 × Cable Diameter (Installed)"
+        ],
+        [
+          "Pulling Tension",
+          "120 N | Elongation ≥ 100%"
+        ],
+        [
+          "Operating Temp.",
+          "-20°C to +60°C"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ELECTRICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Frequency Bandwidth",
+          "Up to 500 MHz (10GBASE-T High Speed)"
+        ],
+        [
+          "Shielding Immunity",
+          "Screening Attenuation ≥ 75 dB (EMI/RFI Proof)"
+        ],
+        [
+          "Quality Test",
+          "100% Pass Fluke Channel / Permanent Link"
+        ]
+      ]
+    },
+    "variantHeader": "Packaging",
+    "parts": [
+      {
+        "partNumber": "LXC6ASFPVG305",
+        "description": "Logx CAT6A S/FTP LAN CABLE (305M) COPPER CABLE 0.54MM, CATEGORY 6A, 4 PAIR, S/FTP, GREY",
+        "variant": "305M Drum"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "faceplate",
+    "title": "LOGX 86 TYPE GLOSSY FACEPLATE",
+    "modelLine": "LOGX F1007 1 PORT & 2 PORTS GLOSSY FACEPLATE (86×86MM)",
+    "description": "LOGX F1007 86 Type British Standard Faceplates are designed for flush-mount and surface-mount telecom outlet termination. Manufactured in standard 86×86mm dimensions with high-gloss white ABS plastic, integrated spring dust shutters, transparent labeling windows, and strictly available in 1 Port (LXA10) and 2 Ports (LXA20) configurations.",
+    "compliance": [
+      "BS 5733 / British Standard 86 Format",
+      "ANSI/TIA-568.2-D & ISO/IEC 11801",
+      "UL 94V-0 Fire Safety Standard",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "Standard 86×86mm British Format",
+        "text": "with 60.3mm mounting pitch"
+      },
+      {
+        "lead": "Configurations:",
+        "text": "Strictly 1 Port (LXA10) and 2 Ports (LXA20)"
+      },
+      {
+        "lead": "Spring-Loaded Dust Shutter",
+        "text": "prevents dust ingress and contact damage"
+      },
+      {
+        "lead": "High-Gloss ABS Flame-Retardant Material",
+        "text": "(UL 94V-0 compliant)"
+      },
+      {
+        "lead": null,
+        "text": "Clear Labeling Window with interchangeable icon inserts"
+      },
+      {
+        "lead": null,
+        "text": "Compatible with all standard CAT6 & CAT6A RJ45 Keystone Jacks"
+      },
+      {
+        "lead": null,
+        "text": "Includes standard M3.5 mounting screws and screw-hole caps"
+      }
+    ],
+    "applications": [
+      "Work Area Outlet Wall Termination in Commercial & Residential Projects",
+      "Single-Port and Dual-Port High-Speed Data / Voice Outlets",
+      "Compatible with Standard 86-Type Wall Mounting Back Boxes"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Series",
+        "LOGX F1007 British Standard Faceplate"
+      ],
+      [
+        "Dimensions",
+        "86 mm × 86 mm (Standard 86 Type)"
+      ],
+      [
+        "Material",
+        "High-Impact Flame-Retardant ABS (UL 94V-0)"
+      ],
+      [
+        "Mounting Pitch",
+        "60.3 mm (Standard British Wall Box)"
+      ],
+      [
+        "Surface Finish",
+        "Glossy White with Protective Dust Shutter"
+      ],
+      [
+        "Available Ports",
+        "1 Port (LXA10) & 2 Ports (LXA20) Only"
+      ],
+      [
+        "Port Compatibility",
+        "Standard CAT6 & CAT6A Keystone Jacks"
+      ],
+      [
+        "Accessories",
+        "Mounting Screws (M3.5) & Icon Inserts Included"
+      ]
+    ],
+    "mechanical": {
+      "title": "PHYSICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Flame Resistance",
+          "UL 94V-0 Fire-Retardant ABS Plastic"
+        ],
+        [
+          "Dust Protection",
+          "Spring-Loaded Auto-Close Dust Shutter"
+        ],
+        [
+          "Durability",
+          "≥ 500 Insertions & Removals"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ENVIRONMENTAL SPECIFICATIONS",
+      "rows": [
+        [
+          "Storage Temp.",
+          "-40°C to +70°C"
+        ],
+        [
+          "Operating Temp.",
+          "-10°C to +60°C"
+        ],
+        [
+          "Relative Humidity",
+          "≤ 93% (Non-condensing)"
+        ]
+      ]
+    },
+    "variantHeader": "Port Count",
+    "parts": [
+      {
+        "partNumber": "LXA10",
+        "description": "Logx F1007 1 Port Glossy Faceplate, 86x86mm, White, with Dust Shutter & Label Window",
+        "variant": "1 Port"
+      },
+      {
+        "partNumber": "LXA20",
+        "description": "Logx F1007 2 Ports Glossy Faceplate, 86x86mm, White, with Dust Shutter & Label Window",
+        "variant": "2 Ports"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "keystone-jack",
+    "title": "LOGX KEYSTONE JACK 180° TOOLLESS",
+    "modelLine": "LOGX K1014 UTP CAT6 & CAT6A KEYSTONE JACK 180 DEGREE TOOLLESS",
+    "description": "LOGX K1014 Toolless Keystone Jacks deliver fast, punch-free, and high-performance termination for Category 6 (250MHz) and Category 6A (500MHz) unshielded structured cabling. Engineered with a 180-degree toolless butterfly closing mechanism, phosphor bronze contacts plated with 50-microinch gold, and full compliance with PoE++ IEEE 802.3bt (up to 90W).",
+    "compliance": [
+      "ANSI/TIA-568.2-D Category 6 & Category 6A",
+      "ISO/IEC 11801 Class E & Class EA",
+      "IEC 60603-7-4 & IEC 60603-7-41",
+      "IEEE 802.3bt (Type 4 PoE 90W)",
+      "UL 94V-0 Fire Safety Standard",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "180-Degree Toolless Termination",
+        "text": "without requiring a 110 punchdown tool"
+      },
+      {
+        "lead": "50µ\" Gold-Plated Contacts",
+        "text": "for maximum signal integrity & anti-corrosion"
+      },
+      {
+        "lead": "Dual T568A & T568B Color Coding",
+        "text": "with clear wire guide cap"
+      },
+      {
+        "lead": "Compact Slim Profile",
+        "text": "fits high-density 24-port / 48-port panels & faceplates"
+      },
+      {
+        "lead": null,
+        "text": "Supports Power over Ethernet (PoE / PoE+ / PoE++ IEEE 802.3bt up to 90W)"
+      },
+      {
+        "lead": null,
+        "text": "High-impact flame-retardant UL 94V-0 white polycarbonate housing"
+      }
+    ],
+    "applications": [
+      "Horizontal Cabling Termination in 19\" Patch Panels and 86-Type Faceplates",
+      "CAT6 (Gigabit) and CAT6A (10-Gigabit) Enterprise Data Center Networks",
+      "High-Density Server Racks and Workstation Outlets"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Standard",
+        "LOGX K1014 180° Toolless Keystone Jack"
+      ],
+      [
+        "Shielding Type",
+        "UTP (Unshielded)"
+      ],
+      [
+        "Housing Material",
+        "Flame-Retardant Polycarbonate (UL 94V-0)"
+      ],
+      [
+        "RJ45 Contacts",
+        "Phosphor Bronze with 50µ\" Gold Plating"
+      ],
+      [
+        "Termination Type",
+        "180-Degree Toolless Butterfly Latch & Wire Cap"
+      ],
+      [
+        "Wiring Standard",
+        "Dual T568A & T568B Color Coded"
+      ],
+      [
+        "Supported Conductors",
+        "Solid & Stranded 22-26 AWG Copper"
+      ],
+      [
+        "Durability",
+        "≥ 750 Insertions (RJ45) | ≥ 250 Re-terminations"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Plug Insertion Life",
+          "750 Mating Cycles"
+        ],
+        [
+          "IDC Re-terminations",
+          "250 Cycles (22-26 AWG)"
+        ],
+        [
+          "Holding Force",
+          "30 lbs (133 N) between plug and jack"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ELECTRICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Contact Resistance",
+          "≤ 20 mΩ | Insulation Res. ≥ 500 MΩ"
+        ],
+        [
+          "Dielectric Strength",
+          "1000V AC RMS 60Hz 1 Min"
+        ],
+        [
+          "Current Rating",
+          "1.5 Amps | PoE/PoE++ Compatible (up to 90W)"
+        ]
+      ]
+    },
+    "variantHeader": "Category",
+    "parts": [
+      {
+        "partNumber": "LXCJ6UFT",
+        "description": "Logx K1014 UTP Cat6 Keystone Jack 180 Degree Toolless, 50u Gold Plated, White",
+        "variant": "CAT 6"
+      },
+      {
+        "partNumber": "LXCJ6AUFT",
+        "description": "Logx K1014 UTP Cat6A Keystone Jack 180 Degree Toolless, 50u Gold Plated, White",
+        "variant": "CAT 6A"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "cable-manager",
+    "title": "LOGX 19 INCH METAL CABLE MANAGER",
+    "modelLine": "LOGX 1U 24 & 2U 48 METAL CABLE MANAGER (19 INCH)",
+    "description": "LOGX 19-Inch Metal Cable Managers provide neat, structured, and organized routing for copper and fiber optic patch cords inside server racks and telecommunications cabinets. Manufactured from premium 1.2mm SPCC cold-rolled steel with a snap-on metal cover to conceal cables and maintain proper bend radius.",
+    "compliance": [
+      "EIA/ECA-310-E Standard 19\" Mounting",
+      "IEC 60297-1 / DIN 41494",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "19-Inch EIA Standard Rack Mount",
+        "text": "in 1U and 2U configurations"
+      },
+      {
+        "lead": "Solid 1.2mm Cold-Rolled Steel",
+        "text": "construction with anti-corrosion black finish"
+      },
+      {
+        "lead": "Dual-Hinged Snap-On Cover",
+        "text": "for quick patch cord access and clean rack aesthetics"
+      },
+      {
+        "lead": "Generous Cable Capacity",
+        "text": "with rounded pass-through slots to protect cable jackets"
+      },
+      {
+        "lead": null,
+        "text": "Eliminates cable strain and maintains optimal airflow inside server cabinets"
+      },
+      {
+        "lead": null,
+        "text": "Includes complete set of M6 cage nuts, screws, and washers"
+      }
+    ],
+    "applications": [
+      "Data Centers, Server Rooms, and Telecom Closets",
+      "19-Inch Free-Standing Server Racks & Wall-Mounted Cabinets",
+      "Patch Cord Organization between Patch Panels and Network Switches"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Standard",
+        "LOGX 19\" Metal Cable Management Panel"
+      ],
+      [
+        "Standard Width",
+        "19-Inch Rack Mount (EIA-310-D)"
+      ],
+      [
+        "Height Options",
+        "1U (24 Ring Slot) / 2U (48 Ring Slot)"
+      ],
+      [
+        "Material",
+        "High-Grade Cold Rolled Steel (SPCC 1.2mm)"
+      ],
+      [
+        "Surface Finish",
+        "Electrostatic Black Powder Coating"
+      ],
+      [
+        "Cable Management",
+        "Open-Duct D-Rings / Slotted Fingers"
+      ],
+      [
+        "Front Cover",
+        "Removable Snap-On Hinged Metal Cover"
+      ],
+      [
+        "Accessories",
+        "Mounting Cage Nuts & Screws (M6) Included"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Material Thickness",
+          "1.2 mm Cold Rolled Steel"
+        ],
+        [
+          "Coating",
+          "Anti-Rust Degreasing, Phosphating & Powder Coat"
+        ],
+        [
+          "Cover Mechanism",
+          "Snap-On Dual-Hinged Metal Cover"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "APPLICATIONS & COMPATIBILITY",
+      "rows": [
+        [
+          "Rack Standards",
+          "19-Inch Server Racks, Wall Cabinets & Frames"
+        ],
+        [
+          "Cable Capacity",
+          "Up to 48 CAT6 / CAT6A / Fiber Patch Cords per 1U"
+        ],
+        [
+          "Bend Protection",
+          "Smooth Edges to Prevent Cable Snagging"
+        ]
+      ]
+    },
+    "variantHeader": "Rack Units",
+    "parts": [
+      {
+        "partNumber": "LXCPCMNM1",
+        "description": "Logx 1U 24 Metal Cable Manager, 19 Inch Rack Mount with Cover, Black",
+        "variant": "1U / 24 Slot"
+      },
+      {
+        "partNumber": "LXCPCMNM2",
+        "description": "Logx 2U 48 Metal Cable Manager, 19 Inch Rack Mount with Cover, Black",
+        "variant": "2U / 48 Slot"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "patch-panel-blank",
+    "title": "LOGX 19 INCH UTP BLANK PATCH PANEL",
+    "modelLine": "LOGX P1224 & P1248 UTP 24 & 48 PORTS BLANK PATCH PANEL",
+    "description": "LOGX Blank Patch Panels offer modular flexibility for structured cabling consolidation in 19-inch equipment racks. Constructed from rugged 1.5mm cold-rolled steel with numerical port numbering, write-on label areas, and a detachable rear cable management bar to organize and relieve strain on incoming cables.",
+    "compliance": [
+      "EIA/ECA-310-E Standard 19\" Specifications",
+      "ANSI/TIA-568.2-D & ISO/IEC 11801",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "Universal 19-Inch Rack Mount",
+        "text": "available in 1U (24 Port) and 2U (48 Port)"
+      },
+      {
+        "lead": "Modular Blank Design",
+        "text": "accepts CAT6, CAT6A, and Fiber Optic Keystone Jacks"
+      },
+      {
+        "lead": "Detachable Rear Cable Management Bar",
+        "text": "with designated tie points for cable strain relief"
+      },
+      {
+        "lead": "Bold Numerical Port Identification",
+        "text": "(1-24 / 1-48) with white labeling strips"
+      },
+      {
+        "lead": null,
+        "text": "Heavy-duty 1.5mm SPCC cold-rolled steel with durable matte black finish"
+      },
+      {
+        "lead": null,
+        "text": "Supplied with complete M6 rack mounting hardware and nylon cable ties"
+      }
+    ],
+    "applications": [
+      "Main Distribution Frames (MDF) & Intermediate Distribution Frames (IDF)",
+      "High-Density Data Center and Enterprise Telecommunications Racks",
+      "Mixed-Media Cabling Deployments (Copper Data, Voice, Fiber, and AV)"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Standard",
+        "LOGX P1224 / P1248 Blank Patch Panel"
+      ],
+      [
+        "Rack Size",
+        "Standard 19-Inch (1U 24 Port / 2U 48 Port)"
+      ],
+      [
+        "Shielding Type",
+        "UTP (Unshielded)"
+      ],
+      [
+        "Panel Material",
+        "1.5mm Heavy-Duty SPCC Cold-Rolled Steel"
+      ],
+      [
+        "Port Configuration",
+        "Accepts all standard snap-in Keystone Jacks"
+      ],
+      [
+        "Rear Management",
+        "Includes Rear Cable Management Bar & Tie Hooks"
+      ],
+      [
+        "Identification",
+        "Screen-Printed Port Numbers (1-24 / 1-48) & White Label Fields"
+      ],
+      [
+        "Accessories",
+        "M6 Cage Nuts, Screws & Cable Ties Included"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Frame Material",
+          "1.5 mm SPCC Steel with Matte Black Finish"
+        ],
+        [
+          "Rear Cable Bar",
+          "Detachable Steel Support Bar with Tie Slots"
+        ],
+        [
+          "Jack Mounting",
+          "Standard Snap-In Keystone Latch"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "SYSTEM COMPATIBILITY",
+      "rows": [
+        [
+          "Keystone Support",
+          "CAT6 / CAT6A / CAT5e / Fiber / Audio-Video Jacks"
+        ],
+        [
+          "Operating Temp.",
+          "-20°C to +70°C"
+        ],
+        [
+          "Standards",
+          "ANSI/TIA-568.2-D, ISO/IEC 11801, EIA-310-D"
+        ]
+      ]
+    },
+    "variantHeader": "Configuration",
+    "parts": [
+      {
+        "partNumber": "LXPP6U2410",
+        "description": "Logx P1224 UTP 24 Ports Patch Panel Blank, 1U 19 Inch Rack Mount, with Rear Cable Bar",
+        "variant": "1U / 24 Ports"
+      },
+      {
+        "partNumber": "LXPP6U4820",
+        "description": "Logx P1248 UTP 48 Ports Patch Panel Blank, 2U 19 Inch Rack Mount, with Rear Cable Bar",
+        "variant": "2U / 48 Ports"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "rj45-plugs-boots",
+    "title": "LOGX RJ45 MODULAR PLUGS",
+    "modelLine": "LOGX S0088 & S0288 8P8C RJ45 MODULAR PLUGS, UTP & FTP SHIELDED",
+    "description": "LOGX S0088 and S0288 RJ45 Modular Plugs are precision engineered for reliable field termination of Category 6 (UTP) and Category 6A (FTP) patch cords and device links. Built with high-transparency flame-retardant polycarbonate housing, 3-prong gold-plated contacts, and an independent wire load bar / insert guide for rapid, error-free conductor alignment.",
+    "compliance": [
+      "ANSI/TIA-568.2-D Category 6 & 6A",
+      "ISO/IEC 11801 Class E & Class EA",
+      "IEC 60603-7 (8P8C Connector Standard)",
+      "UL 94V-0 Flame Safety Standard",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "Precision 3-Prong Gold-Plated Contacts",
+        "text": "for solid and stranded conductors"
+      },
+      {
+        "lead": "Separate Wire Load Bar / Insert Guide",
+        "text": "for optimal pair separation and fast wiring"
+      },
+      {
+        "lead": "Crystal-Clear Flame-Retardant Polycarbonate Housing",
+        "text": "(UL 94V-0 rated)"
+      },
+      {
+        "lead": null,
+        "text": "Available in UTP (Unshielded) and FTP (Shielded Metal Shell) versions"
+      },
+      {
+        "lead": null,
+        "text": "Supports Power over Ethernet (PoE / PoE+ IEEE 802.3af/at)"
+      },
+      {
+        "lead": null,
+        "text": "Supplied in convenient 100 pcs/bag packaging"
+      }
+    ],
+    "applications": [
+      "Fabrication of Custom High-Performance CAT6 / CAT6A Patch Cords",
+      "Direct Device Termination (IP CCTV Cameras, Wi-Fi Access Points, VoIP Phones)",
+      "Modular Plug Terminated Link (MPTL) Field Connections"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Plug Series",
+        "LOGX S0088 / S0288 8P8C Modular Plug"
+      ],
+      [
+        "Housing Material",
+        "Crystal Clear Polycarbonate (UL 94V-0 Rated)"
+      ],
+      [
+        "Shielding / Rating",
+        "UTP (CAT6) / FTP Metal Shield (CAT6A)"
+      ],
+      [
+        "Contact Pins",
+        "Phosphor Bronze with Gold Plated 3-Prong Contacts"
+      ],
+      [
+        "Supported Conductors",
+        "24-28 AWG Stranded & Solid Copper Wires"
+      ],
+      [
+        "Wire Alignment",
+        "Includes Dedicated Wire Load Bar / Insert Guide"
+      ],
+      [
+        "Durability",
+        "≥ 1000 Mating / Insertion Cycles"
+      ],
+      [
+        "Quality Standard",
+        "100% Pass Fluke Component Test"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Cable-to-Plug Tension",
+          "89 N (20 lbs) retention strength"
+        ],
+        [
+          "Mating Durability",
+          "1000 Insertion Cycles"
+        ],
+        [
+          "Operating Temp.",
+          "-20°C to +60°C"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ELECTRICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Current / Voltage",
+          "1.5A Max. at 25°C | 150V AC"
+        ],
+        [
+          "Contact Resistance",
+          "≤ 20 mΩ | Insulation Res. ≥ 500 MΩ"
+        ],
+        [
+          "Dielectric Strength",
+          "1000V AC RMS 1 Min (Contact to Contact)"
+        ]
+      ]
+    },
+    "variantHeader": "Packaging",
+    "parts": [
+      {
+        "partNumber": "LXCPUTC6",
+        "description": "Logx S0088 8P8C UTP RJ45 Modular Plug with Wire Load Bar (3U Gold Plated Pins, CAT6)",
+        "variant": "UTP CAT6 Plug"
+      },
+      {
+        "partNumber": "LXCPSTC6A",
+        "description": "Logx S0288 8P8C FTP Shielded RJ45 Modular Plug with Wire Load Bar (CAT6A)",
+        "variant": "FTP CAT6A Plug"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "drop-fiber",
+    "title": "LOGX FTTH SM DROP FIBER OPTIC CABLE",
+    "modelLine": "LOGX 4, 8 & 12 CORE SM FTTH DROP CABLE (1000M)",
+    "description": "LOGX FTTH Single Mode Drop Fiber Cables are designed for Fiber-to-the-Home (FTTH) subscriber drops and indoor/outdoor distribution. Built with ITU-T G.657.A1 bend-insensitive fibers, dual dielectric FRP strength members, corrugated light steel tape armoring (for 8 & 12 cores), and flame-retardant LSZH outer jacket.",
+    "compliance": [
+      "ITU-T G.657.A1 & ITU-T G.652.D",
+      "IEC 60793 / IEC 60794",
+      "IEC 60332-1 (Flame Retardant) & IEC 60754 (Halogen Free)",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "ITU-T G.657.A1 Bend-Insensitive Optical Fiber",
+        "text": "for tight radius routing"
+      },
+      {
+        "lead": "Dual Dielectric FRP Strength Members",
+        "text": "for superior anti-electromagnetic performance"
+      },
+      {
+        "lead": "Corrugated Light Steel Tape Armoring",
+        "text": "(8C & 12C) for rodent and crush protection"
+      },
+      {
+        "lead": "Low Smoke Zero Halogen (LSZH) Jacket",
+        "text": "for enhanced fire safety compliance"
+      },
+      {
+        "lead": null,
+        "text": "Compact, lightweight, and flexible structure for easy stripping and splicing"
+      },
+      {
+        "lead": null,
+        "text": "Standard 1000 Meter (1KM) wooden drum packaging"
+      }
+    ],
+    "applications": [
+      "FTTH Access Networks and Last-Mile Subscriber Drop Links",
+      "Indoor Riser and Horizontal Optical Distribution in Multi-Dwelling Units (MDU)",
+      "Direct Underground Conduit or Indoor Duct Installations"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Fiber Type",
+        "G.657.A1 Single Mode Optical Fiber (Bend-Insensitive)"
+      ],
+      [
+        "Core Options",
+        "4 Core / 8 Core / 12 Core"
+      ],
+      [
+        "Strength Member",
+        "Dual Non-Metallic FRP (Fiber Reinforced Plastic)"
+      ],
+      [
+        "Armoring (8 & 12 Core)",
+        "Corrugated Light Steel Tape Armored (Rodent-Proof)"
+      ],
+      [
+        "Outer Sheath",
+        "Low Smoke Zero Halogen (LSZH) / UV Resistant"
+      ],
+      [
+        "Cable Diameter",
+        "3.0mm ± 0.2mm (4C) / 6.0mm ± 0.4mm (8C/12C)"
+      ],
+      [
+        "Attenuation",
+        "≤ 0.36 dB/km (1310nm) | ≤ 0.22 dB/km (1550nm)"
+      ],
+      [
+        "Packaging",
+        "1000 Meters (1KM) Wooden Drum Reel"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Tensile Strength",
+          "Long Term ≥ 300N | Short Term ≥ 600N"
+        ],
+        [
+          "Crush Resistance",
+          "Long Term ≥ 1000N/100mm | Short Term ≥ 2200N"
+        ],
+        [
+          "Min. Bend Radius",
+          "15 mm (Dynamic) | 10 mm (Static - G.657.A1)"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ENVIRONMENTAL SPECIFICATIONS",
+      "rows": [
+        [
+          "Operating Temp.",
+          "-40°C to +70°C"
+        ],
+        [
+          "Installation Temp.",
+          "-20°C to +60°C"
+        ],
+        [
+          "Fire Rating",
+          "LSZH (IEC 60332-1, IEC 60754, IEC 61034)"
+        ]
+      ]
+    },
+    "variantHeader": "Packaging",
+    "parts": [
+      {
+        "partNumber": "LXFHN047ALS",
+        "description": "Logx SM drop fiber cable, 4 core, 3.0mm Cable with 2 FRP, G.657.A1 fiber, LSZH (1000M)",
+        "variant": "4 Core"
+      },
+      {
+        "partNumber": "LXFHS087ALS",
+        "description": "Logx SM drop fiber cable, 8 core, Light steel Armoured single tube with 2 FRP, G.657.A1, LSZH (1000M)",
+        "variant": "8 Core Armoured"
+      },
+      {
+        "partNumber": "LXFHS127ALS",
+        "description": "Logx SM drop fiber cable, 12 core, Light steel Armoured single tube with 2 FRP, G.657.A1, LSZH (1000M)",
+        "variant": "12 Core Armoured"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "fiber-patch-panel",
+    "title": "LOGX 19 INCH SLIDING FIBER PATCH PANEL",
+    "modelLine": "LOGX 6, 12, 24 & 48 PORT LC DUPLEX LOADED FIBER PATCH PANEL",
+    "description": "LOGX Sliding Rail Fiber Optic Patch Panels provide high-density fiber patching and splicing in standard 19-inch equipment racks. Pre-loaded with high-precision LC/UPC duplex adapters, smooth telescopic ball-bearing sliding rails for easy front maintenance, and complete internal splice management trays.",
+    "compliance": [
+      "EIA/ECA-310-E Standard 19\" Specifications",
+      "TIA/EIA-568.3-D & ISO/IEC 11801",
+      "Telcordia GR-326-CORE Compliant Adapters",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "Pre-Loaded with LC/UPC Duplex Singlemode Adapters",
+        "text": "with zirconia sleeves"
+      },
+      {
+        "lead": "Smooth Telescopic Ball-Bearing Sliding Drawer",
+        "text": "for easy front access without removing unit"
+      },
+      {
+        "lead": "Complete Splice Kit Included",
+        "text": "(Splice trays, heatshrink holders, and protective sleeves)"
+      },
+      {
+        "lead": "4 Rear Cable Entry Ports",
+        "text": "equipped with cable clamps and rubber protection glands"
+      },
+      {
+        "lead": null,
+        "text": "Constructed from 1.2mm electro-galvanized cold-rolled steel with black powder finish"
+      },
+      {
+        "lead": null,
+        "text": "Available in 1U (6, 12, 24 Port) and 2U (48 Port) configurations"
+      }
+    ],
+    "applications": [
+      "Data Center Fiber Density Patching & Main Cross-Connect (MC)",
+      "Telecom Central Offices, FTTx Core Nodes, and Enterprise Racks",
+      "High-Speed 10G/40G/100G Optical Backbone Distribution"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Standard",
+        "LOGX 19\" Sliding Rail Fiber Patch Panel"
+      ],
+      [
+        "Adapter Type",
+        "Loaded with LC/UPC Duplex Singlemode Adapters (Blue)"
+      ],
+      [
+        "Capacities Available",
+        "6 Port (1U) / 12 Port (1U) / 24 Port (1U) / 48 Port (2U)"
+      ],
+      [
+        "Chassis Material",
+        "1.2mm High-Strength Cold-Rolled Steel (SPCC)"
+      ],
+      [
+        "Sliding Mechanism",
+        "Smooth Telescopic Ball-Bearing Drawer Rails"
+      ],
+      [
+        "Splice Management",
+        "Includes Splice Trays, Heatshrink Sleeves & Cable Glands"
+      ],
+      [
+        "Cable Entry Ports",
+        "4 Rear Cable Entry Ports with Rubber Grommets"
+      ],
+      [
+        "Surface Finish",
+        "Electrostatic Matte Black Powder Coating"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Drawer Extension",
+          "Full 100% Extension Sliding Drawer"
+        ],
+        [
+          "Adapter Ceramic Sleeve",
+          "Zirconia Ceramic Alignment Sleeve (≤ 0.2dB Loss)"
+        ],
+        [
+          "Mounting Dimensions",
+          "Standard 19-Inch EIA Rack Width"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "SPLICE CAPACITY & ACCESSORIES",
+      "rows": [
+        [
+          "Splice Trays",
+          "Stackable ABS Trays (24 Fibers per tray)"
+        ],
+        [
+          "Accessories Included",
+          "Splice Sleeves, PG Glands, Cable Ties, M6 Screws"
+        ],
+        [
+          "Operating Temp.",
+          "-40°C to +80°C"
+        ]
+      ]
+    },
+    "variantHeader": "Rack Size",
+    "parts": [
+      {
+        "partNumber": "LXFPRDLC12",
+        "description": "Logx 12 Port Optic Fiber Patch Panel, LC Duplex SM Loaded, with Rail & Splice Tray, 1U",
+        "variant": "12 Port (1U)"
+      },
+      {
+        "partNumber": "LXFPRDLC24",
+        "description": "Logx 24 Port Optic Fiber Patch Panel, LC Duplex SM Loaded, with Rail & Splice Tray, 1U",
+        "variant": "24 Port (1U)"
+      },
+      {
+        "partNumber": "LXFPRDLC48",
+        "description": "Logx 48 Port Optic Fiber Patch Panel, LC Duplex SM Loaded, with Rail & Splice Tray, 2U",
+        "variant": "48 Port (2U)"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "fiber-patch-cord",
+    "title": "LOGX FIBER OPTIC PATCH CORD LC-LC DUPLEX",
+    "modelLine": "LOGX LC-LC UPC SM & OM3 DUPLEX 2.0MM FIBER PATCH CORD",
+    "description": "LOGX LC-LC Duplex Fiber Optic Patch Cords are factory-terminated with ultra-precision zirconia ceramic ferrules for low insertion loss and high return loss. Available in Single Mode (OS2 Yellow) and 10G Multimode (OM3 Aqua) across all standard lengths from 1M to 100M for data center and optical network connections.",
+    "compliance": [
+      "TIA/EIA-568.3-D & ISO/IEC 11801",
+      "Telcordia GR-326-CORE / IEC 61754-20",
+      "UL 94V-0 & RoHS Compliant"
+    ],
+    "features": [
+      {
+        "lead": "100% Factory Interferometer & Insertion Loss Tested",
+        "text": "for guaranteed performance"
+      },
+      {
+        "lead": "Ultra-Precision Zirconia Ceramic Ferrules",
+        "text": "(Insertion Loss ≤ 0.2dB)"
+      },
+      {
+        "lead": "Available in Single Mode OS2 (Yellow) and 10G Multimode OM3 (Aqua)",
+        "text": ""
+      },
+      {
+        "lead": "2.0mm Duplex Zipcord Construction",
+        "text": "with flexible PVC outer jacket"
+      },
+      {
+        "lead": null,
+        "text": "Complete range of pre-terminated lengths: 1M, 3M, 5M, 10M, 15M, 20M, 25M, 30M, 40M, 50M, 70M, 100M"
+      },
+      {
+        "lead": null,
+        "text": "Includes protective dust caps and individual test report bag"
+      }
+    ],
+    "applications": [
+      "Data Center Fiber SAN, Switches, SFP/SFP+ Transceivers, and Patch Panels",
+      "High-Speed 10G/40G/100G Telecom Backbone & FTTx Infrastructure",
+      "Broadband Optical Transmission and Industrial Automation"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Connector Type",
+        "LC/UPC to LC/UPC Duplex"
+      ],
+      [
+        "Fiber Types",
+        "Single Mode 9/125µm (OS2) / Multimode 50/125µm (OM3)"
+      ],
+      [
+        "Outer Diameter",
+        "Duplex 2.0 mm (Zipcord Cable)"
+      ],
+      [
+        "Jacket Material",
+        "Durable PVC / Flame-Retardant Sheath"
+      ],
+      [
+        "Jacket Color",
+        "Yellow (Single Mode OS2) / Aqua (Multimode OM3)"
+      ],
+      [
+        "Ferrule Material",
+        "High-Precision Zirconia Ceramic Ferrule"
+      ],
+      [
+        "Insertion Loss",
+        "≤ 0.20 dB (Typical ≤ 0.15 dB)"
+      ],
+      [
+        "Return Loss",
+        "≥ 50 dB (UPC SM) | ≥ 35 dB (OM3)"
+      ]
+    ],
+    "mechanical": {
+      "title": "OPTICAL & MECHANICAL SPECS",
+      "rows": [
+        [
+          "Insertion Loss",
+          "≤ 0.2 dB (1310/1550nm SM | 850/1300nm OM3)"
+        ],
+        [
+          "Durability",
+          "1000 Mating Cycles (ΔIL ≤ 0.2 dB)"
+        ],
+        [
+          "Repeatability",
+          "≤ 0.1 dB | Tensile Strength ≥ 100 N"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ENVIRONMENTAL SPECIFICATIONS",
+      "rows": [
+        [
+          "Operating Temp.",
+          "-40°C to +75°C"
+        ],
+        [
+          "Storage Temp.",
+          "-45°C to +85°C"
+        ],
+        [
+          "Standard Compliance",
+          "Telcordia GR-326-CORE, IEC 61754-20"
+        ]
+      ]
+    },
+    "variantHeader": "Length",
+    "parts": [
+      {
+        "partNumber": "LXFCLCLCDUS201",
+        "description": "Logx 1M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "1M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS203",
+        "description": "Logx 3M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "3M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS205",
+        "description": "Logx 5M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "5M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS210",
+        "description": "Logx 10M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "10M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS215",
+        "description": "Logx 15M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "15M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS220",
+        "description": "Logx 20M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "20M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS225",
+        "description": "Logx 25M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "25M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS230",
+        "description": "Logx 30M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "30M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS240",
+        "description": "Logx 40M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "40M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS250",
+        "description": "Logx 50M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "50M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS270",
+        "description": "Logx 70M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "70M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS2100",
+        "description": "Logx 100M LC-LC-UPC SM, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "100M · Single Mode OS2 (Yellow)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS301",
+        "description": "Logx 1M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "1M · Multimode OM3 (Aqua)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS303",
+        "description": "Logx 3M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "3M · Multimode OM3 (Aqua)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS305",
+        "description": "Logx 5M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "5M · Multimode OM3 (Aqua)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS310",
+        "description": "Logx 10M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "10M · Multimode OM3 (Aqua)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS315",
+        "description": "Logx 15M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "15M · Multimode OM3 (Aqua)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS320",
+        "description": "Logx 20M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "20M · Multimode OM3 (Aqua)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS325",
+        "description": "Logx 25M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "25M · Multimode OM3 (Aqua)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS330",
+        "description": "Logx 30M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "30M · Multimode OM3 (Aqua)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS340",
+        "description": "Logx 40M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "40M · Multimode OM3 (Aqua)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS350",
+        "description": "Logx 50M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "50M · Multimode OM3 (Aqua)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS370",
+        "description": "Logx 70M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "70M · Multimode OM3 (Aqua)"
+      },
+      {
+        "partNumber": "LXFCLCLCDUS3100",
+        "description": "Logx 100M LC-LC-UPC OM3, Duplex 2.0 Fiber Optic Patch Cord, PVC",
+        "variant": "100M · Multimode OM3 (Aqua)"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "fiber-pigtail",
+    "title": "LOGX FIBER OPTIC PIGTAIL LC/UPC SIMPLEX",
+    "modelLine": "LOGX 1.5M & 2M 0.9MM LC/UPC SM & OM3 FIBER PIGTAIL",
+    "description": "LOGX LC/UPC 0.9mm Fiber Optic Pigtails are precision factory-terminated fiber ends designed for fusion splicing inside fiber patch panels, wall-mount enclosures, and splice trays. Features high-purity zirconia ferrules, low insertion loss, and easy-strip 0.9mm tight buffer coating.",
+    "compliance": [
+      "TIA/EIA-568.3-D & ISO/IEC 11801",
+      "Telcordia GR-326-CORE / IEC 61754-20",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "0.9mm Easy-Strip Tight Buffer",
+        "text": "for fast and clean fusion splicing"
+      },
+      {
+        "lead": "Precision Factory Polished LC/UPC Ferrule",
+        "text": "with ≤ 0.2dB Insertion Loss"
+      },
+      {
+        "lead": "Available in Single Mode (OS2) and 10G Multimode (OM3)",
+        "text": "in 1.5M and 2.0M lengths"
+      },
+      {
+        "lead": null,
+        "text": "100% Optically Tested for IL, RL, and end-face geometry"
+      },
+      {
+        "lead": null,
+        "text": "High mechanical durability and environmental stability"
+      },
+      {
+        "lead": null,
+        "text": "Individually packaged with protective connector dust cap"
+      }
+    ],
+    "applications": [
+      "Fusion Splicing inside 19-Inch Fiber Patch Panels and Optical Distribution Frames (ODF)",
+      "FTTH Terminal Boxes and Wall-Mount Optical Enclosures",
+      "Industrial Automation & Telecommunication Network Splicing"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Connector Type",
+        "LC/UPC Simplex (0.9mm Buffer)"
+      ],
+      [
+        "Fiber Types",
+        "Single Mode 9/125µm (OS2) / Multimode 50/125µm (OM3)"
+      ],
+      [
+        "Buffer Diameter",
+        "0.9 mm Tight Buffer"
+      ],
+      [
+        "Jacket Material",
+        "PVC (OFNR)"
+      ],
+      [
+        "Lengths Available",
+        "1.5 Meters / 2.0 Meters"
+      ],
+      [
+        "Ferrule Material",
+        "Precision Zirconia Ceramic"
+      ],
+      [
+        "Insertion Loss",
+        "≤ 0.3 dB"
+      ],
+      [
+        "Return Loss",
+        "≥ 50 dB (Single Mode UPC) | ≥ 30 dB (OM3)"
+      ]
+    ],
+    "mechanical": {
+      "title": "OPTICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Insertion Loss",
+          "≤ 0.3 dB"
+        ],
+        [
+          "Return Loss",
+          "≥ 50 dB (SM UPC) | ≥ 30 dB (OM3)"
+        ],
+        [
+          "Operating Wavelength",
+          "1310 / 1550 nm (SM) | 850 / 1300 nm (OM3)"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ENVIRONMENTAL SPECIFICATIONS",
+      "rows": [
+        [
+          "Operating Temp.",
+          "-20°C to +70°C"
+        ],
+        [
+          "Jacket Material",
+          "PVC (OFNR)"
+        ],
+        [
+          "Standard Compliance",
+          "Telcordia GR-326-CORE, IEC 61754-20"
+        ]
+      ]
+    },
+    "variantHeader": "Length",
+    "parts": [
+      {
+        "partNumber": "LXFTLCSUS21.5",
+        "description": "Logx 1.5M 0.9 PIGTAIL LC/UPC SM Simplex, PVC (Single Mode OS2)",
+        "variant": "1.5M · Single Mode OS2"
+      },
+      {
+        "partNumber": "LXFTLCSUS22",
+        "description": "Logx 2M 0.9 PIGTAIL LC/UPC SM Simplex, PVC (Single Mode OS2)",
+        "variant": "2.0M · Single Mode OS2"
+      },
+      {
+        "partNumber": "LXFTLCSUM31.5",
+        "description": "Logx 1.5M 0.9 PIGTAIL LC/UPC OM3 Simplex, PVC (Multimode OM3)",
+        "variant": "1.5M · Multimode OM3"
+      },
+      {
+        "partNumber": "LXFTLCSUM32",
+        "description": "Logx 2M 0.9 PIGTAIL LC/UPC OM3 Simplex, PVC (Multimode OM3)",
+        "variant": "2.0M · Multimode OM3"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "terminal-box",
+    "title": "LOGX FTB FIBER OPTIC TERMINAL BOX",
+    "modelLine": "LOGX 4 PORT & 8 PORT LC SM DUPLEX LOADED FIBER TERMINAL BOX",
+    "description": "LOGX Wall-Mount Fiber Optic Terminal Boxes provide compact and secure optical termination for FTTH indoor distribution. Pre-loaded with single mode LC duplex adapters, integrated splice trays with fusion sleeve holders, and cable management loops to maintain minimum bend radius.",
+    "compliance": [
+      "TIA/EIA-568.3-D & ISO/IEC 11801",
+      "IEC 61754-20 (LC Interface)",
+      "RoHS & REACH Compliant"
+    ],
+    "features": [
+      {
+        "lead": "Pre-Loaded with LC/UPC Duplex Singlemode Adapters",
+        "text": "with ceramic sleeves"
+      },
+      {
+        "lead": "Compact Wall-Mount Form Factor",
+        "text": "ideal for FTTH customer premises and floor boxes"
+      },
+      {
+        "lead": "Integrated Splice Tray & Heat Shrink Holder",
+        "text": "manages excess fiber safely"
+      },
+      {
+        "lead": "High Quality Cold Rolled Steel",
+        "text": "with black powder coating"
+      },
+      {
+        "lead": null,
+        "text": "Secure cover locking mechanism prevents unauthorized tampering"
+      },
+      {
+        "lead": null,
+        "text": "Supplied complete with wall mounting anchors, screws, and fusion splice sleeves"
+      }
+    ],
+    "applications": [
+      "FTTH Customer Premises Termination (ONT / Router optical feed)",
+      "Floor Distribution Terminal Box in Commercial Buildings and MDUs",
+      "CCTV IP Security and Industrial Fiber Drop Splice Endpoints"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Standard",
+        "LOGX FTB Wall-Mount Fiber Terminal Box"
+      ],
+      [
+        "Port Capacities",
+        "4 Port (8 Fibers) / 8 Port (16 Fibers) LC Duplex"
+      ],
+      [
+        "Loaded Adapters",
+        "Pre-loaded with LC/UPC Duplex SM Adapters"
+      ],
+      [
+        "Adapter Polish",
+        "UPC"
+      ],
+      [
+        "Material",
+        "Cold Rolled Steel"
+      ],
+      [
+        "Surface Finish",
+        "Black Powder Coating"
+      ],
+      [
+        "Mounting Type",
+        "Wall Mount"
+      ],
+      [
+        "Splice Tray Capacity",
+        "4 Fibers (4 Port) / 8 Fibers (8 Port), Heat Shrink"
+      ],
+      [
+        "Dimensions (W×D×H)",
+        "160 × 100 × 30 mm (4 Port)"
+      ]
+    ],
+    "mechanical": {
+      "title": "MECHANICAL CHARACTERISTICS",
+      "rows": [
+        [
+          "Chassis Material",
+          "Cold Rolled Steel, Black Powder Coated"
+        ],
+        [
+          "Cable Entry",
+          "4 × Ø 3 mm Inlets"
+        ],
+        [
+          "Cover",
+          "Snap-On Lock Cover with Anti-Tamper Screw"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "OPTICAL & ADAPTER SPECIFICATIONS",
+      "rows": [
+        [
+          "Adapter Type",
+          "LC Duplex, Single Mode"
+        ],
+        [
+          "Port Capacity",
+          "4 Ports / 8 Ports LC Duplex"
+        ],
+        [
+          "Sleeve Material",
+          "Zirconia Ceramic Alignment Sleeve"
+        ]
+      ]
+    },
+    "variantHeader": "Capacity",
+    "parts": [
+      {
+        "partNumber": "LXFTBLC04",
+        "description": "LOGX 4 PORT LC SINGLE MODE DUPLEX LOADED FIBER OPTIC TERMINAL BOX, Wall Mount",
+        "variant": "4 Port (8 Fibers)"
+      },
+      {
+        "partNumber": "LXFTBLC08",
+        "description": "LOGX 8 PORT LC SINGLE MODE DUPLEX LOADED FIBER OPTIC TERMINAL BOX, Wall Mount",
+        "variant": "8 Port (16 Fibers)"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "media-converter",
+    "title": "LOGX GIGABIT & 10G SFP MEDIA CONVERTER",
+    "modelLine": "LOGX 1G & 10G SFP PORT FIBER TO ETHERNET MEDIA CONVERTER",
+    "description": "LOGX SFP Media Converters transparently convert copper Ethernet signals (RJ45) to fiber optic signals via standard SFP/SFP+ slots. Designed in a rugged metal enclosure with low power consumption, auto-negotiation, and Link Fault Pass-Through (LFP) for reliable enterprise network extension.",
+    "compliance": [
+      "IEEE 802.3ab (1000BASE-T), IEEE 802.3z (1000BASE-X)",
+      "IEEE 802.3an (10GBASE-T), IEEE 802.3ae (10GBASE-SR/LR)",
+      "CE, FCC Class A, RoHS Compliant"
+    ],
+    "features": [
+      {
+        "lead": "Converts 10/100/1000M or 10G Copper",
+        "text": "to High-Speed Optical Fiber"
+      },
+      {
+        "lead": "Open Standard SFP / SFP+ Slot",
+        "text": "compatible with all MSA-compliant transceivers"
+      },
+      {
+        "lead": "Auto-Negotiation & Auto-MDI/MDIX",
+        "text": "on RJ45 port eliminates crossover cables"
+      },
+      {
+        "lead": "Link Fault Pass-Through (LFP)",
+        "text": "enables instant fault alerting on remote connections"
+      },
+      {
+        "lead": null,
+        "text": "Rugged, compact metal chassis engineered for optimal heat dissipation and long MTBF"
+      },
+      {
+        "lead": null,
+        "text": "Comprehensive LED status indicators for power, fiber link, copper activity, and speed"
+      }
+    ],
+    "applications": [
+      "Extending Local Area Networks (LAN) over Long-Distance Fiber Optic Backbones",
+      "Connecting Remote IP CCTV Cameras and Wi-Fi Access Points to Central Core Switches",
+      "Data Center Server Interconnections (10GBASE-T to 10G SFP+)"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Standard",
+        "LOGX Industrial/Enterprise Media Converter"
+      ],
+      [
+        "Models Available",
+        "1G SFP (10/100/1000M) / 10G SFP+ (10GBASE-T to 10G SFP+)"
+      ],
+      [
+        "Copper Interface",
+        "1 × RJ45 Port (Auto-MDI/MDI-X, Auto-Negotiation)"
+      ],
+      [
+        "Fiber Interface",
+        "1 × Open SFP / SFP+ Slot (Universal Compatibility)"
+      ],
+      [
+        "Chassis Material",
+        "Durable Metal Casing for Heat Dissipation"
+      ],
+      [
+        "LED Indicators",
+        "PWR, 1000M/10G, Link/Act, FX Link/Act, TP Link/Act"
+      ],
+      [
+        "Power Input",
+        "DC 5V / 1A (1G) | DC 12V / 1A (10G), Adapter Included"
+      ],
+      [
+        "Dimensions (W×D×H)",
+        "70 × 94 × 26 mm (1G) | 94 × 70 × 26 mm (10G)"
+      ]
+    ],
+    "mechanical": {
+      "title": "TECHNICAL SPECIFICATIONS",
+      "rows": [
+        [
+          "Forwarding Mode",
+          "Store-and-Forward Switching Architecture"
+        ],
+        [
+          "Transmission Dist.",
+          "1G: 550m MMF / 120km SMF | 10G: 300m MMF / 80km SMF"
+        ],
+        [
+          "Power Consumption",
+          "< 3 Watts (1G) | < 6 Watts (10G)"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "ENVIRONMENTAL SPECIFICATIONS",
+      "rows": [
+        [
+          "Operating Temp.",
+          "0°C to +50°C | Storage: -20°C to +70°C"
+        ],
+        [
+          "Operating Humidity",
+          "5% to 90% Non-condensing"
+        ],
+        [
+          "Certifications",
+          "CE, FCC Class A, RoHS"
+        ]
+      ]
+    },
+    "variantHeader": "Speed",
+    "parts": [
+      {
+        "partNumber": "LGX-MC1000GSFP",
+        "description": "Logx SFP port 1G Media converter (10/100/1000M RJ45 to 1G SFP Slot, Metal Case)",
+        "variant": "1G SFP"
+      },
+      {
+        "partNumber": "LGX-MC10GSFP+",
+        "description": "Logx SFP port 10G Media converter (10GBASE-T RJ45 to 10G SFP+ Slot, Metal Case)",
+        "variant": "10G SFP+"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "pdu",
+    "title": "LOGX 19 INCH 6-WAY UK SOCKET PDU",
+    "modelLine": "LOGX 6-WAY UK SOCKET POWER DISTRIBUTION UNIT WITH POWER CABLE (1U 19 INCH)",
+    "description": "LOGX 19-Inch Rack Mount Power Distribution Units (PDU) deliver dependable electrical power distribution to servers, switches, routers, and active IT hardware. Features 6 British BS 1363 sockets, robust extruded aluminum alloy housing, an illuminated master switch with protective cover, and a 2-meter heavy-duty power cable.",
+    "compliance": [
+      "BS 1363 & BS 5733 Standard Compliance",
+      "EIA/ECA-310-E 19\" Rack Standard",
+      "CE & RoHS Certified Safety Standards"
+    ],
+    "features": [
+      {
+        "lead": "6-Way British Standard BS 1363 Sockets",
+        "text": "with internal safety shutters"
+      },
+      {
+        "lead": "1U 19-Inch Horizontal Rack-Mount Format",
+        "text": "for server and network cabinets"
+      },
+      {
+        "lead": "Heavy-Duty Extruded Aluminum Alloy Chassis",
+        "text": "with matte black finish"
+      },
+      {
+        "lead": "Illuminated Master Power Switch",
+        "text": "with protective cover to prevent accidental shut-off"
+      },
+      {
+        "lead": null,
+        "text": "2.0 Meter Heavy-Duty 3×1.5mm² power cord with 13A UK fused plug"
+      },
+      {
+        "lead": null,
+        "text": "Integrated grounding terminal for comprehensive rack electrical protection"
+      }
+    ],
+    "applications": [
+      "Power Distribution in 19-Inch Server Racks, Data Cabinets, and Wall Boxes",
+      "Powering Network Switches, Firewalls, Routers, Patch Panels, and Servers",
+      "Telecom Central Offices, CCTV Monitoring Racks, and Enterprise IT Infrastructure"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Standard",
+        "LOGX 19\" Horizontal Rack-Mount PDU"
+      ],
+      [
+        "Socket Standard",
+        "6 × British Standard UK BS 1363 Sockets"
+      ],
+      [
+        "Input Plug Type",
+        "UK BS 1363 13A Fused Plug (3-Pin)"
+      ],
+      [
+        "Power Cable",
+        "3 × 1.5mm² Heavy-Duty Power Cord (2.0 Meters)"
+      ],
+      [
+        "Chassis Material",
+        "Heavy-Duty Extruded Aluminum Alloy (Black)"
+      ],
+      [
+        "Control & Protection",
+        "Master ON/OFF Switch with Protective Cover"
+      ],
+      [
+        "Electrical Rating",
+        "250V AC, 50/60Hz, 13A Max (3250W Max Capacity)"
+      ],
+      [
+        "Mounting Format",
+        "1U 19-Inch Horizontal Rack Mount"
+      ]
+    ],
+    "mechanical": {
+      "title": "ELECTRICAL SPECIFICATIONS",
+      "rows": [
+        [
+          "Nominal Voltage",
+          "250V AC 50/60Hz"
+        ],
+        [
+          "Max. Current / Load",
+          "13 Amps | 3250 Watts Maximum Load"
+        ],
+        [
+          "Safety Switch",
+          "Illuminated Master Switch with Safety Guard"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "SAFETY & STANDARDS",
+      "rows": [
+        [
+          "Socket Compliance",
+          "BS 1363 / British 3-Pin Standard Sockets"
+        ],
+        [
+          "Grounding",
+          "External M5 Earthing Lug for Rack Grounding"
+        ],
+        [
+          "Certifications",
+          "CE, RoHS, BS 5733 Safety Certified"
+        ]
+      ]
+    },
+    "variantHeader": "Format",
+    "parts": [
+      {
+        "partNumber": "LGX-PDU6-UK",
+        "description": "LOGX 6 Way UK Socket Power Distribution Unit with Power Cable (1U 19 Inch Rack Mount, 13A)",
+        "variant": "1U / 6 Way UK"
+      }
+    ],
+    "revision": "2026-09"
+  },
+  {
+    "key": "tools-bag",
+    "title": "LOGX NETWORKING TOOLS BAG & INSTALLATION KIT",
+    "modelLine": "LOGX PROFESSIONAL NETWORK INSTALLATION TOOLS BAG & TEST KIT",
+    "description": "The LOGX Professional Networking Tools Bag is an all-in-one installation toolkit tailored for field network engineers and telecom technicians. Housed in a durable, water-resistant 600D polyester bag in black with blue trim, it contains essential precision tools for terminating, stripping, crimping, and testing copper and telecom structured cabling.",
+    "compliance": [
+      "ISO 9001 Manufacturing Quality Standards",
+      "CE & RoHS Certified Test Equipment"
+    ],
+    "features": [
+      {
+        "lead": "Durable Water-Resistant 600D Polyester Fabric",
+        "text": "with reinforced stitching"
+      },
+      {
+        "lead": "Multi-Compartment Organizer",
+        "text": "with dedicated elastic slots for organized tool storage"
+      },
+      {
+        "lead": "Precision Ratchet RJ45/RJ11 Crimping Tool",
+        "text": "for consistent, clean modular plug terminations"
+      },
+      {
+        "lead": "Digital RJ45/RJ11 Cable Continuity Tester",
+        "text": "with remote unit for line verification"
+      },
+      {
+        "lead": null,
+        "text": "Multi-function wire stripper and precision 110 punchdown tool included"
+      },
+      {
+        "lead": null,
+        "text": "Comfortable padded shoulder strap and heavy-duty dual-zipper opening"
+      }
+    ],
+    "applications": [
+      "On-Site Structured Cabling Installation, Maintenance, and Troubleshooting",
+      "Telecom, CCTV Security, and Data Center Field Engineer Operations",
+      "Custom Patch Cord Fabrication and Keystone Jack Termination"
+    ],
+    "sideTable": null,
+    "specsTitle": "SPECIFICATIONS & TECHNICAL PARAMETERS",
+    "specs": [
+      [
+        "Product Standard",
+        "LOGX Professional Network Installation Toolkit"
+      ],
+      [
+        "Bag Material",
+        "600D Polyester, Water-Resistant"
+      ],
+      [
+        "Colour",
+        "Black with Blue Trim"
+      ],
+      [
+        "Carrying Options",
+        "Hand Carry Handle & Adjustable Removable Shoulder Strap"
+      ],
+      [
+        "Internal Compartments",
+        "Multi-Pocket Layered Tool Holders with Elastic Loops"
+      ],
+      [
+        "Included Tools",
+        "Modular RJ45 Crimper, Cable Stripper, Wire Cutter"
+      ],
+      [
+        "Test & Punch Tools",
+        "RJ45/RJ11 Cable Continuity Tester, 110/88 Punchdown Tool"
+      ],
+      [
+        "Accessories Included",
+        "Pack of RJ45 Connectors, Spare Blades, Screwdriver Set"
+      ],
+      [
+        "Durability",
+        "Wear-Resistant, Water-Repellent, Reinforced Base"
+      ]
+    ],
+    "mechanical": {
+      "title": "TOOLKIT CONTENTS",
+      "rows": [
+        [
+          "Crimping Tool",
+          "Heavy-Duty RJ45/RJ11 Modular Plug Ratchet Crimper"
+        ],
+        [
+          "Cable Tester",
+          "Digital RJ45 / RJ11 / RJ12 LED Wiremap Tester"
+        ],
+        [
+          "Stripping Tools",
+          "Universal Rotary Coaxial & UTP/STP Cable Stripper"
+        ]
+      ]
+    },
+    "electrical": {
+      "title": "BAG SPECIFICATIONS",
+      "rows": [
+        [
+          "Dimensions (L×W×H)",
+          "400 mm × 220 mm × 260 mm"
+        ],
+        [
+          "Weight",
+          "1.1 kg (Approx.)"
+        ],
+        [
+          "Closure",
+          "Heavy-Duty Zipper with Reinforced Stitching"
+        ]
+      ]
+    },
+    "variantHeader": "Package",
+    "parts": [
+      {
+        "partNumber": "BT-Tools",
+        "description": "Logx Professional Networking Tools Bag & Installation Kit (Heavy-Duty Tool Bag with Tools)",
+        "variant": "Full Kit"
+      }
+    ],
+    "revision": "2026-09"
+  }
+]
