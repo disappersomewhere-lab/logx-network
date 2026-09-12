@@ -19,13 +19,35 @@ The catalogue is generated from two sources, and both steps are reproducible:
 
 | Source | Command | Output |
 | --- | --- | --- |
-| Original product photography | `npm run build:images` | `public/products/photos/*.webp`, link-preview cards |
+| Rendered PDF datasheets | `npm run import-datasheets` | `public/datasheets/<PART>.pdf` |
 | LOGX price list (`.xls`) | `npm run import-products` | `data/products.json` |
+| Original product photography | `npm run build:images` | `public/products/photos/*.webp`, link-preview cards |
 | `app/icon.svg` | `npm run build:icons` | `app/favicon.ico`, `app/apple-icon.png` |
 
 ```bash
-npm run build:catalog   # runs both, in order
+npm run build:catalog   # datasheets → products → images, in that order
 ```
+
+The order matters once: `import-products` records which parts have a datasheet by
+looking in `public/datasheets/`, so the datasheets must be imported first. Both importers
+read the price list through `scripts/price-list.mjs`, which is the one place the excluded
+part numbers live.
+
+### Datasheets
+
+The per-part A4 sheets are rendered by a separate PowerShell tool (documented in
+`README-DATASHEETS.md` beside the price list's original folder) as `NNN_PARTNUMBER.pdf`.
+`import-datasheets` drops the numeric prefix so the URL is the part number, refuses to copy a
+sheet whose part is not in the price list (so a removed product's PDF can never become a live
+URL), and removes copies whose product has gone. A `+` in a part number becomes `-plus` in
+the filename. The copies are committed — 64 sheets, about 42 MB — so a clone serves them
+without the generator.
+
+Two known gaps, both inherited from the generator: the RJ45 boot (`LXCPPTC6`) has no sheet,
+and the sheets predate the current photography, so some carry the placeholder images the
+generator's README describes. Regenerating them with the photos in
+`public/products/photos/` would fix that and, with JPEG rather than raw bitmaps, shrink
+them considerably.
 
 ### Photography
 

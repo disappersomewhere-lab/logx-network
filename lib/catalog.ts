@@ -22,6 +22,8 @@ export type Product = {
   images: string[];
   /** 1200x630 JPEG card for link previews, shared across the product family. */
   ogImage: string;
+  /** Per-part PDF datasheet, when one has been imported. */
+  datasheet: {url: string; bytes: number} | null;
   /** Verbatim description from the LOGX price list. */
   raw: string;
 };

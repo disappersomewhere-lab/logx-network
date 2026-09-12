@@ -9,26 +9,13 @@
 // The original spreadsheet text is kept on every record as `raw` so nothing is
 // lost and the catalogue can always be reconciled against the price list.
 
-import XLSX from 'xlsx';
 import fs from 'node:fs';
 import path from 'node:path';
 import {familyFor, imagesFor, ogImageFor} from './photo-map.mjs';
+import {PRICE_LIST, readRows} from './price-list.mjs';
+import {datasheetFor} from './datasheets.mjs';
 
 const ROOT = path.join(import.meta.dirname, '..');
-// The price list lives in the repo beside the catalogue it produces, so a fresh
-// clone can regenerate data/products.json without hunting for the workbook.
-const DEFAULT_SOURCE = path.join(ROOT, 'data', 'source', "Logx product's.xls");
-
-/**
- * Part numbers that appear in the price list but must not reach the site.
- * Keeping the exclusion here rather than editing data/products.json means it
- * survives the next import from the same spreadsheet.
- */
-const EXCLUDED = new Map([
-  ['LXFPRDLC06', 'not a real product — confirmed 2026-09-10']
-]);
-
-const clean = (value) => String(value).replace(/\s+/g, ' ').trim();
 
 const t = (en, ar) => ({en, ar});
 const spec = (labelEn, labelAr, valueEn, valueAr) => ({
@@ -525,34 +512,17 @@ function slugify(value) {
 }
 
 function main() {
-  const source = process.argv[2] || DEFAULT_SOURCE;
-  const workbook = XLSX.readFile(source);
-  const rows = XLSX.utils
-    .sheet_to_json(workbook.Sheets[workbook.SheetNames[0]], {header: 1, defval: ''})
-    .slice(1);
-
-  const seen = new Set();
+  const source = process.argv[2] || PRICE_LIST;
   const products = [];
+  let withoutDatasheet = [];
 
-  for (const row of rows) {
-    if (!row[0] || !row[1]) continue;
-    const raw = clean(row[0]);
-    const partNumber = clean(row[1]);
-
-    if (EXCLUDED.has(partNumber)) {
-      console.log(`  - skipping ${partNumber}: ${EXCLUDED.get(partNumber)}`);
-      continue;
-    }
-
-    if (seen.has(partNumber)) {
-      console.warn(`  ! duplicate part number ${partNumber} — keeping the first row`);
-      continue;
-    }
-    seen.add(partNumber);
-
+  for (const {raw, partNumber} of readRows(source)) {
     const {category, name, summary, specs} = describe(partNumber, raw);
     const images = imagesFor(partNumber);
     if (!images.length) console.warn(`  ! no photography mapped for ${partNumber}`);
+
+    const datasheet = datasheetFor(partNumber);
+    if (!datasheet) withoutDatasheet.push(partNumber);
 
     products.push({
       slug: `${slugify(name.en)}-${slugify(partNumber)}`,
@@ -564,8 +534,13 @@ function main() {
       specs: [...specs, spec('Part number', 'رقم القطعة', partNumber, partNumber)],
       images,
       ogImage: ogImageFor(partNumber),
+      datasheet,
       raw
     });
+  }
+
+  if (withoutDatasheet.length) {
+    console.log(`  - no datasheet in public/datasheets/ for: ${withoutDatasheet.join(', ')}`);
   }
 
   fs.writeFileSync(

@@ -9,8 +9,9 @@
     "lint": "eslint",
     "build:images": "node scripts/build-images.mjs",
     "build:icons": "node scripts/build-icons.mjs",
+    "import-datasheets": "node scripts/import-datasheets.mjs",
     "import-products": "node scripts/import-products.mjs",
-    "build:catalog": "npm run build:images && npm run import-products"
+    "build:catalog": "npm run import-datasheets && npm run import-products && npm run build:images"
   },
   "dependencies": {
     "next": "16.3.4",

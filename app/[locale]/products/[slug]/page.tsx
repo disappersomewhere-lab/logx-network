@@ -6,6 +6,7 @@ import ProductGallery from '@/components/ProductGallery';
 import ProductCard from '@/components/ProductCard';
 import {catalog, getProduct, relatedProducts, type Locale} from '@/lib/catalog';
 import {alternatesFor, contact, mailto} from '@/lib/site';
+import {formatBytes} from '@/lib/format';
 import {locales} from '@/i18n';
 
 type Props = {
@@ -66,7 +67,17 @@ export default async function ProductPage({params}: Props) {
     sku: product.partNumber,
     mpn: product.partNumber,
     brand: {'@type': 'Brand', name: 'LOGX NETWORK'},
-    image: product.images
+    image: product.images,
+    ...(product.datasheet
+      ? {
+          subjectOf: {
+            '@type': 'DigitalDocument',
+            name: `${product.partNumber} datasheet`,
+            encodingFormat: 'application/pdf',
+            url: product.datasheet.url
+          }
+        }
+      : {})
   };
 
   return (
@@ -130,6 +141,21 @@ export default async function ProductPage({params}: Props) {
             >
               {t('productDetail.quote')}
             </Link>
+            {product.datasheet ? (
+              <a
+                href={product.datasheet.url}
+                className="button button-quiet button-datasheet"
+                target="_blank"
+                rel="noopener"
+                type="application/pdf"
+              >
+                <span className="pdf-badge" aria-hidden="true">
+                  PDF
+                </span>
+                {t('productDetail.datasheet')}
+                <small>{formatBytes(product.datasheet.bytes, language)}</small>
+              </a>
+            ) : null}
             <a
               href={mailto(`${product.partNumber} — ${product.name.en}`)}
               className="button button-quiet"
