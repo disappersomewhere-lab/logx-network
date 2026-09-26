@@ -175,12 +175,8 @@
         }
       }
     ],
-    "images": [
-      "/products/photos/cat6a-cable-01.webp",
-      "/products/photos/cat6a-cable-02.webp",
-      "/products/photos/cat6a-cable-03.webp"
-    ],
-    "ogImage": "/products/photos/cat6a-cable-og.jpg",
+    "images": [],
+    "ogImage": "/og-default.png",
     "datasheet": {
       "url": "/datasheets/LXC6AUUPVG305.pdf",
       "bytes": 384981
@@ -262,12 +258,8 @@
         }
       }
     ],
-    "images": [
-      "/products/photos/cat6a-cable-01.webp",
-      "/products/photos/cat6a-cable-02.webp",
-      "/products/photos/cat6a-cable-03.webp"
-    ],
-    "ogImage": "/products/photos/cat6a-cable-og.jpg",
+    "images": [],
+    "ogImage": "/og-default.png",
     "datasheet": {
       "url": "/datasheets/LXC6ASFPVG305.pdf",
       "bytes": 168188
@@ -1505,12 +1497,9 @@
       }
     ],
     "images": [
-      "/products/photos/faceplate-01.webp",
-      "/products/photos/faceplate-02.webp",
-      "/products/photos/faceplate-03.webp",
-      "/products/photos/faceplate-04.webp"
+      "/products/photos/faceplate-2-port-01.webp"
     ],
-    "ogImage": "/products/photos/faceplate-og.jpg",
+    "ogImage": "/products/photos/faceplate-2-port-og.jpg",
     "datasheet": {
       "url": "/datasheets/LXA20.pdf",
       "bytes": 289210
@@ -2115,11 +2104,8 @@
         }
       }
     ],
-    "images": [
-      "/products/photos/rj45-plug-01.webp",
-      "/products/photos/rj45-plug-02.webp"
-    ],
-    "ogImage": "/products/photos/rj45-plug-og.jpg",
+    "images": [],
+    "ogImage": "/og-default.png",
     "datasheet": null,
     "raw": "Logx Boot(blue, grey, yellow, green)"
   },
@@ -2264,11 +2250,8 @@
         }
       }
     ],
-    "images": [
-      "/products/photos/rj45-plug-01.webp",
-      "/products/photos/rj45-plug-02.webp"
-    ],
-    "ogImage": "/products/photos/rj45-plug-og.jpg",
+    "images": [],
+    "ogImage": "/og-default.png",
     "datasheet": {
       "url": "/datasheets/LXCPSTC6A.pdf",
       "bytes": 564946
@@ -2791,13 +2774,8 @@
         }
       }
     ],
-    "images": [
-      "/products/photos/fiber-panel-48-01.webp",
-      "/products/photos/fiber-panel-48-02.webp",
-      "/products/photos/fiber-panel-48-03.webp",
-      "/products/photos/fiber-panel-48-04.webp"
-    ],
-    "ogImage": "/products/photos/fiber-panel-48-og.jpg",
+    "images": [],
+    "ogImage": "/og-default.png",
     "datasheet": {
       "url": "/datasheets/LXFPRDLC48.pdf",
       "bytes": 239749
@@ -5458,10 +5436,8 @@
         }
       }
     ],
-    "images": [
-      "/products/photos/media-converter-01.webp"
-    ],
-    "ogImage": "/products/photos/media-converter-og.jpg",
+    "images": [],
+    "ogImage": "/og-default.png",
     "datasheet": {
       "url": "/datasheets/LGX-MC10GSFP-plus.pdf",
       "bytes": 888708

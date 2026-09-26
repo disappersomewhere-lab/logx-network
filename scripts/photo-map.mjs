@@ -7,6 +7,14 @@
 // Where a photograph shows a legible part-number label it is assigned to that
 // exact part; families without their own labelled shot reuse an unlabelled
 // photograph of the same product line rather than a mismatched label.
+//
+// A part with no entry in `rules` below gets no photo at all, rather than a
+// sibling's — deliberately, for parts the original shoot never covered
+// distinctly: the CAT6A cables (only the CAT6 box was shot), the FTP shielded
+// and boot RJ45 accessories (only a generic unshielded-plug carton was shot),
+// the 48-port/2U fiber panel (only the 12/24-port 1U chassis was shot), and
+// the 10G media converter (only the 1G unit was shot). Showing that photo
+// would misrepresent the part; showing nothing does not.
 
 export const families = {
   "cat6-cable": [
@@ -17,11 +25,6 @@ export const families = {
     "٢٠٢٥٠٣٠٣_٠٠٠٦٢٢_3.jpg",
     "٢٠٢٥٠٣٠٣_٠٠٠٦٥٦_1.jpg",
     "٢٠٢٥٠٣٠٣_٠٠٠٩٠٧_2.jpg"
-  ],
-  "cat6a-cable": [
-    "٢٠٢٥٠٣٠٣_٠٠٠٩٣٨_5.jpg",
-    "٢٠٢٥٠٣٠٣_٠٠٠٩٠٧_2.jpg",
-    "٢٠٢٥٠٣٠٣_٠٠٠٧٥٥_6.jpg"
   ],
   "patch-cord-cat6-short": [
     "٢٠٢٥٠٣٠٢_٢٣٣٦٣٩_4.jpg",
@@ -53,6 +56,9 @@ export const families = {
     "٢٠٢٥٠٣١٣_٢١٥٧٠٥_1.jpg",
     "٢٠٢٥٠٣١٣_٢١٥٤٤٦_5.jpg",
     "٢٠٢٥٠٣١٣_٢١٥٥٠٦_6.jpg"
+  ],
+  "faceplate-2-port": [
+    "faceplate 2 port.jpg"
   ],
   "keystone-cat6": [
     "٢٠٢٥٠٣١٣_٢٢٠٥٣٤_8.jpg",
@@ -129,12 +135,6 @@ export const families = {
     "٢٠٢٥٠٣٠٤_٠٠٠٠٥٦_2.jpg",
     "٢٠٢٥٠٣٠٤_٠٠٠٠٥٦_4.jpg",
     "٢٠٢٥٠٣٠٤_٠٠٠٠٣٥.jpg"
-  ],
-  "fiber-panel-48": [
-    "٢٠٢٥٠٣٠٤_٠٠٠٥٥٨.jpg",
-    "٢٠٢٥٠٣٠٤_٠٠٠٥٥٨_4.jpg",
-    "٢٠٢٥٠٣٠٤_٠٠٠٦١٤_1.jpg",
-    "٢٠٢٥٠٣٠٤_٠٠٠٦١٤_6.jpg"
   ],
   "fiber-cord-sm": [
     "٢٠٢٥٠٣٠٢_٢٣٤٢١٧_6.jpg",
@@ -224,14 +224,18 @@ export const crops = {
   'fiber D 4 port.jpeg': [0.03, 0.02, 0.8, 0.91],
   'fiber D 8 port.jpeg prot.jpeg': [0.175, 0.15, 0.635, 0.83],
   'PDU.jpeg': [0.03, 0.45, 0.94, 0.19],
-  'PDU..jpeg': [0.02, 0.44, 0.96, 0.19]
+  'PDU..jpeg': [0.02, 0.44, 0.96, 0.19],
+  // Shot in its retail bag on a desk rather than on the seamless backdrop;
+  // this frames the packet and drops the desk visible around its edges.
+  'faceplate 2 port.jpg': [0.07, 0.14, 0.8, 0.72]
 };
 
 // Resolves a part number to a family key. First match wins, so order matters.
 const rules = [
   [/^LXC6UUPVG305$/, 'cat6-cable'],
-  [/^LXC6AUUPVG305$/, 'cat6a-cable'],
-  [/^LXC6ASFPVG305$/, 'cat6a-cable'],
+  // LXC6AUUPVG305 (CAT6A U/UTP) and LXC6ASFPVG305 (CAT6A S/FTP) were never
+  // photographed separately — only the CAT6 box above was shot — so they get
+  // no family here rather than the CAT6 box's photo under a CAT6A label.
 
   [/^LXPC6UUPVG0\.25$/, 'patch-cord-cat6-short'],
   [/^LXPC6UUPVG0\.5$/, 'patch-cord-cat6-half'],
@@ -239,7 +243,8 @@ const rules = [
   [/^LXPC6UUPVG(3|5|10)$/, 'patch-cord-cat6-long'],
   [/^LXPC6AUUPVG/, 'patch-cord-cat6a'],
 
-  [/^LXA(10|20)$/, 'faceplate'],
+  [/^LXA10$/, 'faceplate'],
+  [/^LXA20$/, 'faceplate-2-port'],
   [/^LXCJ6UFT$/, 'keystone-cat6'],
   [/^LXCJ6AUFT$/, 'keystone-cat6a'],
 
@@ -247,7 +252,10 @@ const rules = [
   [/^LXCPCMNM2$/, 'cable-manager-2u'],
   [/^LXPP6U2410$/, 'patch-panel-24'],
   [/^LXPP6U4820$/, 'patch-panel-48'],
-  [/^LXCP(PTC6|UTC6|STC6A)$/, 'rj45-plug'],
+  // The shot carton is an unshielded modular plug: a real match for the UTP
+  // plug, but not for the FTP shielded plug (no metal shell visible) or the
+  // strain-relief boot (not a plug at all) — those two get no family here.
+  [/^LXCPUTC6$/, 'rj45-plug'],
 
   [/^LXFHN047ALS$/, 'drop-fiber-4'],
   [/^LXFHS087ALS$/, 'drop-fiber-8'],
@@ -255,7 +263,8 @@ const rules = [
 
   [/^LXFPRDLC12$/, 'fiber-panel-12'],
   [/^LXFPRDLC24$/, 'fiber-panel-24'],
-  [/^LXFPRDLC48$/, 'fiber-panel-48'],
+  // LXFPRDLC48 is a 2U chassis, but only the 12/24-port 1U chassis was shot;
+  // it gets no family here rather than that shorter panel's photo.
 
   [/^LXFCLCLCDUS2/, 'fiber-cord-sm'],
   [/^LXFCLCLCDUS3/, 'fiber-cord-om3'],
@@ -263,7 +272,9 @@ const rules = [
   [/^LXFTLCSUM3/, 'pigtail-om3'],
 
   [/^BT-Tools$/, 'tools-bag'],
-  [/^LGX-MC/, 'media-converter'],
+  // The shot unit is the 1G model (its own label reads 1000BASE-FX); the 10G
+  // SFP+ converter was never photographed, so it gets no family here.
+  [/^LGX-MC1000GSFP$/, 'media-converter'],
   [/^LXFTBLC04$/, 'terminal-box-4'],
   [/^LXFTBLC08$/, 'terminal-box-8'],
   [/^LGX-PDU/, 'pdu']

@@ -98,7 +98,7 @@ export default async function ProductPage({params}: Props) {
         {t('productDetail.back')}
       </Link>
 
-      <div className="detail-grid">
+      <div className={product.images.length ? 'detail-grid' : 'detail-grid detail-grid-solo'}>
         <ProductGallery
           images={product.images}
           alt={product.name[language]}

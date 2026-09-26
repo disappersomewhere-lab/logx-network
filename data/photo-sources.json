@@ -29,20 +29,6 @@
       "output": "/products/photos/cat6-cable-07.webp"
     }
   ],
-  "cat6a-cable": [
-    {
-      "source": "٢٠٢٥٠٣٠٣_٠٠٠٩٣٨_5.jpg",
-      "output": "/products/photos/cat6a-cable-01.webp"
-    },
-    {
-      "source": "٢٠٢٥٠٣٠٣_٠٠٠٩٠٧_2.jpg",
-      "output": "/products/photos/cat6a-cable-02.webp"
-    },
-    {
-      "source": "٢٠٢٥٠٣٠٣_٠٠٠٧٥٥_6.jpg",
-      "output": "/products/photos/cat6a-cable-03.webp"
-    }
-  ],
   "patch-cord-cat6-short": [
     {
       "source": "٢٠٢٥٠٣٠٢_٢٣٣٦٣٩_4.jpg",
@@ -129,6 +115,12 @@
     {
       "source": "٢٠٢٥٠٣١٣_٢١٥٥٠٦_6.jpg",
       "output": "/products/photos/faceplate-04.webp"
+    }
+  ],
+  "faceplate-2-port": [
+    {
+      "source": "faceplate 2 port.jpg",
+      "output": "/products/photos/faceplate-2-port-01.webp"
     }
   ],
   "keystone-cat6": [
@@ -361,24 +353,6 @@
     {
       "source": "٢٠٢٥٠٣٠٤_٠٠٠٠٣٥.jpg",
       "output": "/products/photos/fiber-panel-24-05.webp"
-    }
-  ],
-  "fiber-panel-48": [
-    {
-      "source": "٢٠٢٥٠٣٠٤_٠٠٠٥٥٨.jpg",
-      "output": "/products/photos/fiber-panel-48-01.webp"
-    },
-    {
-      "source": "٢٠٢٥٠٣٠٤_٠٠٠٥٥٨_4.jpg",
-      "output": "/products/photos/fiber-panel-48-02.webp"
-    },
-    {
-      "source": "٢٠٢٥٠٣٠٤_٠٠٠٦١٤_1.jpg",
-      "output": "/products/photos/fiber-panel-48-03.webp"
-    },
-    {
-      "source": "٢٠٢٥٠٣٠٤_٠٠٠٦١٤_6.jpg",
-      "output": "/products/photos/fiber-panel-48-04.webp"
     }
   ],
   "fiber-cord-sm": [
