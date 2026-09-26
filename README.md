@@ -95,6 +95,18 @@ The originals are large and stay out of the repository (see `.gitignore`) — th
 WebP files are committed, so a clone builds without them. You only need the source folder to
 regenerate the imagery.
 
+### Company profile
+
+`/[locale]/company-profile` is a four-page bilingual brochure — cover, about &
+mission, product range, offices — built from the same site content (no
+separate copy to maintain) and linked from the About page and footer. Like
+the datasheets, the PDF is that page printed by headless Edge/Chrome:
+
+```bash
+npm run build                    # the profile is a page, so build first
+npm run build:company-profile    # renders public/company-profile/LOGX-Company-Profile-<locale>.pdf
+```
+
 ### Product data
 
 The price list is committed at `data/source/Logx product's.xls` — it holds only descriptions

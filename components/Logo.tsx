@@ -1,5 +1,8 @@
+import Image from 'next/image';
+import type {CSSProperties} from 'react';
+
 type LogoProps = {
-  /** Overrides the wordmark size; anything CSS accepts for font-size. */
+  /** Overrides the displayed logo height; anything CSS accepts for height. */
   size?: string;
   className?: string;
 };
@@ -7,14 +10,16 @@ type LogoProps = {
 export default function Logo({size, className = ''}: LogoProps) {
   return (
     <span
-      className={`brand-logo ${className}`.trim()}
-      style={size ? {fontSize: size} : undefined}
-      role="img"
-      aria-label="LOGX NETWORK"
+      className={`brand-logo brand-logo-image ${className}`.trim()}
+      style={size ? {'--logo-height': size} as CSSProperties : undefined}
     >
-      <span aria-hidden="true">LOG</span>
-      <b aria-hidden="true">X</b>
-      <small aria-hidden="true">NETWORK</small>
+      <Image
+        src="/logx-logo.png"
+        alt="LOGX NETWORK"
+        width={122}
+        height={57}
+        priority
+      />
     </span>
   );
 }

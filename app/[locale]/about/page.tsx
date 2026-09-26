@@ -5,7 +5,7 @@ import Image from 'next/image';
 import {alternatesFor} from '@/lib/site';
 
 const SHOWCASE = [
-  '/products/photos/fiber-panel-48-01.webp',
+  '/products/photos/fiber-panel-24-01.webp',
   '/products/photos/patch-panel-48-01.webp',
   '/products/photos/keystone-cat6-01.webp',
   '/products/photos/brand-packaging-01.webp'
@@ -73,9 +73,14 @@ export default async function AboutPage({params}: {params: Promise<{locale: stri
           <p className="eyebrow">{t('contact.eyebrow')}</p>
           <h2>{t('contact.title')}</h2>
         </div>
-        <Link href={`/${locale}/contact`} className="button button-primary">
-          {t('contact.cta')}
-        </Link>
+        <div className="action-row">
+          <Link href={`/${locale}/company-profile`} className="button button-quiet">
+            {t('companyProfile.nav')}
+          </Link>
+          <Link href={`/${locale}/contact`} className="button button-primary">
+            {t('contact.cta')}
+          </Link>
+        </div>
       </section>
     </div>
   );

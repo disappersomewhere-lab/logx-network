@@ -238,37 +238,192 @@ p {
   color: var(--brand);
 }
 
+/* --------------------------------------------------------------- hamburger */
+
+.nav-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.18s ease;
+  flex-shrink: 0;
+}
+
+.nav-hamburger:hover {
+  border-color: var(--brand);
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.hamburger-icon span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
+}
+
+/* Animate to X when open */
+.hamburger-icon.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger-icon.is-open span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.hamburger-icon.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------- mobile drawer */
+
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 28;
+  background: rgb(20 20 20 / 40%);
+  backdrop-filter: blur(2px);
+  animation: fade-in 0.2s ease forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  inset-inline-end: 0;
+  z-index: 29;
+  width: min(320px, 88vw);
+  height: 100dvh;
+  background: var(--paper);
+  border-inline-start: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  /* `display: none` at rest (not just an off-canvas transform) — Chromium
+     mis-paints the header's `backdrop-filter` when this fixed + transformed
+     drawer sits outside the viewport while still rendered, blanking out the
+     header (and the logo) on every RTL page load. `allow-discrete` +
+     `@starting-style` below keep the slide animation working across the
+     display toggle. */
+  display: none;
+  flex-direction: column;
+  padding: 96px 0 40px;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), display 0.3s allow-discrete;
+  overflow-y: auto;
+}
+
+/* RTL: drawer slides from the left */
+[dir='rtl'] .mobile-menu {
+  transform: translateX(-100%);
+}
+
+.mobile-menu.is-open {
+  display: flex;
+  transform: translateX(0);
+}
+
+@starting-style {
+  .mobile-menu.is-open {
+    transform: translateX(100%);
+  }
+
+  [dir='rtl'] .mobile-menu.is-open {
+    transform: translateX(-100%);
+  }
+}
+
+.mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-inline: 28px;
+  gap: 4px;
+}
+
+.mobile-menu-nav a {
+  display: block;
+  padding: 14px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  transition: color 0.15s ease, padding-inline-start 0.15s ease;
+}
+
+.mobile-menu-nav a:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu-nav a:hover {
+  color: var(--ink);
+  padding-inline-start: 6px;
+}
+
+.mobile-menu-nav a[aria-current='page'] {
+  color: var(--brand);
+  font-weight: 800;
+}
+
+.mobile-menu-foot {
+  padding: 24px 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.mobile-menu-foot .language-switch {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+}
+
+/* Show hamburger, hide desktop nav on mobile */
+@media (max-width: 720px) {
+  .main-nav {
+    display: none;
+  }
+
+  /* Hide the desktop language switch — it's duplicated inside the drawer */
+  .header-actions > .language-switch {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+}
+
 /* ------------------------------------------------------------------- logo */
 
 .brand-logo {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0;
-  font-weight: 900;
-  letter-spacing: -0.06em;
-  line-height: 1;
-  color: var(--ink);
-  font-size: 1.65rem;
-  /* The wordmark is Latin in both locales. */
-  direction: ltr;
-}
-
-.brand-logo b {
-  color: var(--brand);
-  font-size: 1.18em;
-  font-style: normal;
-  transform: skewX(-11deg);
   display: inline-block;
+  line-height: 0;
 }
 
-.brand-logo small {
-  align-self: flex-end;
-  font-size: 0.3rem;
-  font-weight: 700;
-  letter-spacing: 0.4em;
-  margin-inline-start: 4px;
-  padding-bottom: 0.35em;
-  color: var(--ink-soft);
+.brand-logo-image img {
+  display: block;
+  width: auto;
+  height: var(--logo-height, 2.25rem);
+  object-fit: contain;
 }
 
 /* ------------------------------------------------------------------ buttons */
@@ -424,12 +579,7 @@ p {
 }
 
 .hero-note .brand-logo {
-  color: #fff;
-  font-size: 1.4rem;
-}
-
-.hero-note .brand-logo small {
-  color: rgb(255 255 255 / 55%);
+  --logo-height: 1.4rem;
 }
 
 .hero-note p {
@@ -803,6 +953,16 @@ p {
   align-items: start;
 }
 
+/* A part with no photography (see photo-map.mjs) skips the gallery column
+   rather than leaving it blank. */
+.detail-grid-solo {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.detail-grid-solo .detail-copy {
+  max-width: 640px;
+}
+
 /* gallery */
 
 .gallery-main {
@@ -1074,10 +1234,6 @@ p {
   justify-content: space-between;
   padding-bottom: 6pt;
   border-bottom: 2.5pt solid var(--ds-red);
-}
-
-.ds-head .brand-logo {
-  color: var(--ds-ink);
 }
 
 .ds-doc-type {
@@ -1434,6 +1590,393 @@ p {
   }
 }
 
+/* ------------------------------------------------------------ company profile */
+
+.cp-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.cp-toolbar {
+  width: min(210mm, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cp-toolbar .back-link {
+  margin: 0;
+}
+
+.cp-toolbar-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cp-doc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.cp-sheet {
+  box-sizing: border-box;
+  width: min(210mm, 100%);
+  min-height: 297mm;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-sheet:not(.cp-cover) {
+  padding: 16mm 15mm;
+  gap: 14pt;
+}
+
+.cp-sheet h2 {
+  color: var(--brand);
+  font-size: 9.5pt;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-bottom: 4pt;
+  margin: 0 0 4pt;
+  border-bottom: 1px solid var(--line);
+}
+
+.cp-sheet p {
+  margin: 0;
+  font-size: 9.5pt;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.cp-sheet-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 10pt;
+  border-bottom: 2.5pt solid var(--brand);
+  margin-bottom: 2pt;
+}
+
+.cp-sheet-head small {
+  font-size: 8pt;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* cover */
+
+.cp-cover {
+  position: relative;
+  overflow: hidden;
+  justify-content: flex-end;
+  color: #fff;
+}
+
+.cp-cover-photo {
+  position: absolute;
+  inset: 0;
+}
+
+.cp-cover-photo img {
+  object-fit: cover;
+}
+
+.cp-cover-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(20 20 20 / 35%) 0%, rgb(20 20 20 / 78%) 68%, rgb(20 20 20 / 94%) 100%);
+}
+
+.cp-cover-brand {
+  position: relative;
+  padding: 16mm 15mm 0;
+}
+
+.cp-cover-body {
+  position: relative;
+  padding: 0 15mm 20mm;
+}
+
+.cp-cover-eyebrow {
+  font-size: 8.5pt;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin: 0 0 10pt;
+}
+
+.cp-cover-body h1 {
+  font-size: 30pt;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 8pt;
+}
+
+.cp-cover-tagline {
+  font-size: 12pt;
+  font-weight: 600;
+  margin: 0 0 6pt;
+}
+
+.cp-cover-subtitle {
+  font-size: 9.5pt;
+  color: rgb(255 255 255 / 78%);
+  max-width: 120mm;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* body sections */
+
+.cp-lede {
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;
+  max-width: 150mm;
+}
+
+.cp-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16pt;
+}
+
+.cp-block + .cp-block {
+  margin-top: 2pt;
+}
+
+.cp-checks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4pt;
+}
+
+.cp-checks li {
+  position: relative;
+  padding-inline-start: 14pt;
+  font-size: 9.3pt;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.cp-checks li::before {
+  content: '✓';
+  position: absolute;
+  inset-inline-start: 0;
+  color: var(--brand);
+  font-weight: 900;
+}
+
+.cp-points {
+  display: flex;
+  flex-direction: column;
+  gap: 10pt;
+}
+
+.cp-points strong {
+  display: block;
+  font-size: 9.8pt;
+  color: var(--ink);
+  margin-bottom: 2pt;
+}
+
+.cp-callout {
+  background: var(--tile);
+  border: 1px solid var(--line);
+  border-inline-start: 3pt solid var(--brand);
+  padding: 12pt 14pt;
+}
+
+.cp-callout .cp-callout-label {
+  font-size: 7.6pt;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin: 0 0 4pt;
+}
+
+.cp-callout p {
+  color: var(--ink);
+  font-size: 9.6pt;
+}
+
+.cp-callout + .cp-callout {
+  margin-top: 10pt;
+}
+
+/* product range cards */
+
+.cp-range-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12pt;
+  flex: 1;
+}
+
+.cp-range-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+}
+
+.cp-range-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--tile);
+}
+
+.cp-range-photo img {
+  object-fit: cover;
+}
+
+.cp-range-card-body {
+  padding: 10pt 11pt 12pt;
+  display: flex;
+  flex-direction: column;
+  gap: 4pt;
+}
+
+.cp-range-card-body h3 {
+  margin: 0;
+  font-size: 10pt;
+  font-weight: 800;
+}
+
+.cp-range-card-body p {
+  font-size: 8.8pt;
+  line-height: 1.55;
+}
+
+.cp-range-count {
+  margin-top: auto;
+  padding-top: 6pt;
+  font-size: 7.6pt;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+/* gallery */
+
+.cp-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8pt;
+}
+
+.cp-gallery figure {
+  position: relative;
+  aspect-ratio: 1;
+  margin: 0;
+  background: var(--tile);
+  border: 1px solid var(--line);
+}
+
+.cp-gallery img {
+  object-fit: contain;
+  padding: 6pt;
+}
+
+/* contact / closing */
+
+.cp-offices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14pt;
+}
+
+.cp-office {
+  border: 1px solid var(--line);
+  padding: 12pt 14pt;
+}
+
+.cp-office .cp-office-role {
+  font-size: 7.6pt;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin: 0 0 4pt;
+}
+
+.cp-office h3 {
+  margin: 0 0 6pt;
+  font-size: 10pt;
+}
+
+.cp-office address {
+  font-style: normal;
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.cp-office .cp-office-links {
+  margin-top: 8pt;
+  display: flex;
+  flex-direction: column;
+  gap: 2pt;
+  font-size: 8.8pt;
+  direction: ltr;
+  text-align: start;
+}
+
+.cp-foot {
+  margin-top: auto;
+  padding-top: 10pt;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 7.6pt;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 720px) {
+  .cp-sheet:not(.cp-cover) {
+    padding: 8mm 6mm;
+  }
+
+  .cp-columns,
+  .cp-range-grid,
+  .cp-offices {
+    grid-template-columns: 1fr;
+  }
+
+  .cp-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cp-cover-body h1 {
+    font-size: 22pt;
+  }
+}
+
 /* ---------------------------------------------------------------- proof band */
 
 .proof-band {
@@ -1592,6 +2135,52 @@ p {
   padding: clamp(24px, 4vw, 44px);
 }
 
+.contact-offices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 44px;
+}
+
+.office-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+}
+
+.office-card .office-role {
+  color: var(--brand);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.office-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.office-card address {
+  font-style: normal;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.office-card .office-links {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.92rem;
+}
+
+.office-card .office-links a:hover {
+  color: var(--brand);
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1664,17 +2253,29 @@ p {
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.25fr 0.85fr 0.85fr 1.05fr;
   gap: 36px;
   padding-block: 52px 32px;
 }
 
-.footer-brand .brand-logo {
-  color: #fff;
+.footer-col address {
+  font-style: normal;
 }
 
-.footer-brand .brand-logo small {
-  color: rgb(255 255 255 / 60%);
+.footer-col .footer-office + .footer-office {
+  margin-top: 14px;
+}
+
+.footer-col .footer-office strong {
+  display: block;
+  color: rgb(255 255 255 / 88%);
+  font-size: 0.82rem;
+}
+
+.footer-col .footer-office span {
+  display: block;
+  font-size: 0.82rem;
+  line-height: 1.6;
 }
 
 .footer-brand p {
@@ -1848,10 +2449,6 @@ p {
     gap: 12px;
   }
 
-  .brand-logo {
-    font-size: 1.3rem;
-  }
-
   .main-nav {
     gap: 14px;
     font-size: 0.66rem;
@@ -1903,12 +2500,8 @@ p {
     width: min(100% - 24px, var(--shell));
   }
 
-  .brand-logo {
-    font-size: 1.15rem;
-  }
-
-  .brand-logo small {
-    display: none;
+  .brand-logo-image {
+    --logo-height: 2rem;
   }
 
   /* Only the two destinations that matter survive on the narrowest screens. */
@@ -1922,12 +2515,21 @@ p {
 }
 
 /* ------------------------------------------------------------------- print
-   Only the datasheet is designed to be printed. The site chrome and the
-   on-screen toolbar disappear; the sheet takes the page. */
+   The datasheet and the company profile are designed to be printed. The site
+   chrome and the on-screen toolbar disappear; the sheet takes the page. */
 
 @page {
   size: A4;
   margin: 10mm 12mm 11mm;
+}
+
+/* The company profile sizes and pads its own 210x297mm sheet (the cover needs
+   a full-bleed photo), so it opts out of the browser's page margin above —
+   applying both would shrink the printable area below one sheet and spill
+   every section onto an extra, near-blank page. */
+@page cp {
+  size: A4;
+  margin: 0;
 }
 
 @media print {
@@ -1943,7 +2545,8 @@ p {
 
   .site-header,
   .site-footer,
-  .ds-toolbar {
+  .ds-toolbar,
+  .cp-toolbar {
     display: none !important;
   }
 
@@ -1954,7 +2557,8 @@ p {
     margin: 0;
   }
 
-  .ds-page {
+  .ds-page,
+  .cp-page {
     display: block;
   }
 
@@ -1984,6 +2588,32 @@ p {
 
   .ds-ordering td a {
     text-decoration: none;
+  }
+
+  .cp-doc {
+    display: block;
+    gap: 0;
+  }
+
+  .cp-sheet {
+    page: cp;
+    width: 210mm;
+    height: 297mm;
+    min-height: 0;
+    border: 0;
+    box-shadow: none;
+    overflow: hidden;
+    break-after: page;
+  }
+
+  .cp-sheet:last-child {
+    break-after: auto;
+  }
+
+  .cp-range-card,
+  .cp-office,
+  .cp-callout {
+    break-inside: avoid;
   }
 }
 

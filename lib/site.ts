@@ -40,6 +40,40 @@ export function mailto(subject?: string) {
     : `mailto:${contact.email}`;
 }
 
+export type Office = {
+  id: 'uk' | 'sa';
+  name: string;
+  addressLines: string[];
+  phones?: string[];
+  email: string;
+  website: string;
+};
+
+/**
+ * The two physical offices behind the site: the UK entity that owns the LOGX
+ * brand, and the Middle East distributor that carries its stock. Each
+ * office's `role` label (head office / regional distributor) is localised in
+ * the message catalogues under `contact.offices.<id>.role` rather than kept
+ * here, since the rest of this record is proper nouns.
+ */
+export const offices: Office[] = [
+  {
+    id: 'uk',
+    name: 'LOGX NETWORKS LTD.',
+    addressLines: ['71-75 Shelton Street', 'Covent Garden, London', 'United Kingdom'],
+    email: 'hello@logxn.co.uk',
+    website: 'logxn.co.uk'
+  },
+  {
+    id: 'sa',
+    name: 'Networks Sea Company',
+    addressLines: ['Olaya', 'Riyadh, Saudi Arabia'],
+    phones: ['+966 11 217 0269', '+966 53 990 9932'],
+    email: 'sales@nsea.com.sa',
+    website: 'nsea.com.sa'
+  }
+];
+
 /**
  * Canonical + hreflang for one page, in every locale.
  *

@@ -1,7 +1,7 @@
 import {getTranslations} from 'next-intl/server';
 import type {Metadata} from 'next';
 import QuoteForm from '@/components/QuoteForm';
-import {alternatesFor, contact} from '@/lib/site';
+import {alternatesFor, contact, offices} from '@/lib/site';
 
 type Props = {
   params: Promise<{locale: string}>;
@@ -44,6 +44,36 @@ export default async function ContactPage({searchParams}: Props) {
           error: t('contact.form.error', {email: contact.email})
         }}
       />
+
+      <div className="contact-offices">
+        {offices.map((office) => (
+          <div className="office-card" key={office.id}>
+            <p className="office-role">{t(`contact.offices.${office.id}.role`)}</p>
+            <h3>{office.name}</h3>
+            <address>
+              {office.addressLines.map((line) => (
+                <span key={line}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </address>
+            <div className="office-links">
+              {office.phones?.map((phone) => (
+                <a key={phone} href={`tel:${phone.replace(/\s+/g, '')}`} dir="ltr">
+                  {t('contact.offices.phoneLabel')}: {phone}
+                </a>
+              ))}
+              <a href={`mailto:${office.email}`}>
+                {t('contact.offices.emailLabel')}: {office.email}
+              </a>
+              <a href={`https://${office.website}`} target="_blank" rel="noreferrer">
+                {office.website}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

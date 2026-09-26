@@ -10,6 +10,7 @@
     "build:images": "node scripts/build-images.mjs",
     "build:icons": "node scripts/build-icons.mjs",
     "build:datasheets": "node scripts/build-datasheets.mjs",
+    "build:company-profile": "node scripts/build-company-profile.mjs",
     "import-products": "node scripts/import-products.mjs",
     "import-family-content": "node scripts/import-family-content.mjs",
     "build:catalog": "npm run import-products && npm run build:images"
