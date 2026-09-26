@@ -13,7 +13,7 @@ import path from 'node:path';
 import {EXCLUDED} from './price-list.mjs';
 
 const ROOT = path.join(import.meta.dirname, '..');
-const DEFAULT_SOURCE = String.raw`C:\Users\NSEA ITSM\OneDrive\Desktop\logx\tools\logx-catalog.json`;
+const DEFAULT_SOURCE = String.raw`C:\xampp\htdocs\My projects\logx\tools\logx-catalog.json`;
 
 // The source was authored as HTML fragments; the site renders text.
 const ENTITIES = {

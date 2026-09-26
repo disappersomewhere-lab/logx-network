@@ -13,7 +13,7 @@ import path from 'node:path';
 import {crops, families, rotations} from './photo-map.mjs';
 
 const ROOT = path.join(import.meta.dirname, '..');
-const SRC = process.argv[2] || path.join(ROOT, 'logx oreginal image');
+const SRC = process.argv[2] || path.join(ROOT, 'docs', 'logx oreginal image');
 const OUT = path.join(ROOT, 'public', 'products', 'photos');
 
 const SIZE = 1400; // master square; next/image derives the responsive sizes
