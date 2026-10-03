@@ -13,6 +13,7 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
+  "frame-src 'self' https://www.google.com https://maps.google.com",
   // Dev needs the Turbopack HMR socket; production talks to nothing but itself.
   `connect-src 'self'${isProduction ? '' : ' ws: wss:'}`,
   "form-action 'self'",

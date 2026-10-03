@@ -70,6 +70,8 @@ export default async function LocaleLayout({children, params}: Props) {
   const nav = [
     {href: `/${locale}`, label: t('nav.home')},
     {href: `/${locale}/products`, label: t('nav.products')},
+    {href: `/${locale}/datasheets`, label: t('datasheet.index')},
+    {href: `/${locale}/company-profile`, label: t('companyProfile.nav')},
     {href: `/${locale}/about`, label: t('nav.about')},
     {href: `/${locale}/contact`, label: t('nav.contact')}
   ];
@@ -93,14 +95,27 @@ export default async function LocaleLayout({children, params}: Props) {
               </nav>
 
               <div className="header-actions">
-                <Link href={`/${other}`} className="language-switch" lang={other} hrefLang={other}>
-                  {other === 'ar' ? 'عربي' : 'EN'}
+                <Link href={`/${other}`} className="language-switch flex items-center justify-center" lang={other} hrefLang={other} title={other === 'ar' ? 'عربي' : 'English'}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label={other === 'ar' ? 'عربي' : 'English'}>
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                    <path d="M2 12h20"/>
+                  </svg>
                 </Link>
                 <MobileNav
                   items={nav}
                   langSwitch={{
                     href: `/${other}`,
-                    label: other === 'ar' ? 'عربي' : 'EN',
+                    label: (
+                      <div className="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <circle cx="12" cy="12" r="10"/>
+                          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                          <path d="M2 12h20"/>
+                        </svg>
+                        <span>{other === 'ar' ? 'عربي' : 'English'}</span>
+                      </div>
+                    ),
                     lang: other
                   }}
                   menuLabel={t('nav.openMenu')}
@@ -116,7 +131,7 @@ export default async function LocaleLayout({children, params}: Props) {
             <div className="shell">
               <div className="footer-inner">
                 <div className="footer-brand">
-                  <Logo size="1.5rem" />
+                  <Logo size="1.5rem" tone="light" />
                   <p>{t('footer.tagline')}</p>
                 </div>
 

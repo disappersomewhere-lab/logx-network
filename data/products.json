@@ -94,17 +94,13 @@
       "/products/photos/cat6-cable-07.webp"
     ],
     "ogImage": "/products/photos/cat6-cable-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXC6UUPVG305.pdf",
-      "bytes": 345881
-    },
     "raw": "Logx CAT6 UTP LAN CABLE(305M) 24 AWG, BARE COPPER 0.52 MM PASS FLUKE TEST,UTP,SOLID CABLE GREY"
   },
   {
     "slug": "cat6a-u-utp-lan-cable-305-m-box-lxc6auupvg305",
     "partNumber": "LXC6AUUPVG305",
     "category": "copper",
-    "family": "cat6a-cable",
+    "family": "cat6-cable",
     "name": {
       "en": "CAT6A U/UTP LAN Cable, 305 m Box",
       "ar": "كابل شبكة CAT6A غير مُدرَّع (U/UTP) — صندوق 305 متر"
@@ -175,19 +171,23 @@
         }
       }
     ],
-    "images": [],
-    "ogImage": "/og-default.png",
-    "datasheet": {
-      "url": "/datasheets/LXC6AUUPVG305.pdf",
-      "bytes": 384981
-    },
+    "images": [
+      "/products/photos/cat6-cable-01.webp",
+      "/products/photos/cat6-cable-02.webp",
+      "/products/photos/cat6-cable-03.webp",
+      "/products/photos/cat6-cable-04.webp",
+      "/products/photos/cat6-cable-05.webp",
+      "/products/photos/cat6-cable-06.webp",
+      "/products/photos/cat6-cable-07.webp"
+    ],
+    "ogImage": "/products/photos/cat6-cable-og.jpg",
     "raw": "Logx CAT6A UTP LAN CABLE(305M) COPPER CABLE 0.54MM, CATEGORY 6A, 4 PAIR, U/UTP, 23 AWG SOLID"
   },
   {
     "slug": "cat6a-s-ftp-lan-cable-305-m-box-lxc6asfpvg305",
     "partNumber": "LXC6ASFPVG305",
     "category": "copper",
-    "family": "cat6a-cable",
+    "family": "cat6-cable",
     "name": {
       "en": "CAT6A S/FTP LAN Cable, 305 m Box",
       "ar": "كابل شبكة CAT6A مُدرَّع (S/FTP) — صندوق 305 متر"
@@ -258,12 +258,16 @@
         }
       }
     ],
-    "images": [],
-    "ogImage": "/og-default.png",
-    "datasheet": {
-      "url": "/datasheets/LXC6ASFPVG305.pdf",
-      "bytes": 168188
-    },
+    "images": [
+      "/products/photos/cat6-cable-01.webp",
+      "/products/photos/cat6-cable-02.webp",
+      "/products/photos/cat6-cable-03.webp",
+      "/products/photos/cat6-cable-04.webp",
+      "/products/photos/cat6-cable-05.webp",
+      "/products/photos/cat6-cable-06.webp",
+      "/products/photos/cat6-cable-07.webp"
+    ],
+    "ogImage": "/products/photos/cat6-cable-og.jpg",
     "raw": "Logx CAT6A S/FTP LAN CABLE(305M) COPPER CABLE 0.54MM, CATEGORY 6A, 4 PAIR, S/FTP,"
   },
   {
@@ -357,10 +361,6 @@
       "/products/photos/patch-cord-cat6a-03.webp"
     ],
     "ogImage": "/products/photos/patch-cord-cat6a-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPC6AUUPVG0.5.pdf",
-      "bytes": 278471
-    },
     "raw": "Logx 0.5M CAT6a UTP, Stranded 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test"
   },
   {
@@ -454,10 +454,6 @@
       "/products/photos/patch-cord-cat6a-03.webp"
     ],
     "ogImage": "/products/photos/patch-cord-cat6a-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPC6AUUPVG1.pdf",
-      "bytes": 278453
-    },
     "raw": "Logx 1M CAT6a UTP, Stranded 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test"
   },
   {
@@ -551,10 +547,6 @@
       "/products/photos/patch-cord-cat6a-03.webp"
     ],
     "ogImage": "/products/photos/patch-cord-cat6a-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPC6AUUPVG3.pdf",
-      "bytes": 278457
-    },
     "raw": "Logx 3M CAT6a UTP, Stranded 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test"
   },
   {
@@ -648,10 +640,6 @@
       "/products/photos/patch-cord-cat6a-03.webp"
     ],
     "ogImage": "/products/photos/patch-cord-cat6a-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPC6AUUPVG5.pdf",
-      "bytes": 278456
-    },
     "raw": "Logx 5M CAT6a UTP, Stranded 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test"
   },
   {
@@ -745,10 +733,6 @@
       "/products/photos/patch-cord-cat6a-03.webp"
     ],
     "ogImage": "/products/photos/patch-cord-cat6a-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPC6AUUPVG10.pdf",
-      "bytes": 278464
-    },
     "raw": "Logx 10M CAT6a UTP, Stranded 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test"
   },
   {
@@ -842,10 +826,6 @@
       "/products/photos/patch-cord-cat6-short-03.webp"
     ],
     "ogImage": "/products/photos/patch-cord-cat6-short-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPC6UUPVG0.25.pdf",
-      "bytes": 279301
-    },
     "raw": "Logx 0.25M cat6, UTP, 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test"
   },
   {
@@ -939,10 +919,6 @@
       "/products/photos/patch-cord-cat6-half-03.webp"
     ],
     "ogImage": "/products/photos/patch-cord-cat6-half-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPC6UUPVG0.5.pdf",
-      "bytes": 279297
-    },
     "raw": "Logx 0.5M cat6, UTP, 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test"
   },
   {
@@ -1036,10 +1012,6 @@
       "/products/photos/patch-cord-cat6-1m-03.webp"
     ],
     "ogImage": "/products/photos/patch-cord-cat6-1m-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPC6UUPVG1.pdf",
-      "bytes": 279269
-    },
     "raw": "Logx 1M cat6, UTP, 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test"
   },
   {
@@ -1133,10 +1105,6 @@
       "/products/photos/patch-cord-cat6-long-03.webp"
     ],
     "ogImage": "/products/photos/patch-cord-cat6-long-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPC6UUPVG3.pdf",
-      "bytes": 279276
-    },
     "raw": "Logx 3M cat6, UTP, 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test"
   },
   {
@@ -1230,10 +1198,6 @@
       "/products/photos/patch-cord-cat6-long-03.webp"
     ],
     "ogImage": "/products/photos/patch-cord-cat6-long-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPC6UUPVG5.pdf",
-      "bytes": 279274
-    },
     "raw": "Logx 5M cat6, UTP,4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test"
   },
   {
@@ -1327,10 +1291,6 @@
       "/products/photos/patch-cord-cat6-long-03.webp"
     ],
     "ogImage": "/products/photos/patch-cord-cat6-long-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPC6UUPVG10.pdf",
-      "bytes": 279288
-    },
     "raw": "Logx 10M cat6, UTP, 4PX28AWG+cross+PVC+RJ45, gold plated pins, pass fluke test"
   },
   {
@@ -1415,17 +1375,13 @@
       "/products/photos/faceplate-04.webp"
     ],
     "ogImage": "/products/photos/faceplate-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXA10.pdf",
-      "bytes": 289196
-    },
     "raw": "Logx F1007 1 Port Glossy Faceplate"
   },
   {
     "slug": "86-type-faceplate-2-port-lxa20",
     "partNumber": "LXA20",
     "category": "accessories",
-    "family": "faceplate",
+    "family": "faceplate-2-port",
     "name": {
       "en": "86 Type Faceplate, 2 Port",
       "ar": "وجهة تركيب قياس 86 — منفذان"
@@ -1500,10 +1456,6 @@
       "/products/photos/faceplate-2-port-01.webp"
     ],
     "ogImage": "/products/photos/faceplate-2-port-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXA20.pdf",
-      "bytes": 289210
-    },
     "raw": "Logx F1007 2 Ports Glossy Faceplate"
   },
   {
@@ -1590,10 +1542,6 @@
       "/products/photos/keystone-cat6-06.webp"
     ],
     "ogImage": "/products/photos/keystone-cat6-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXCJ6UFT.pdf",
-      "bytes": 977054
-    },
     "raw": "Logx K1014 UTP Cat6 Keystone Jack 180 Degree Toolless"
   },
   {
@@ -1678,10 +1626,6 @@
       "/products/photos/keystone-cat6a-04.webp"
     ],
     "ogImage": "/products/photos/keystone-cat6a-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXCJ6AUFT.pdf",
-      "bytes": 977061
-    },
     "raw": "Logx K1014 UTP Cat6A Keystone Jack 180 Degree Toolless"
   },
   {
@@ -1767,10 +1711,6 @@
       "/products/photos/cable-manager-1u-05.webp"
     ],
     "ogImage": "/products/photos/cable-manager-1u-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXCPCMNM1.pdf",
-      "bytes": 238475
-    },
     "raw": "Logx 1U 24 Metal Cable Manager"
   },
   {
@@ -1855,10 +1795,6 @@
       "/products/photos/cable-manager-2u-04.webp"
     ],
     "ogImage": "/products/photos/cable-manager-2u-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXCPCMNM2.pdf",
-      "bytes": 238745
-    },
     "raw": "Logx 2U 48 Metal Cable Manager"
   },
   {
@@ -1944,10 +1880,6 @@
       "/products/photos/patch-panel-24-05.webp"
     ],
     "ogImage": "/products/photos/patch-panel-24-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPP6U2410.pdf",
-      "bytes": 227038
-    },
     "raw": "Logx P1224 UTP 24 Ports Patch Panel Blank"
   },
   {
@@ -2033,10 +1965,6 @@
       "/products/photos/patch-panel-48-05.webp"
     ],
     "ogImage": "/products/photos/patch-panel-48-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXPP6U4820.pdf",
-      "bytes": 227034
-    },
     "raw": "Logx P1248 UTP 48 Ports Patch Panel Blank"
   },
   {
@@ -2104,9 +2032,12 @@
         }
       }
     ],
-    "images": [],
-    "ogImage": "/og-default.png",
-    "datasheet": null,
+    "images": [
+      "/products/photos/rj45-plug-01.webp",
+      "/products/photos/rj45-plug-02.webp",
+      "/products/photos/rj45-plug-03.webp"
+    ],
+    "ogImage": "/products/photos/rj45-plug-og.jpg",
     "raw": "Logx Boot(blue, grey, yellow, green)"
   },
   {
@@ -2176,20 +2107,17 @@
     ],
     "images": [
       "/products/photos/rj45-plug-01.webp",
-      "/products/photos/rj45-plug-02.webp"
+      "/products/photos/rj45-plug-02.webp",
+      "/products/photos/rj45-plug-03.webp"
     ],
     "ogImage": "/products/photos/rj45-plug-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXCPUTC6.pdf",
-      "bytes": 564859
-    },
     "raw": "Logx S0088 8P8C UTP RJ45 Plug (3U)"
   },
   {
     "slug": "8p8c-ftp-shielded-rj45-plug-lxcpstc6a",
     "partNumber": "LXCPSTC6A",
     "category": "accessories",
-    "family": "rj45-plug",
+    "family": "rj45-plug-shielded",
     "name": {
       "en": "8P8C FTP Shielded RJ45 Plug",
       "ar": "قابس RJ45 معياري 8P8C مُدرَّع"
@@ -2250,12 +2178,10 @@
         }
       }
     ],
-    "images": [],
-    "ogImage": "/og-default.png",
-    "datasheet": {
-      "url": "/datasheets/LXCPSTC6A.pdf",
-      "bytes": 564946
-    },
+    "images": [
+      "/products/photos/rj45-plug-shielded-01.webp"
+    ],
+    "ogImage": "/products/photos/rj45-plug-shielded-og.jpg",
     "raw": "Logx S0288 8P8C FTP RJ45 Plug"
   },
   {
@@ -2340,10 +2266,6 @@
       "/products/photos/drop-fiber-4-04.webp"
     ],
     "ogImage": "/products/photos/drop-fiber-4-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFHN047ALS.pdf",
-      "bytes": 213782
-    },
     "raw": "Logx SM drop fiber cable, 4core . 3.0mm Cable with 2 FRP A1 fiber(1000M)"
   },
   {
@@ -2428,10 +2350,6 @@
       "/products/photos/drop-fiber-8-04.webp"
     ],
     "ogImage": "/products/photos/drop-fiber-8-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFHS087ALS.pdf",
-      "bytes": 213738
-    },
     "raw": "Logx SM drop fiber cable, 8core Light steel Armoured single tube Cable with 2 FRP. A1 fiber(1000M)"
   },
   {
@@ -2516,10 +2434,6 @@
       "/products/photos/drop-fiber-12-04.webp"
     ],
     "ogImage": "/products/photos/drop-fiber-12-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFHS127ALS.pdf",
-      "bytes": 213737
-    },
     "raw": "Logx SM drop fiber cable, 12 core Light steel Armoured single tube Cable with 2 FRP. A1 fiber(1000M)"
   },
   {
@@ -2604,10 +2518,6 @@
       "/products/photos/fiber-panel-12-04.webp"
     ],
     "ogImage": "/products/photos/fiber-panel-12-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFPRDLC12.pdf",
-      "bytes": 239751
-    },
     "raw": "Logx 12 Port Optic Fiber Patch Panel (universal for , LC duplex, loaded, SM,with rail and splice tray heatshrink holder, 1U)"
   },
   {
@@ -2693,17 +2603,13 @@
       "/products/photos/fiber-panel-24-05.webp"
     ],
     "ogImage": "/products/photos/fiber-panel-24-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFPRDLC24.pdf",
-      "bytes": 239749
-    },
     "raw": "Logx 24 Port Optic Fiber Patch Panel (universal for , LC duplex, loaded, SM,with rail and splice tray heatshrink holder, 1U)"
   },
   {
     "slug": "48-port-lc-duplex-fiber-patch-panel-2u-lxfprdlc48",
     "partNumber": "LXFPRDLC48",
     "category": "fiber",
-    "family": "fiber-panel-48",
+    "family": "fiber-panel-24",
     "name": {
       "en": "48 Port LC Duplex Fiber Patch Panel, 2U",
       "ar": "لوحة توصيل ألياف LC مزدوجة 48 منفذاً — 2U"
@@ -2774,12 +2680,14 @@
         }
       }
     ],
-    "images": [],
-    "ogImage": "/og-default.png",
-    "datasheet": {
-      "url": "/datasheets/LXFPRDLC48.pdf",
-      "bytes": 239749
-    },
+    "images": [
+      "/products/photos/fiber-panel-24-01.webp",
+      "/products/photos/fiber-panel-24-02.webp",
+      "/products/photos/fiber-panel-24-03.webp",
+      "/products/photos/fiber-panel-24-04.webp",
+      "/products/photos/fiber-panel-24-05.webp"
+    ],
+    "ogImage": "/products/photos/fiber-panel-24-og.jpg",
     "raw": "Logx 48 Port Optic Fiber Patch Panel (universal for LC duplex, loaded, SM,with rail and splice tray heatshrink holder, 2U)"
   },
   {
@@ -2862,10 +2770,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS201.pdf",
-      "bytes": 1023711
-    },
     "raw": "Logx 1M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -2948,10 +2852,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS203.pdf",
-      "bytes": 1023701
-    },
     "raw": "Logx 3M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3034,10 +2934,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS205.pdf",
-      "bytes": 1023704
-    },
     "raw": "Logx 5M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3120,10 +3016,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS210.pdf",
-      "bytes": 1023722
-    },
     "raw": "Logx 10M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3206,10 +3098,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS215.pdf",
-      "bytes": 1023721
-    },
     "raw": "Logx 15M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3292,10 +3180,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS220.pdf",
-      "bytes": 1023708
-    },
     "raw": "Logx 20M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3378,10 +3262,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS225.pdf",
-      "bytes": 1023708
-    },
     "raw": "Logx 25M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3464,10 +3344,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS230.pdf",
-      "bytes": 1023712
-    },
     "raw": "Logx 30M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3550,10 +3426,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS240.pdf",
-      "bytes": 1023718
-    },
     "raw": "Logx 40M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3636,10 +3508,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS250.pdf",
-      "bytes": 1023717
-    },
     "raw": "Logx 50M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3722,10 +3590,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS270.pdf",
-      "bytes": 1023718
-    },
     "raw": "Logx 70M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3808,10 +3672,6 @@
       "/products/photos/fiber-cord-sm-02.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS2100.pdf",
-      "bytes": 1023724
-    },
     "raw": "Logx 100M LC-LC-UPC SM,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3897,10 +3757,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS301.pdf",
-      "bytes": 1023599
-    },
     "raw": "Logx 1M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -3986,10 +3842,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS303.pdf",
-      "bytes": 1023589
-    },
     "raw": "Logx 3M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -4075,10 +3927,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS305.pdf",
-      "bytes": 1023593
-    },
     "raw": "Logx 5M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -4164,10 +4012,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS310.pdf",
-      "bytes": 1023601
-    },
     "raw": "Logx 10M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -4253,10 +4097,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS315.pdf",
-      "bytes": 1023605
-    },
     "raw": "Logx 15M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -4342,10 +4182,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS320.pdf",
-      "bytes": 1023594
-    },
     "raw": "Logx 20M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -4431,10 +4267,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS325.pdf",
-      "bytes": 1023596
-    },
     "raw": "Logx 25M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -4520,10 +4352,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS330.pdf",
-      "bytes": 1023596
-    },
     "raw": "Logx 30M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -4609,10 +4437,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS340.pdf",
-      "bytes": 1023599
-    },
     "raw": "Logx 40M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -4698,10 +4522,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS350.pdf",
-      "bytes": 1023603
-    },
     "raw": "Logx 50M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -4787,10 +4607,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS370.pdf",
-      "bytes": 1023603
-    },
     "raw": "Logx 70M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -4876,10 +4692,6 @@
       "/products/photos/fiber-cord-om3-05.webp"
     ],
     "ogImage": "/products/photos/fiber-cord-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFCLCLCDUS3100.pdf",
-      "bytes": 1023610
-    },
     "raw": "Logx 100M LC-LC-UPC OM3,Douplex 2.0 Fiber Optic Patch Cord,PVC"
   },
   {
@@ -4963,10 +4775,6 @@
       "/products/photos/pigtail-sm-03.webp"
     ],
     "ogImage": "/products/photos/pigtail-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFTLCSUS21.5.pdf",
-      "bytes": 912894
-    },
     "raw": "Logx 1.5M 0.9 PIGTIAL LC/UPC SM Simplex,PVC"
   },
   {
@@ -5050,10 +4858,6 @@
       "/products/photos/pigtail-sm-03.webp"
     ],
     "ogImage": "/products/photos/pigtail-sm-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFTLCSUS22.pdf",
-      "bytes": 912884
-    },
     "raw": "Logx 2M 0.9 PIGTIAL LC/UPC SM Simplex,PVC"
   },
   {
@@ -5137,10 +4941,6 @@
       "/products/photos/pigtail-om3-03.webp"
     ],
     "ogImage": "/products/photos/pigtail-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFTLCSUM31.5.pdf",
-      "bytes": 912911
-    },
     "raw": "Logx 1.5M 0.9 PIGTIAL LC/UPC OM3 Simplex,PVC"
   },
   {
@@ -5224,10 +5024,6 @@
       "/products/photos/pigtail-om3-03.webp"
     ],
     "ogImage": "/products/photos/pigtail-om3-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFTLCSUM32.pdf",
-      "bytes": 912901
-    },
     "raw": "Logx 2M 0.9 PIGTIAL LC/UPC OM3 Simplex,PVC"
   },
   {
@@ -5290,10 +5086,6 @@
       "/products/photos/tools-bag-02.webp"
     ],
     "ogImage": "/products/photos/tools-bag-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/BT-Tools.pdf",
-      "bytes": 857059
-    },
     "raw": "Logx Tools bag"
   },
   {
@@ -5365,10 +5157,6 @@
       "/products/photos/media-converter-01.webp"
     ],
     "ogImage": "/products/photos/media-converter-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LGX-MC1000GSFP.pdf",
-      "bytes": 888556
-    },
     "raw": "Logx SFP port 1G Media converter"
   },
   {
@@ -5436,12 +5224,10 @@
         }
       }
     ],
-    "images": [],
-    "ogImage": "/og-default.png",
-    "datasheet": {
-      "url": "/datasheets/LGX-MC10GSFP-plus.pdf",
-      "bytes": 888708
-    },
+    "images": [
+      "/products/photos/media-converter-01.webp"
+    ],
+    "ogImage": "/products/photos/media-converter-og.jpg",
     "raw": "Logx SFP port 10G Media converter"
   },
   {
@@ -5513,10 +5299,6 @@
       "/products/photos/terminal-box-4-01.webp"
     ],
     "ogImage": "/products/photos/terminal-box-4-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFTBLC04.pdf",
-      "bytes": 1165786
-    },
     "raw": "LOGX 4 PORT LC SINGLE MODE DUPLEX LOADED FIBER OPTIC TERMINAL BOX"
   },
   {
@@ -5588,10 +5370,6 @@
       "/products/photos/terminal-box-8-01.webp"
     ],
     "ogImage": "/products/photos/terminal-box-8-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LXFTBLC08.pdf",
-      "bytes": 1165794
-    },
     "raw": "LOGX 8 PORT LC SINGLE MODE DUPLEX LOADED FIBER OPTIC TERMINAL BOX"
   },
   {
@@ -5664,10 +5442,6 @@
       "/products/photos/pdu-02.webp"
     ],
     "ogImage": "/products/photos/pdu-og.jpg",
-    "datasheet": {
-      "url": "/datasheets/LGX-PDU6-UK.pdf",
-      "bytes": 679174
-    },
     "raw": "LOGX Way UK Socket Power Distribution Unit with Power Cable"
   }
 ]

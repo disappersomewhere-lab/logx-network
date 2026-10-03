@@ -1,4 +1,4 @@
-import {getTranslations} from 'next-intl/server';
+import {getTranslations, setRequestLocale} from 'next-intl/server';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import CatalogBrowser from '@/components/CatalogBrowser';
@@ -22,8 +22,9 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
 
 export default async function ProductsPage({params, searchParams}: Props) {
   const {locale} = await params;
+  setRequestLocale(locale);
   const {category} = await searchParams;
-  const t = await getTranslations();
+  const t = await getTranslations({locale});
 
   return (
     <div>
@@ -34,9 +35,14 @@ export default async function ProductsPage({params, searchParams}: Props) {
         </div>
         <div>
           <p>{t('catalog.description')}</p>
-          <Link href={`/${locale}/datasheets`} className="text-link">
-            {t('datasheet.indexTitle')} ↗
-          </Link>
+          <div style={{display: 'flex', flexWrap: 'wrap', gap: '16px', marginTop: '8px'}}>
+            <Link href={`/${locale}/datasheets`} className="text-link">
+              {t('datasheet.indexTitle')} ↗
+            </Link>
+            <Link href={`/${locale}/datasheets#master-sheet`} className="text-link">
+              {t('masterSheet.title')} ↗
+            </Link>
+          </div>
         </div>
       </div>
 

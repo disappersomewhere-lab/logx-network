@@ -1,33 +1,27 @@
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import type {Metadata} from 'next';
-import Link from 'next/link';
+import type {CSSProperties, ReactNode} from 'react';
 import Image from 'next/image';
 import Logo from '@/components/Logo';
-import PrintButton from '@/components/PrintButton';
-import {catalog, countByCategory, type Locale} from '@/lib/catalog';
-import {alternatesFor, contact, mailto, offices} from '@/lib/site';
-import {companyProfileFor} from '@/lib/company-profile';
-import {formatBytes} from '@/lib/format';
+import ProfileDeck from '@/components/ProfileDeck';
+import ProfileIcon from '@/components/ProfileIcons';
+import type {Locale} from '@/lib/catalog';
+import {alternatesFor, contact, mailto, offices, productionUrl} from '@/lib/site';
+import {companyProfilesFor} from '@/lib/company-profile';
+import {chunk, deckCategories, deckCopy, deckLocations, productCardsFor} from '@/lib/profile-deck';
 import {locales} from '@/i18n';
+import './profile.css';
 
 type Props = {
   params: Promise<{locale: string}>;
 };
 
-// One representative shot per category — the same editorial picks the home
-// page uses, so the profile stays visually consistent with the site.
-const CATEGORY_SHOTS = {
-  copper: '/products/photos/patch-cord-cat6-long-01.webp',
-  fiber: '/products/photos/fiber-cord-om3-01.webp',
-  accessories: '/products/photos/patch-panel-24-01.webp'
+/** Accent per category, as in the reference decks' category slides. */
+const CATEGORY_ACCENT = {
+  fiber: '#ef9b1f',
+  copper: '#1d8fe1',
+  accessories: '#9a8443'
 } as const;
-
-const GALLERY = [
-  '/products/photos/fiber-panel-24-01.webp',
-  '/products/photos/patch-panel-48-01.webp',
-  '/products/photos/keystone-cat6a-01.webp',
-  '/products/photos/brand-packaging-01.webp'
-];
 
 export function generateStaticParams() {
   return locales.map((locale) => ({locale}));
@@ -38,9 +32,46 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   const t = await getTranslations({locale});
   return {
     title: t('companyProfile.nav'),
-    description: t('companyProfile.cover.subtitle'),
+    description: t('companyProfile.description'),
     alternates: alternatesFor(locale, '/company-profile')
   };
+}
+
+/** Both artworks; the theme's stylesheet shows the one that suits its ground. */
+function DeckLogo({size}: {size: string}) {
+  return (
+    <span className="pf-logo">
+      <Logo size={size} className="pf-logo-ink" />
+      <Logo size={size} tone="light" className="pf-logo-light" />
+    </span>
+  );
+}
+
+type SlideProps = {
+  kind: string;
+  /** Page number in the folio; the cover, welcome and contact slides have none. */
+  number?: number;
+  className?: string;
+  style?: CSSProperties;
+  children: ReactNode;
+};
+
+function Slide({kind, number, className = '', style, children}: SlideProps) {
+  return (
+    <section className={`pf-slide pf-s-${kind} ${className}`.trim()} style={style}>
+      {/* Theme artwork: halftone ribbon, network lattice, or photo and slashes. */}
+      <div className="pf-art" aria-hidden="true" />
+      <div className="pf-photo" aria-hidden="true" />
+      <div className="pf-body">{children}</div>
+      {number ? (
+        <footer className="pf-folio" data-side={number % 2 ? 'start' : 'end'}>
+          <span className="pf-folio-number">{String(number).padStart(2, '0')}</span>
+          <span className="pf-folio-rule" />
+          <DeckLogo size="0.9em" />
+        </footer>
+      ) : null}
+    </section>
+  );
 }
 
 export default async function CompanyProfilePage({params}: Props) {
@@ -49,235 +80,220 @@ export default async function CompanyProfilePage({params}: Props) {
 
   const t = await getTranslations();
   const language = locale as Locale;
-  const isRTL = locale === 'ar';
-  const pdf = companyProfileFor(language);
+  const copy = <K extends keyof typeof deckCopy>(key: K) =>
+    (deckCopy[key] as Record<Locale, string>)[language];
+
+  const phone = offices.find((office) => office.id === 'sa')?.phones?.[0];
+  const website = `www.${new URL(productionUrl).host}`;
+
+  // Folio numbers run on from About Us (01), as in the reference.
+  let page = 0;
+  const next = () => ++page;
 
   return (
-    <div className="cp-page">
-      {/* Screen-only controls; the print stylesheet removes them. */}
-      <div className="cp-toolbar">
-        <Link href={`/${locale}/about`} className="back-link">
-          <span className="arrow" aria-hidden="true">
-            ←
-          </span>
-          {t('companyProfile.back')}
-        </Link>
-        <div className="cp-toolbar-actions">
-          <PrintButton label={t('companyProfile.print')} />
-          {pdf ? (
-            <a href={pdf.url} className="button button-primary" download>
-              <span className="pdf-badge" aria-hidden="true">
-                PDF
-              </span>
-              {t('companyProfile.download')}
-              <small className="ds-size">{formatBytes(pdf.bytes, language)}</small>
-            </a>
-          ) : null}
+    <ProfileDeck
+      locale={language}
+      pdfs={companyProfilesFor(language)}
+      labels={{
+        back: t('companyProfile.back'),
+        theme: t('companyProfile.theme.label'),
+        themes: {
+          dark: t('companyProfile.theme.dark'),
+          wave: t('companyProfile.theme.wave'),
+          mesh: t('companyProfile.theme.mesh')
+        },
+        print: t('companyProfile.print'),
+        download: t('companyProfile.download')
+      }}
+    >
+      {/* ------------------------------------------------------------- cover */}
+      <Slide kind="cover">
+        <div className="pf-cover-mark">
+          <DeckLogo size="5.6em" />
+          <h1 className="pf-cover-title">{copy('coverTitle')}</h1>
+          <p className="pf-cover-year">{new Date().getFullYear()}</p>
         </div>
-      </div>
+      </Slide>
 
-      <article className="cp-doc" lang={locale} dir={isRTL ? 'rtl' : 'ltr'}>
-        {/* ---------------------------------------------------------- cover */}
-        <section className="cp-sheet cp-cover">
-          <div className="cp-cover-photo">
-            <Image
-              src={CATEGORY_SHOTS.fiber}
-              alt=""
-              fill
-              sizes="210mm"
-              priority
-            />
-          </div>
-          <div className="cp-cover-brand">
-            <Logo size="1.7rem" />
-          </div>
-          <div className="cp-cover-body">
-            <p className="cp-cover-eyebrow">{t('companyProfile.cover.eyebrow')}</p>
-            <h1>{t('companyProfile.cover.title')}</h1>
-            <p className="cp-cover-tagline">{t('companyProfile.cover.tagline')}</p>
-            <p className="cp-cover-subtitle">{t('companyProfile.cover.subtitle')}</p>
-          </div>
-        </section>
+      {/* ----------------------------------------------------------- welcome */}
+      <Slide kind="welcome">
+        <h2 className="pf-welcome-word">{copy('welcome')}</h2>
+        <p className="pf-welcome-tagline">{copy('tagline')}</p>
+      </Slide>
 
-        {/* ------------------------------------------------ about / mission */}
-        <section className="cp-sheet">
-          <header className="cp-sheet-head">
-            <Logo size="1.3rem" />
-            <small>{t('companyProfile.docType')}</small>
-          </header>
-
-          <div>
-            <h2>{t('companyProfile.about.title')}</h2>
-            <p className="cp-lede">{t('companyProfile.about.body1')}</p>
-            <p style={{marginTop: '8pt'}}>{t('companyProfile.about.body2')}</p>
-          </div>
-
-          <div className="cp-block">
-            <h2>{t('companyProfile.mission.title')}</h2>
-            <div className="cp-columns">
-              <div className="cp-callout">
-                <p className="cp-callout-label">{t('companyProfile.mission.visionLabel')}</p>
-                <p>{t('companyProfile.mission.vision')}</p>
-              </div>
-              <div className="cp-callout">
-                <p className="cp-callout-label">{t('companyProfile.mission.missionLabel')}</p>
-                <p>{t('companyProfile.mission.mission')}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="cp-block">
-            <h2>{t('companyProfile.why.title')}</h2>
-            <div className="cp-columns">
-              <div className="cp-points">
-                <div>
-                  <strong>{t('companyProfile.why.point1Title')}</strong>
-                  <p>{t('companyProfile.why.point1')}</p>
-                </div>
-                <div>
-                  <strong>{t('companyProfile.why.point2Title')}</strong>
-                  <p>{t('companyProfile.why.point2')}</p>
-                </div>
-                <div>
-                  <strong>{t('companyProfile.why.point3Title')}</strong>
-                  <p>{t('companyProfile.why.point3')}</p>
-                </div>
-              </div>
-              <div>
-                <p style={{marginBottom: '6pt'}}>{t('companyProfile.compliance.intro')}</p>
-                <ul className="cp-checks">
-                  <li>{t('companyProfile.compliance.item1')}</li>
-                  <li>{t('companyProfile.compliance.item2')}</li>
-                  <li>{t('companyProfile.compliance.item3')}</li>
-                  <li>{t('companyProfile.compliance.item4')}</li>
-                  <li>{t('companyProfile.compliance.item5')}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <footer className="cp-foot">
-            <span>© LOGX NETWORK</span>
-            <span>{t('companyProfile.footNote')}</span>
-          </footer>
-        </section>
-
-        {/* ------------------------------------------------- product range */}
-        <section className="cp-sheet">
-          <header className="cp-sheet-head">
-            <Logo size="1.3rem" />
-            <small>{t('companyProfile.docType')}</small>
-          </header>
-
-          <div>
-            <h2>{t('companyProfile.range.title')}</h2>
-            <p className="cp-lede">{t('companyProfile.range.intro')}</p>
-          </div>
-
-          <div className="cp-range-grid">
-            <div className="cp-range-card">
-              <div className="cp-range-photo">
-                <Image src={CATEGORY_SHOTS.copper} alt="" fill sizes="210mm" />
-              </div>
-              <div className="cp-range-card-body">
-                <h3>{t('companyProfile.range.copperTitle')}</h3>
-                <p>{t('companyProfile.range.copperBody')}</p>
-                <span className="cp-range-count">
-                  {countByCategory('copper')} {t('catalog.items')}
-                </span>
-              </div>
-            </div>
-
-            <div className="cp-range-card">
-              <div className="cp-range-photo">
-                <Image src={CATEGORY_SHOTS.fiber} alt="" fill sizes="210mm" />
-              </div>
-              <div className="cp-range-card-body">
-                <h3>{t('companyProfile.range.fiberTitle')}</h3>
-                <p>{t('companyProfile.range.fiberBody')}</p>
-                <span className="cp-range-count">
-                  {countByCategory('fiber')} {t('catalog.items')}
-                </span>
-              </div>
-            </div>
-
-            <div className="cp-range-card">
-              <div className="cp-range-photo">
-                <Image src={CATEGORY_SHOTS.accessories} alt="" fill sizes="210mm" />
-              </div>
-              <div className="cp-range-card-body">
-                <h3>{t('companyProfile.range.accessoriesTitle')}</h3>
-                <p>{t('companyProfile.range.accessoriesBody')}</p>
-                <span className="cp-range-count">
-                  {countByCategory('accessories')} {t('catalog.items')}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="cp-gallery">
-            {GALLERY.map((src) => (
-              <figure key={src}>
-                <Image src={src} alt="" fill sizes="120mm" />
-              </figure>
-            ))}
-          </div>
-
-          <footer className="cp-foot">
-            <span>© LOGX NETWORK</span>
-            <span>
-              {catalog.length} {t('home.stats.parts')}
+      {/* ---------------------------------------------------------- about us */}
+      <Slide kind="about" number={next()}>
+        <h2 className="pf-title">{copy('aboutTitle')}</h2>
+        <p className="pf-about-body">
+          <DeckLogo size="1.9em" /> {copy('aboutBody')}
+        </p>
+        <ul className="pf-hallmarks">
+          <li>
+            <span className="pf-badge">
+              <ProfileIcon name="reliable" />
             </span>
-          </footer>
-        </section>
+            {copy('hallmarkReliable')}
+          </li>
+          <li>
+            <span className="pf-badge">
+              <ProfileIcon name="eco" />
+            </span>
+            {copy('hallmarkEco')}
+          </li>
+        </ul>
+      </Slide>
 
-        {/* ------------------------------------------------------- contact */}
-        <section className="cp-sheet">
-          <header className="cp-sheet-head">
-            <Logo size="1.3rem" />
-            <small>{t('companyProfile.docType')}</small>
-          </header>
-
-          <div>
-            <h2>{t('companyProfile.contactSection.title')}</h2>
-            <p className="cp-lede">{t('companyProfile.contactSection.body')}</p>
+      {/* ------------------------------------------------ mission & commitment */}
+      <Slide kind="mission" number={next()}>
+        <div className="pf-pillars">
+          <div className="pf-pillar">
+            <h3 className="pf-pill">{copy('missionTitle')}</h3>
+            <p>{copy('missionBody')}</p>
           </div>
+          <div className="pf-pillar pf-pillar-alt">
+            <h3 className="pf-pill">{copy('commitmentTitle')}</h3>
+            <p>{copy('commitmentBody')}</p>
+          </div>
+        </div>
+      </Slide>
 
-          <div className="cp-offices">
-            {offices.map((office) => (
-              <div className="cp-office" key={office.id}>
-                <p className="cp-office-role">{t(`contact.offices.${office.id}.role`)}</p>
-                <h3>{office.name}</h3>
-                <address>
-                  {office.addressLines.map((line) => (
-                    <span key={line}>
-                      {line}
-                      <br />
+      {/* -------------------------------------------------------- why choose */}
+      <Slide kind="why" number={next()}>
+        <h2 className="pf-title">
+          {copy('whyTitle')} <DeckLogo size="1.15em" />
+        </h2>
+        <div className="pf-why">
+          {deckCopy.why.map((item) => (
+            <div className="pf-why-item" key={item.icon}>
+              <span className="pf-badge">
+                <ProfileIcon name={item.icon} />
+              </span>
+              <h3>{item.title[language]}</h3>
+              <p>{item.body[language]}</p>
+            </div>
+          ))}
+        </div>
+      </Slide>
+
+      {/* -------------------------------------------------------- categories */}
+      <Slide kind="categories" number={next()}>
+        <h2 className="pf-title">{copy('categoriesTitle')}</h2>
+        <div className="pf-categories">
+          {deckCategories.map((category) => (
+            <a
+              href={`/${locale}/products?category=${category.id}`}
+              className="pf-category"
+              key={category.id}
+              style={{'--accent': CATEGORY_ACCENT[category.id]} as CSSProperties}
+            >
+              <span className="pf-category-thumb">
+                <Image src={category.thumb} alt="" fill sizes="240px" />
+              </span>
+              <h3>{category.title[language]}</h3>
+              <p>{category.summary[language]}</p>
+            </a>
+          ))}
+        </div>
+      </Slide>
+
+      {/* ----------------------------------- per category: intro + product list */}
+      {deckCategories.flatMap((category) => {
+        const accent = {'--accent': CATEGORY_ACCENT[category.id]} as CSSProperties;
+        const pages = chunk(productCardsFor(category.id, language));
+
+        return [
+          <Slide kind="intro" number={next()} style={accent} key={`${category.id}-intro`}>
+            <h2 className="pf-intro-title">{category.title[language]}</h2>
+            <p className="pf-intro-body">{category.intro[language]}</p>
+            <div className="pf-intro-photos">
+              {category.photos.map((src) => (
+                <span className="pf-intro-photo" key={src}>
+                  <Image src={src} alt="" fill sizes="(max-width: 760px) 90vw, 520px" />
+                </span>
+              ))}
+            </div>
+          </Slide>,
+          ...pages.map((cards, index) => (
+            <Slide kind="list" number={next()} style={accent} key={`${category.id}-list-${index}`}>
+              <h2 className="pf-title">
+                {copy('productListTitle')}
+                <small>
+                  {category.title[language]}
+                  {pages.length > 1 ? ` · ${index + 1}/${pages.length}` : ''}
+                </small>
+              </h2>
+              <div className="pf-products">
+                {cards.map((card) => (
+                  <a href={card.href} className="pf-product" key={card.key}>
+                    <span className="pf-product-name">{card.title}</span>
+                    <span className="pf-product-photo">
+                      <Image src={card.image} alt="" fill sizes="(max-width: 760px) 45vw, 240px" />
                     </span>
-                  ))}
-                </address>
-                <div className="cp-office-links">
-                  {office.phones?.map((phone) => <span key={phone}>{phone}</span>)}
-                  <span>{office.email}</span>
-                  <span>{office.website}</span>
-                </div>
+                    <span className="pf-product-details">
+                      {card.details.map((line) => (
+                        <span key={line}>{line}</span>
+                      ))}
+                    </span>
+                  </a>
+                ))}
               </div>
-            ))}
-          </div>
+            </Slide>
+          ))
+        ];
+      })}
 
-          <div className="cp-callout">
-            <p className="cp-callout-label">{t('companyProfile.contactSection.salesLabel')}</p>
-            <p style={{direction: 'ltr', textAlign: 'start'}}>
-              <a href={mailto()}>{contact.email}</a>
-            </p>
-          </div>
+      {/* --------------------------------------------------------- locations */}
+      <Slide kind="locations" number={next()}>
+        <h2 className="pf-title">{copy('locationsTitle')}</h2>
+        <div className="pf-map">
+          {/* eslint-disable-next-line @next/next/no-img-element -- a static SVG; next/image adds nothing */}
+          <img src="/profile/world-map.svg" alt="" />
+          {deckLocations.map((place) => (
+            <div
+              className="pf-pin"
+              data-pin={place.id}
+              key={place.id}
+              style={{insetInlineStart: `${locale === 'ar' ? 100 - place.x : place.x}%`, top: `${place.y}%`}}
+            >
+              <span className="pf-pin-dot" />
+              <span className="pf-pin-tag">
+                <span className="pf-pin-role">{place.role[language]}</span>
+                <strong>{place.place[language]}</strong>
+                <span>{place.company[language]}</span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </Slide>
 
-          <footer className="cp-foot" style={{marginTop: 'auto'}}>
-            <span>© LOGX NETWORK</span>
-            <span>{t('companyProfile.footNote')}</span>
-          </footer>
-        </section>
-      </article>
-    </div>
+      {/* ----------------------------------------------------------- contact */}
+      <Slide kind="contact">
+        <h2 className="pf-contact-title">
+          {copy('contactTitle')} <em>{copy('contactAccent')}</em>
+        </h2>
+        <ul className="pf-contact-lines">
+          {phone ? (
+            <li>
+              <ProfileIcon name="phone" />
+              <a href={`tel:${phone.replace(/\s+/g, '')}`} dir="ltr">
+                {phone}
+              </a>
+            </li>
+          ) : null}
+          <li>
+            <ProfileIcon name="mail" />
+            <a href={mailto()} dir="ltr">
+              {contact.email}
+            </a>
+          </li>
+          <li>
+            <ProfileIcon name="globe" />
+            <a href={productionUrl} dir="ltr">
+              {website}
+            </a>
+          </li>
+        </ul>
+      </Slide>
+    </ProfileDeck>
   );
 }

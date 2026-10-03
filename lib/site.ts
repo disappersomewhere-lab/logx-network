@@ -47,10 +47,14 @@ export type Office = {
   phones?: string[];
   email: string;
   website: string;
+  /** Google Maps embed URL for the office location */
+  mapUrl?: string;
+  /** Google Maps directions URL */
+  directionsUrl?: string;
 };
 
 /**
- * The two physical offices behind the site: the UK entity that owns the LOGX
+ * The physical offices behind the site: the UK entity that owns the LOGX
  * brand, and the Middle East distributor that carries its stock. Each
  * office's `role` label (head office / regional distributor) is localised in
  * the message catalogues under `contact.offices.<id>.role` rather than kept
@@ -60,17 +64,25 @@ export const offices: Office[] = [
   {
     id: 'uk',
     name: 'LOGX NETWORKS LTD.',
-    addressLines: ['71-75 Shelton Street', 'Covent Garden, London', 'United Kingdom'],
+    addressLines: ['71-75 Shelton Street', 'Covent Garden', 'London, WC2H 9JQ', 'United Kingdom'],
     email: 'hello@logxn.co.uk',
-    website: 'logxn.co.uk'
+    website: 'logxn.co.uk',
+    mapUrl:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.7876!2d-0.12388!3d51.51474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d1f9e2e85f%3A0x4a03b7e16c476f1a!2s71-75%20Shelton%20St%2C%20London%20WC2H%209JQ!5e0!3m2!1sen!2suk!4v1696000000000!5m2!1sen!2suk',
+    directionsUrl:
+      'https://maps.google.com/?q=71-75+Shelton+Street,+Covent+Garden,+London,+WC2H+9JQ,+United+Kingdom'
   },
   {
     id: 'sa',
     name: 'Networks Sea Company',
-    addressLines: ['Olaya', 'Riyadh, Saudi Arabia'],
+    addressLines: ['Prince Muhammad Ibn Abd Al Aziz Rd', 'Olaya District', 'Riyadh 12214', 'Saudi Arabia'],
     phones: ['+966 11 217 0269', '+966 53 990 9932'],
     email: 'sales@nsea.com.sa',
-    website: 'nsea.com.sa'
+    website: 'nsea.com.sa',
+    mapUrl:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.2!2d46.67!3d24.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sOlaya%2C%20Riyadh%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1696000000000!5m2!1sen!2ssa',
+    directionsUrl:
+      'https://maps.google.com/?q=Olaya+District,+Riyadh,+Saudi+Arabia'
   }
 ];
 

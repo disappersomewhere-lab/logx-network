@@ -48,6 +48,7 @@ next-env.d.ts
 # reference company-profile brochures from other companies, used as design
 # inspiration for the /company-profile page — not site content
 /logx profile examples/
+/LogX profile example/
 /docs/logx profile examples/
 
 # editor state

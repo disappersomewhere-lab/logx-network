@@ -253,12 +253,22 @@
   ],
   "rj45-plug": [
     {
-      "source": "٢٠٢٥٠٣٠٢_٢٣٤٥٥٨.jpg",
+      "source": "rj45-utp-plug-bag.jpg",
       "output": "/products/photos/rj45-plug-01.webp"
     },
     {
-      "source": "٢٠٢٥٠٣٠٢_٢٣٤٦١١_1.jpg",
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٥٥٨.jpg",
       "output": "/products/photos/rj45-plug-02.webp"
+    },
+    {
+      "source": "٢٠٢٥٠٣٠٢_٢٣٤٦١١_1.jpg",
+      "output": "/products/photos/rj45-plug-03.webp"
+    }
+  ],
+  "rj45-plug-shielded": [
+    {
+      "source": "LXCPSTC6A-rj45-stp-plug.jpg",
+      "output": "/products/photos/rj45-plug-shielded-01.webp"
     }
   ],
   "drop-fiber-4": [

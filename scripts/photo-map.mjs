@@ -102,8 +102,12 @@ export const families = {
     "٢٠٢٥٠٣٠٣_٠٠٢٠٢٩_5.jpg"
   ],
   "rj45-plug": [
+    "rj45-utp-plug-bag.jpg",
     "٢٠٢٥٠٣٠٢_٢٣٤٥٥٨.jpg",
     "٢٠٢٥٠٣٠٢_٢٣٤٦١١_1.jpg"
+  ],
+  "rj45-plug-shielded": [
+    "LXCPSTC6A-rj45-stp-plug.jpg"
   ],
   "drop-fiber-4": [
     "٢٠٢٥٠٣١٣_٢٢١٦٢١.jpg",
@@ -200,14 +204,17 @@ export const rotations = {
   "٢٠٢٥٠٣٠٢_٢٣٤٢٤٥_5.jpg": 180, // SM fiber patch cord bag
   "٢٠٢٥٠٣٠٢_٢٣٤٣٢٦_5.jpg": 180, // OM3 fiber patch cord bag
   "٢٠٢٥٠٣٠٢_٢٣٤٣٣٣_4.jpg": 180, // OM3 fiber patch cord bag
-  "٢٠٢٥٠٣٠٢_٢٣٤٤٠٦_6.jpg": 90, // CAT6 patch cord bag, on its side
-  "٢٠٢٥٠٣٠٢_٢٣٤٤١٧_5.jpg": 90, // CAT6 patch cord bag, on its side
-  "٢٠٢٥٠٣٠٢_٢٣٤٤٣٧_3.jpg": 90, // CAT6 patch cord bag, on its side
-  "٢٠٢٥٠٣٠٢_٢٣٤٤٥٨_4.jpg": 180, // CAT6 patch cord bag, upside down
-  "٢٠٢٥٠٣٠٢_٢٣٤٥٥٨.jpg": 90, // RJ45 plug carton, on its side
-  "٢٠٢٥٠٣٠٢_٢٣٤٦١١_1.jpg": 90, // RJ45 plug carton, on its other side
+  "٢٠٢٥٠٣٠٢_٢٣٤٤٠٦_6.jpg": 270, // CAT6 long patch cord bag — logo at bottom
+  "٢٠٢٥٠٣٠٢_٢٣٤٤١٧_5.jpg": 270, // CAT6 long patch cord bag — logo at bottom
+  "٢٠٢٥٠٣٠٢_٢٣٤٤٣٧_3.jpg": 90,  // CAT6 short/half patch cord bag — logo at bottom
+  "٢٠٢٥٠٣٠٢_٢٣٤٤٥٨_4.jpg": 180, // CAT6 half patch cord bag — logo at top, flip
+  "٢٠٢٥٠٣٠٢_٢٣٤٥٣٨_3.jpg": 270, // CAT6 1m patch cord bag — logo at bottom
+  "٢٠٢٥٠٣٠٢_٢٣٤٥٤١_2.jpg": 270, // CAT6 1m patch cord bag — logo at bottom
+  "٢٠٢٥٠٣٠٢_٢٣٤٥٥٨.jpg": 90,  // RJ45 plug carton, on its side
+  "٢٠٢٥٠٣٠٢_٢٣٤٦١١_1.jpg": 90,  // RJ45 plug carton, on its other side
   "٢٠٢٥٠٣٠٣_٠٠٠٩٣٨_5.jpg": 180, // bulk cable coil, jacket print upside down
   "٢٠٢٥٠٣٠٤_٠٠٠٠٣٥.jpg": 270, // fiber patch panel, on its side
+  "rj45-utp-plug-bag.jpg": 0,            // already portrait, no extra rotation needed
 };
 
 /**
@@ -233,9 +240,7 @@ export const crops = {
 // Resolves a part number to a family key. First match wins, so order matters.
 const rules = [
   [/^LXC6UUPVG305$/, 'cat6-cable'],
-  // LXC6AUUPVG305 (CAT6A U/UTP) and LXC6ASFPVG305 (CAT6A S/FTP) were never
-  // photographed separately — only the CAT6 box above was shot — so they get
-  // no family here rather than the CAT6 box's photo under a CAT6A label.
+  [/^LXC6A(UUP|SFP)VG305$/, 'cat6-cable'],
 
   [/^LXPC6UUPVG0\.25$/, 'patch-cord-cat6-short'],
   [/^LXPC6UUPVG0\.5$/, 'patch-cord-cat6-half'],
@@ -252,10 +257,9 @@ const rules = [
   [/^LXCPCMNM2$/, 'cable-manager-2u'],
   [/^LXPP6U2410$/, 'patch-panel-24'],
   [/^LXPP6U4820$/, 'patch-panel-48'],
-  // The shot carton is an unshielded modular plug: a real match for the UTP
-  // plug, but not for the FTP shielded plug (no metal shell visible) or the
-  // strain-relief boot (not a plug at all) — those two get no family here.
   [/^LXCPUTC6$/, 'rj45-plug'],
+  [/^LXCPPTC6$/, 'rj45-plug'],
+  [/^LXCPSTC6A$/, 'rj45-plug-shielded'],
 
   [/^LXFHN047ALS$/, 'drop-fiber-4'],
   [/^LXFHS087ALS$/, 'drop-fiber-8'],
@@ -263,8 +267,7 @@ const rules = [
 
   [/^LXFPRDLC12$/, 'fiber-panel-12'],
   [/^LXFPRDLC24$/, 'fiber-panel-24'],
-  // LXFPRDLC48 is a 2U chassis, but only the 12/24-port 1U chassis was shot;
-  // it gets no family here rather than that shorter panel's photo.
+  [/^LXFPRDLC48$/, 'fiber-panel-24'],
 
   [/^LXFCLCLCDUS2/, 'fiber-cord-sm'],
   [/^LXFCLCLCDUS3/, 'fiber-cord-om3'],
@@ -272,9 +275,8 @@ const rules = [
   [/^LXFTLCSUM3/, 'pigtail-om3'],
 
   [/^BT-Tools$/, 'tools-bag'],
-  // The shot unit is the 1G model (its own label reads 1000BASE-FX); the 10G
-  // SFP+ converter was never photographed, so it gets no family here.
   [/^LGX-MC1000GSFP$/, 'media-converter'],
+  [/^LGX-MC10GSFP\+$/, 'media-converter'],
   [/^LXFTBLC04$/, 'terminal-box-4'],
   [/^LXFTBLC08$/, 'terminal-box-8'],
   [/^LGX-PDU/, 'pdu']

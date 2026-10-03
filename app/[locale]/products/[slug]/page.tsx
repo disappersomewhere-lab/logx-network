@@ -15,12 +15,6 @@ type Props = {
   params: Promise<{locale: string; slug: string}>;
 };
 
-/**
- * The catalogue is fixed at build time, so a slug that was not generated is a
- * real 404 rather than a page to render on demand. Without this, an unknown
- * slug renders the not-found page with a 200 status — a soft 404, which search
- * engines may index.
- */
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -42,8 +36,6 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     openGraph: {
       title: product.name[language],
       description: product.summary[language],
-      // A dedicated 1200x630 JPEG: link previews on WhatsApp and LinkedIn do
-      // not reliably render the WebP used on the page itself.
       images: [{url: product.ogImage, width: 1200, height: 630, alt: product.name[language]}]
     }
   };
@@ -59,7 +51,8 @@ export default async function ProductPage({params}: Props) {
   const t = await getTranslations();
   const language = locale as Locale;
   const related = relatedProducts(product);
-  const hasSheet = Boolean(contentFor(product.partNumber));
+  const family = contentFor(product.partNumber);
+  const hasSheet = Boolean(family);
   const pdf = datasheetFor(product.partNumber);
 
   // Structured data so the part shows up correctly in search results.
@@ -106,7 +99,11 @@ export default async function ProductPage({params}: Props) {
         />
 
         <div className="detail-copy">
-          <p className="eyebrow product-code">{product.partNumber}</p>
+          <div className="detail-header-meta">
+            <span className="product-code">{product.partNumber}</span>
+            <span className="brand-origin-badge">{t('productDetail.brandOrigin')}</span>
+          </div>
+
           <h1>{product.name[language]}</h1>
           <p className="detail-summary">{product.summary[language]}</p>
 
@@ -133,6 +130,72 @@ export default async function ProductPage({params}: Props) {
             </table>
           </div>
 
+          {/* Technical Documentation & Datasheet Box */}
+          {(hasSheet || pdf) && (
+            <div className="product-datasheet-card">
+              <div className="pds-head">
+                <div className="pds-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                  </svg>
+                </div>
+                <div className="pds-titles">
+                  <h4>{t('productDetail.technicalDocumentation')}</h4>
+                  <p>{t('productDetail.technicalDocDesc')}</p>
+                </div>
+                {pdf && (
+                  <span className="pds-badge">
+                    <span className="pdf-badge" aria-hidden="true">PDF</span>
+                    <span>{formatBytes(pdf.bytes, language)}</span>
+                  </span>
+                )}
+              </div>
+
+              {family?.compliance && family.compliance.length > 0 && (
+                <div className="pds-compliance">
+                  <span className="pds-compliance-title">{t('productDetail.standardsCompliance')}:</span>
+                  <div className="pds-tags">
+                    {family.compliance.map((item) => (
+                      <span className="pds-tag" key={item}>
+                        ✓ {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div className="pds-actions">
+                {pdf && (
+                  <a href={pdf.url} className="button button-primary" download>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    {t('productDetail.downloadDatasheet')}
+                  </a>
+                )}
+                {hasSheet && (
+                  <Link
+                    href={`/${locale}/products/${product.slug}/datasheet`}
+                    className="button button-quiet"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
+                    {t('productDetail.viewInteractiveSheet')}
+                  </Link>
+                )}
+              </div>
+            </div>
+          )}
+
           <dl className="detail-source">
             <dt>{t('productDetail.sourceLabel')}</dt>
             <dd>{product.raw}</dd>
@@ -145,22 +208,6 @@ export default async function ProductPage({params}: Props) {
             >
               {t('productDetail.quote')}
             </Link>
-            {hasSheet ? (
-              <Link
-                href={`/${locale}/products/${product.slug}/datasheet`}
-                className="button button-quiet button-datasheet"
-              >
-                {t('productDetail.datasheet')}
-                {pdf ? (
-                  <small>
-                    <span className="pdf-badge" aria-hidden="true">
-                      PDF
-                    </span>{' '}
-                    {formatBytes(pdf.bytes, language)}
-                  </small>
-                ) : null}
-              </Link>
-            ) : null}
             <a
               href={mailto(`${product.partNumber} — ${product.name.en}`)}
               className="button button-quiet"

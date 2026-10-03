@@ -8,7 +8,7 @@ type NavItem = {href: string; label: string};
 
 type MobileNavProps = {
   items: NavItem[];
-  langSwitch: {href: string; label: string; lang: string};
+  langSwitch: {href: string; label: string | React.ReactNode; lang: string};
   menuLabel: string;
   closeLabel: string;
 };

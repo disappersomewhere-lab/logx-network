@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: logx-network
+    runtime: node
+    region: frankfurt  # أقرب منطقة للشرق الأوسط
+    plan: starter      # يمكن تغييره إلى free للتجربة
+
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 20.19.1
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false   # ستُضبط يدوياً في Dashboard
+      - key: RESEND_API_KEY
+        sync: false   # ستُضبط يدوياً في Dashboard
+      - key: RESEND_FROM_EMAIL
+        sync: false   # ستُضبط يدوياً في Dashboard
+      - key: CONTACT_EMAIL
+        sync: false   # ستُضبط يدوياً في Dashboard
+
+    healthCheckPath: /
+    autoDeploy: true   # يُعيد النشر تلقائياً عند كل push على GitHub

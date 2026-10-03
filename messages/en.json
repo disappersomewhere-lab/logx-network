@@ -17,6 +17,104 @@
     "terms": "Terms",
     "offices": "Offices"
   },
+  "slogan": {
+    "tagline": "Where Excellence Meets Innovation",
+    "pillars": {
+      "reliable": {
+        "title": "Reliable",
+        "desc": "Engineered for mission-critical network uptime and dependable signal integrity."
+      },
+      "performance": {
+        "title": "High-Performance",
+        "desc": "100% Fluke-tested copper and optical precision with minimal insertion loss."
+      },
+      "eco": {
+        "title": "Environmentally Friendly",
+        "desc": "RoHS and REACH compliant materials designed for sustainable infrastructure."
+      }
+    }
+  },
+  "missionCommitment": {
+    "eyebrow": "Our Core Direction",
+    "title": "Built on Purpose & Uncompromising Dedication",
+    "mission": {
+      "pill": "Our Mission",
+      "text": "At LOGX NETWORK we are committed to providing products that stand out for their quality, durability, and reliability. Our goal is to empower businesses and individuals with the best-in-class connectivity solutions that support their growing data needs."
+    },
+    "commitment": {
+      "pill": "Our Commitment",
+      "text": "LOGX NETWORK is dedicated to delivering excellence in every product we offer. We continuously innovate to meet the evolving demands of the industry, ensuring that our customers always have access to the latest and most reliable connectivity solutions."
+    }
+  },
+  "catalogueCategories": {
+    "eyebrow": "Ecosystem Categories",
+    "title": "Our Infrastructure Categories",
+    "subtitle": "Complete data connectivity solutions spanning ultra-fast optics, verified copper, and precision rack management.",
+    "fiber": {
+      "title": "Fiber Optic",
+      "tag": "High-Speed & Low Loss",
+      "desc": "High-speed, reliable connections with minimal signal loss, perfect for any network size."
+    },
+    "copper": {
+      "title": "Copper Cables",
+      "tag": "Durable & Certified",
+      "desc": "Durable cables for various applications, providing stable and fast data transfer."
+    },
+    "accessories": {
+      "title": "Components & Hardware",
+      "tag": "Organized & Efficient",
+      "desc": "Essential items like keystone jacks, patch cords, faceplates, patch panels, and cable management solutions for an efficient and organized network."
+    }
+  },
+  "hallmarks": {
+    "reliable": "Reliable. High-Performance",
+    "eco": "Environmentally Friendly",
+    "warrantyBadge": "No-Questions-Asked Direct Replacement",
+    "stockBadge": "Showroom Stocked & Immediate Dispatch"
+  },
+  "whyLogx": {
+    "eyebrow": "The LOGX Standard",
+    "title": "Why Global Networks Choose LOGX",
+    "subtitle": "Built on uncompromising engineering, verified compliance, and direct regional availability.",
+    "ctaProfile": "Download 2025 Company Profile (PDF)",
+    "viewCatalogue": "View 2025 Digital Catalogue",
+    "items": {
+      "quality": {
+        "tag": "01",
+        "title": "Best Quality",
+        "desc": "Manufactured to stringent international standards (ANSI/TIA-568.2-D, ISO/IEC 11801) ensuring superior transmission and enduring lifecycle."
+      },
+      "durability": {
+        "tag": "02",
+        "title": "Durability & Reliability",
+        "desc": "Engineered to withstand demanding enterprise and data center environments, guaranteeing stable connections under continuous load."
+      },
+      "warranty": {
+        "tag": "03",
+        "title": "Direct Replacement Warranty",
+        "desc": "An immediate 'no questions asked' direct replacement policy, providing complete confidence and peace of mind for installers and clients."
+      },
+      "availability": {
+        "tag": "04",
+        "title": "Immediate Availability",
+        "desc": "Full product range stocked in central showrooms and regional logistics hubs, ready for prompt dispatch and project handover."
+      }
+    }
+  },
+  "globalFootprint": {
+    "eyebrow": "International Presence",
+    "title": "Global Engineering, Local Availability",
+    "london": {
+      "role": "Global Headquarters",
+      "city": "London, United Kingdom",
+      "name": "LOGX NETWORKS LTD"
+    },
+    "riyadh": {
+      "role": "Regional Main Distributor",
+      "city": "Riyadh, Saudi Arabia",
+      "name": "Networks Sea Co."
+    }
+  },
   "hero": {
     "eyebrow": "Connectivity solutions",
     "title": "Reliable infrastructure for modern networks",
@@ -80,8 +178,10 @@
       "title": "Our offices",
       "phoneLabel": "Phone",
       "emailLabel": "Email",
+      "directionsLabel": "Get directions",
+      "openMapLabel": "Open in Maps",
       "uk": {
-        "role": "Head office"
+        "role": "Head office — United Kingdom"
       },
       "sa": {
         "role": "Middle East distributor"
@@ -96,7 +196,16 @@
     "related": "Related products",
     "included": "Included",
     "quote": "Request a quotation",
-    "datasheet": "Datasheet"
+    "datasheet": "Datasheet",
+    "downloadDatasheet": "Download PDF Datasheet",
+    "viewInteractiveSheet": "View Interactive Datasheet",
+    "technicalDocumentation": "Technical Documentation & Datasheet",
+    "technicalDocDesc": "Official engineering specifications, wiring standards, and verified performance compliance for LOGX NETWORK.",
+    "standardsCompliance": "Standards & Compliance",
+    "featuresHighlights": "Features & Highlights",
+    "quickSpecs": "Quick Specs",
+    "brandOrigin": "HQ: London, United Kingdom",
+    "officialDatasheet": "Official Verified Datasheet"
   },
   "about": {
     "eyebrow": "The LOGX standard",
@@ -107,7 +216,9 @@
     "rangeTitle": "One connected range",
     "range": "Copper, fiber, patching and rack accessories are designed to work together across enterprise and data center environments.",
     "contactTitle": "Talk to a specialist",
-    "contact": "Need a bill of materials, lead time or a full data sheet? Our sales team can help shape the right kit."
+    "contact": "Need a bill of materials, lead time or a full data sheet? Our sales team can help shape the right kit.",
+    "officesTitle": "Global Presence & Headquarters",
+    "officesIntro": "From our United Kingdom headquarters to regional logistics and distribution in Saudi Arabia, we bring reliable inventory and direct support to your projects."
   },
   "datasheet": {
     "backToProduct": "Back to product",
@@ -117,66 +228,63 @@
     "indexTitle": "Technical datasheets",
     "indexIntro": "A4 engineering datasheet for every LOGX part: specifications, standards, mechanical and electrical characteristics, and ordering information. View in the browser or download the PDF.",
     "view": "View",
-    "parts": "parts"
+    "parts": "parts",
+    "searchPlaceholder": "Search by part number or model…",
+    "allCategories": "All Categories",
+    "filterLabel": "Filter datasheets",
+    "noResults": "No datasheets match your search.",
+    "directDownload": "Direct Download"
   },
   "companyProfile": {
     "nav": "Company profile",
     "download": "Download PDF",
     "print": "Print",
     "back": "Back",
-    "docType": "Company profile",
-    "cover": {
-      "eyebrow": "LOGX NETWORK",
-      "title": "Company Profile",
-      "tagline": "Connect with confidence.",
-      "subtitle": "Structured cabling, fiber optic distribution and rack infrastructure — supplied as one connected range."
-    },
-    "about": {
-      "title": "Who we are",
-      "body1": "LOGX NETWORK is the connectivity brand of LOGX NETWORKS LTD, supplying the physical layer behind modern networks: copper and fiber cabling, patch panels, keystones, faceplates and rack accessories, engineered as one connected range rather than a shelf of unrelated parts.",
-      "body2": "Across the Middle East, LOGX products are carried and supported by our regional distributor, Networks Sea Company, based in Riyadh, Saudi Arabia — putting stock, pricing and technical support close to the project."
-    },
-    "mission": {
-      "title": "Vision & mission",
-      "visionLabel": "Vision",
-      "vision": "To be the dependable physical layer behind every network we touch — infrastructure that installers trust and that disappears into the work.",
-      "missionLabel": "Mission",
-      "mission": "To supply a single, connected range of copper, fiber and rack products, specified around repeatable installation, tested performance and clear documentation, so every project ships with confidence."
-    },
-    "why": {
-      "title": "Why LOGX",
-      "point1Title": "Consistency first",
-      "point1": "Every product is specified around repeatable installation, dependable materials and the realities of the network room.",
-      "point2Title": "One connected range",
-      "point2": "Copper, fiber, patching and rack accessories are designed to work together across enterprise and data center environments.",
-      "point3Title": "Documented performance",
-      "point3": "Copper cable ships Fluke channel tested, and every product family carries a technical datasheet with standards, characteristics and ordering information."
-    },
-    "compliance": {
-      "title": "Standards & compliance",
-      "intro": "LOGX products are specified against the standards installers already design to.",
-      "item1": "ANSI/TIA-568.2-D & ISO/IEC 11801, category 6 / 6A",
-      "item2": "IEEE 802.3 Ethernet and PoE standards",
-      "item3": "RoHS & REACH compliant materials",
-      "item4": "CE and UL 94V-0 fire-safety rated components",
-      "item5": "ISO 9001 manufacturing quality standards"
-    },
-    "range": {
-      "title": "Product range",
-      "intro": "Three categories, one connected system.",
-      "copperTitle": "Copper cabling",
-      "copperBody": "CAT6 and CAT6A UTP cable, patch cords and bulk reels, Fluke channel tested.",
-      "fiberTitle": "Fiber optic",
-      "fiberBody": "Single-mode and OM3 drop cable, patch cords, pigtails, splice and distribution panels.",
-      "accessoriesTitle": "Racks & accessories",
-      "accessoriesBody": "Patch panels, keystones, faceplates, cable managers, RJ45 plugs and PDUs."
-    },
-    "contactSection": {
-      "title": "Get in touch",
-      "body": "For pricing, lead times or a full bill of materials, reach the sales team directly.",
-      "salesLabel": "Sales",
-      "websiteLabel": "Website"
-    },
-    "footNote": "Specifications subject to change without notice."
+    "description": "The LOGX NETWORK profile and catalogue: who we are, what we stand for, and the full copper, fiber and components range.",
+    "theme": {
+      "label": "Profile style",
+      "dark": "Dark",
+      "wave": "Wave",
+      "mesh": "Network"
+    }
+  },
+  "masterSheet": {
+    "eyebrow": "Master Connectivity Matrix",
+    "title": "LOGX Official Product Data Sheet",
+    "subtitle": "Complete Connectivity Solutions for Networks — A comprehensive architectural overview of all copper, fiber, patching, and rack infrastructure products.",
+    "badge": "Official Master Reference",
+    "ctaInspect": "Inspect High-Resolution Sheet",
+    "ctaDownload": "Download High-Res Sheet (JPG)",
+    "ctaWebp": "Download WebP Version",
+    "inspectHint": "Click to zoom & inspect part numbers and engineering specs",
+    "zoomIn": "Zoom In (+)",
+    "zoomOut": "Zoom Out (-)",
+    "resetZoom": "Reset View",
+    "close": "Close",
+    "categoriesCount": "13 Verified Network Categories",
+    "partsCount": "60+ Matched Part Numbers",
+    "standards": "100% Fluke Tested & ANSI/TIA, ISO/IEC Compliant",
+    "dragHint": "Drag to pan when zoomed",
+    "categoriesTitle": "Featured Categories in this Master Data Sheet:",
+    "browseCategory": "Browse Category Products",
+    "homeSectionEyebrow": "Complete Infrastructure Ecosystem",
+    "homeSectionTitle": "Master Product Data Sheet & Specifications",
+    "homeSectionDesc": "Designed for consultants, network architects, and project managers: an integrated matrix covering our complete physical layer portfolio in one unified reference.",
+    "exploreCatalog": "View Individual A4 Engineering Datasheets ↗",
+    "categories": {
+      "copperCables": "Copper Cables (305M)",
+      "patchCordsCat6": "Patch Cords - CAT6 UTP",
+      "patchCordsCat6A": "Patch Cords - CAT6A UTP",
+      "rackAccessories": "Rack & Cabinet Accessories",
+      "faceplatesKeystones": "Faceplates & Keystone Jacks",
+      "fiberPatchPanels": "Fiber Patch Panels (Loaded)",
+      "fiberOpticCables": "Fiber Optic Cables (1000M)",
+      "fiberCordsSM": "Fiber Cords LC-LC UPC SM (OS2)",
+      "fiberCordsOM3": "Fiber Cords LC-LC UPC OM3 (MM)",
+      "fiberPigtails": "Fiber Pigtails LC/UPC",
+      "toolsEquipment": "Tools & SFP Media Converters",
+      "fiberTerminalBoxes": "Fiber Optic Terminal Boxes (Loaded)",
+      "powerDistribution": "Power Distribution Units (PDU)"
+    }
   }
 }

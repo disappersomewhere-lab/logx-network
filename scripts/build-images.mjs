@@ -17,7 +17,7 @@ const SRC = process.argv[2] || path.join(ROOT, 'docs', 'logx oreginal image');
 const OUT = path.join(ROOT, 'public', 'products', 'photos');
 
 const SIZE = 1400; // master square; next/image derives the responsive sizes
-const MARGIN = 0.055; // breathing room around the product, as a fraction of SIZE
+const MARGIN = 0.015; // breathing room around the product, as a fraction of SIZE
 const WHITE = {r: 255, g: 255, b: 255};
 const CANVAS = {r: 250, g: 250, b: 250}; // matches the levelled backdrop, so padding is seamless
 

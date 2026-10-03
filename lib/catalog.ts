@@ -48,7 +48,13 @@ export function countByCategory(category: ProductCategory) {
  * One card per product family, dealt round-robin across the three categories so
  * the landing page shows the breadth of the range rather than eight lengths of
  * the same patch cord.
+ *
+ * Families are split by size or count (`drop-fiber-4`, `drop-fiber-8`, …), and
+ * those variants photograph identically, so the dedupe keys on the family stem.
  */
+const familyStem = (family: string) =>
+  family.replace(/-(\d+(-port|u)?|short|half|long|1m|shielded|sm|om3)$/, '');
+
 export function featuredProducts(limit = 8) {
   const seen = new Set<string>();
   const byCategory = new Map<ProductCategory, Product[]>(
@@ -56,7 +62,7 @@ export function featuredProducts(limit = 8) {
   );
 
   for (const product of catalog) {
-    const key = product.family ?? product.slug;
+    const key = product.family ? familyStem(product.family) : product.slug;
     if (seen.has(key)) continue;
     seen.add(key);
     byCategory.get(product.category)?.push(product);

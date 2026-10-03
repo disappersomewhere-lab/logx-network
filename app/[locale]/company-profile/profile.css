@@ -1,0 +1,1227 @@
+/* ==========================================================================
+   Company profile deck
+   Landscape slides recreating the reference decks in "LogX profile example/".
+   Every size inside a slide is in `em`, and the slide's font size tracks its
+   own width (`cqi`), so a slide scales as one picture: on a laptop, on a
+   phone-width preview and on a 297mm printed page alike.
+
+   The three looks are `data-theme` on .pf-deck: dark (Profile example 1),
+   wave (example 2) and mesh (example 3).
+   ========================================================================== */
+
+.pf-deck {
+  --pf-red: #e3262b;
+  --pf-bg: #fff;
+  --pf-ink: #141414;
+  --pf-soft: #4a4a4a;
+  --pf-rule: #1b1b1b;
+  --pf-panel: #efefef;
+  --pf-panel-ink: #141414;
+  --pf-card: #fff;
+  --pf-card-line: #e2e2df;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.pf-deck[data-theme='dark'] {
+  --pf-bg: #0b0b0b;
+  --pf-ink: #fff;
+  --pf-soft: rgb(255 255 255 / 74%);
+  --pf-rule: rgb(255 255 255 / 70%);
+  --pf-panel: #fff;
+  --pf-panel-ink: #141414;
+  --pf-card: #fff;
+  --pf-card-line: transparent;
+}
+
+/* ------------------------------------------------------------- page chrome */
+
+.pf-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pf-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+}
+
+.pf-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pf-themes {
+  display: inline-flex;
+  padding: 4px;
+  gap: 4px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.pf-theme-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pf-theme-option[aria-checked='true'] {
+  background: var(--ink);
+  color: #fff;
+}
+
+.pf-theme-option:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* A thumbnail of each look: ink with a red slash, a red ribbon, a lattice. */
+.pf-theme-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgb(0 0 0 / 15%);
+  background: #fff;
+}
+
+[data-option='dark'] .pf-theme-swatch {
+  background: linear-gradient(120deg, #0b0b0b 55%, #e3262b 55% 68%, #0b0b0b 68%);
+}
+
+[data-option='wave'] .pf-theme-swatch {
+  background: radial-gradient(circle at 20% 90%, #e3262b 0 30%, transparent 31%), #fff;
+}
+
+[data-option='mesh'] .pf-theme-swatch {
+  background:
+    radial-gradient(circle at 30% 65%, #e3262b 0 12%, transparent 13%),
+    radial-gradient(circle at 72% 40%, #9a9a9a 0 10%, transparent 11%),
+    linear-gradient(150deg, transparent 47%, #b9b9b9 48% 52%, transparent 53%), #fff;
+}
+
+/* ------------------------------------------------------------------- slide */
+
+.pf-slide {
+  position: relative;
+  container-type: inline-size;
+  isolation: isolate;
+  width: 100%;
+  aspect-ratio: 297 / 210;
+  overflow: hidden;
+  background: var(--pf-bg);
+  color: var(--pf-ink);
+  border-radius: 6px;
+  box-shadow: var(--shadow-md);
+}
+
+/* The slide's type size follows its width; children size in em from it.
+   Set on .pf-body (inside the container) since `cqi` resolves against the
+   nearest container ancestor, not the element itself. */
+.pf-body,
+.pf-folio {
+  font-size: clamp(9px, 1.42cqi, 18px);
+}
+
+.pf-body {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 3em 4em 4.4em;
+  line-height: 1.55;
+}
+
+.pf-art,
+.pf-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+}
+
+.pf-photo {
+  z-index: 1;
+  display: none;
+  background-size: cover;
+  background-position: center;
+}
+
+.pf-slide a {
+  color: inherit;
+}
+
+.pf-slide h1,
+.pf-slide h2,
+.pf-slide h3,
+.pf-slide p {
+  margin: 0;
+  letter-spacing: normal;
+}
+
+/* ---------------------------------------------------------------- the logo */
+
+.pf-logo {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
+}
+
+.pf-logo .brand-logo-image img {
+  height: var(--logo-height);
+}
+
+.pf-logo-light {
+  display: none;
+}
+
+[data-theme='dark'] .pf-logo-ink {
+  display: none;
+}
+
+[data-theme='dark'] .pf-logo-light {
+  display: inline-block;
+}
+
+/* ------------------------------------------------------------------- folio */
+
+.pf-folio {
+  position: absolute;
+  z-index: 3;
+  inset-inline: 1.6em;
+  bottom: 1.3em;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  color: var(--pf-ink);
+}
+
+.pf-folio[data-side='end'] {
+  flex-direction: row-reverse;
+}
+
+.pf-folio-number {
+  font-size: 0.8em;
+  font-weight: 800;
+}
+
+.pf-folio-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--pf-rule);
+}
+
+/* ------------------------------------------------------------ shared parts */
+
+.pf-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15em;
+  font-size: 2.3em;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.pf-title .pf-logo {
+  vertical-align: baseline;
+}
+
+.pf-title:has(.pf-logo) {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pf-title small {
+  color: var(--accent, var(--pf-red));
+  font-size: 0.42em;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Dark deck: a rule either side of every heading, as in Profile example 1. */
+[data-theme='dark'] .pf-title {
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.3em 0.5em;
+  font-weight: 600;
+}
+
+[data-theme='dark'] .pf-title::before,
+[data-theme='dark'] .pf-title::after {
+  content: '';
+  width: 2.2em;
+  height: 2px;
+  background: var(--pf-ink);
+  opacity: 0.85;
+}
+
+[data-theme='dark'] .pf-title small {
+  flex-basis: 100%;
+  order: 3;
+}
+
+/* Icon in a red disc (light) or a red outlined slash (dark). */
+.pf-badge {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 3.4em;
+  height: 3.4em;
+  border-radius: 50%;
+  background: var(--pf-red);
+  color: #fff;
+  box-shadow:
+    0 0 0 0.3em #fff,
+    0 0 0 calc(0.3em + 1px) rgb(227 38 43 / 45%);
+}
+
+.pf-badge svg {
+  width: 52%;
+  height: 52%;
+}
+
+[data-theme='dark'] .pf-badge {
+  border-radius: 0;
+  background: transparent;
+  color: var(--pf-red);
+  box-shadow: none;
+  position: relative;
+}
+
+[data-theme='dark'] .pf-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--pf-red);
+  transform: skewX(-14deg);
+}
+
+/* ------------------------------------------------------------ theme: wave */
+
+[data-theme='wave'] .pf-art {
+  background-image: url('/profile/wave.svg'), url('/profile/wave.svg');
+  background-size: 62% auto, 48% auto;
+  background-position: -14% 118%, 112% -24%;
+  opacity: 0.38;
+}
+
+[data-theme='wave'] .pf-s-cover .pf-art {
+  background-size: 92% auto, 66% auto;
+  background-position: -30% 135%, 120% -40%;
+  opacity: 1;
+}
+
+[data-theme='wave'] .pf-s-welcome .pf-art {
+  background-image: url('/profile/wave.svg');
+  background-size: 115% auto;
+  background-position: center 160%;
+  opacity: 0.9;
+}
+
+[data-theme='wave'] .pf-s-contact .pf-art {
+  background-image: url('/profile/wave.svg');
+  background-size: 70% auto;
+  background-position: 120% 50%;
+  opacity: 0.95;
+}
+
+[dir='rtl'][data-theme='wave'] .pf-s-contact .pf-art {
+  background-position: -20% 50%;
+}
+
+/* ------------------------------------------------------------ theme: mesh */
+
+[data-theme='mesh'] .pf-art {
+  background-image: url('/profile/mesh.svg'), url('/profile/mesh.svg');
+  background-size: 100% auto, 70% auto;
+  background-position: center 112%, -10% -18%;
+  opacity: 0.32;
+}
+
+[data-theme='mesh'] .pf-s-cover .pf-art,
+[data-theme='mesh'] .pf-s-welcome .pf-art {
+  background-size: 115% auto, 60% auto;
+  background-position: center 104%, -12% -22%;
+  opacity: 0.95;
+}
+
+[data-theme='mesh'] .pf-s-contact .pf-art {
+  background-image: url('/profile/mesh.svg');
+  background-size: 90% auto;
+  background-position: 160% 105%;
+  opacity: 0.9;
+}
+
+[dir='rtl'][data-theme='mesh'] .pf-s-contact .pf-art {
+  background-position: -60% 105%;
+}
+
+/* ------------------------------------------------------------ theme: dark */
+
+/* Photographs and slashes appear only on the four statement slides. The
+   photos are CSS backgrounds so the light themes never download them. */
+[data-theme='dark'] :is(.pf-s-cover, .pf-s-welcome, .pf-s-about, .pf-s-contact) .pf-photo {
+  display: block;
+}
+
+[data-theme='dark'] .pf-s-cover .pf-photo {
+  inset-inline-start: 48%;
+  background-image: url('/profile/cover-workers.webp');
+  clip-path: polygon(22% 0, 100% 0, 100% 100%, 22% 100%, 0 50%);
+}
+
+[dir='rtl'][data-theme='dark'] .pf-s-cover .pf-photo {
+  clip-path: polygon(0 0, 78% 0, 100% 50%, 78% 100%, 0 100%);
+}
+
+[data-theme='dark'] .pf-s-welcome .pf-photo {
+  top: 38%;
+  background-image: url('/profile/fiber-lights.webp');
+  background-position: center 70%;
+  mask-image: linear-gradient(to bottom, transparent, #000 35%);
+}
+
+[data-theme='dark'] .pf-s-about .pf-photo {
+  top: 66%;
+  inset-inline: 18%;
+  background-image: url('/profile/city-network.webp');
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+[data-theme='dark'] .pf-s-contact .pf-photo {
+  inset-inline-end: 42%;
+  background-image: url('/profile/contact-workers.webp');
+  clip-path: polygon(0 0, 78% 0, 100% 50%, 78% 100%, 0 100%);
+}
+
+[dir='rtl'][data-theme='dark'] .pf-s-contact .pf-photo {
+  clip-path: polygon(22% 0, 100% 0, 100% 100%, 22% 100%, 0 50%);
+}
+
+/* Slashes: a white and a red hairline running along each photo's edge. */
+[data-theme='dark'] :is(.pf-s-cover, .pf-s-contact) .pf-art::before,
+[data-theme='dark'] :is(.pf-s-cover, .pf-s-contact) .pf-art::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 46%;
+  border-radius: 2px;
+}
+
+[data-theme='dark'] .pf-s-cover .pf-art::before {
+  inset-inline-start: 50.5%;
+  top: -4%;
+  background: linear-gradient(to bottom, transparent, #fff);
+  transform: rotate(32deg);
+}
+
+[data-theme='dark'] .pf-s-cover .pf-art::after {
+  inset-inline-start: 52%;
+  bottom: -6%;
+  background: var(--pf-red);
+  transform: rotate(-32deg);
+}
+
+[data-theme='dark'] .pf-s-contact .pf-art::before {
+  inset-inline-start: 57%;
+  top: -4%;
+  background: var(--pf-red);
+  transform: rotate(-32deg);
+}
+
+[data-theme='dark'] .pf-s-contact .pf-art::after {
+  inset-inline-start: 56%;
+  bottom: -6%;
+  background: linear-gradient(to top, transparent, #fff);
+  transform: rotate(32deg);
+}
+
+[dir='rtl'][data-theme='dark'] :is(.pf-s-cover, .pf-s-contact) .pf-art::before,
+[dir='rtl'][data-theme='dark'] :is(.pf-s-cover, .pf-s-contact) .pf-art::after {
+  scale: -1 1;
+}
+
+/* ------------------------------------------------------------------ cover */
+
+.pf-s-cover .pf-body {
+  justify-content: center;
+  align-items: center;
+}
+
+.pf-cover-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6em;
+  text-align: center;
+}
+
+.pf-cover-title {
+  color: var(--pf-red);
+  font-size: 1.9em;
+  font-weight: 800;
+}
+
+.pf-cover-year {
+  display: none;
+}
+
+[data-theme='dark'] .pf-s-cover .pf-body {
+  align-items: flex-start;
+  padding-inline-start: 5em;
+}
+
+[data-theme='dark'] .pf-cover-title {
+  color: #fff;
+  font-size: 1.6em;
+  font-weight: 500;
+}
+
+/* Year between two rules, as on the dark reference cover. */
+[data-theme='dark'] .pf-cover-year {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  color: rgb(255 255 255 / 80%);
+  font-size: 1.1em;
+}
+
+[data-theme='dark'] .pf-cover-year::before,
+[data-theme='dark'] .pf-cover-year::after {
+  content: '';
+  width: 3.5em;
+  height: 2px;
+  background: #fff;
+}
+
+/* ---------------------------------------------------------------- welcome */
+
+.pf-s-welcome .pf-body {
+  align-items: center;
+  padding-top: 5em;
+  text-align: center;
+  gap: 0.4em;
+}
+
+.pf-welcome-word {
+  color: var(--pf-red);
+  font-size: 4.4em;
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.pf-welcome-tagline {
+  font-size: 1.9em;
+  font-weight: 500;
+}
+
+[data-theme='dark'] .pf-welcome-word {
+  display: none;
+}
+
+[data-theme='dark'] .pf-welcome-tagline {
+  padding-bottom: 0.7em;
+  background: linear-gradient(#fff, #fff) center bottom / 8em 2px no-repeat;
+}
+
+/* ------------------------------------------------------------------ about */
+
+.pf-s-about .pf-body {
+  gap: 2.4em;
+}
+
+.pf-about-body {
+  max-width: 62em;
+  text-align: justify;
+  font-size: 1.04em;
+  line-height: 1.75;
+}
+
+[dir='rtl'] .pf-about-body {
+  line-height: 2;
+}
+
+.pf-hallmarks {
+  display: flex;
+  justify-content: space-around;
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 700;
+}
+
+.pf-hallmarks li {
+  display: flex;
+  align-items: center;
+  gap: 1.1em;
+}
+
+/* ---------------------------------------------------- mission & commitment */
+
+.pf-s-mission .pf-body {
+  justify-content: center;
+}
+
+.pf-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3em;
+}
+
+.pf-pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pf-pill {
+  position: relative;
+  z-index: 1;
+  min-width: 11em;
+  padding: 0.55em 1.6em;
+  border-radius: 999px;
+  background: var(--pf-red);
+  color: #fff;
+  font-size: 1.15em;
+  font-weight: 800;
+  text-align: center;
+}
+
+.pf-pillar-alt .pf-pill {
+  background: #141414;
+}
+
+/* Connector: a short stem and a dot between the pill and its panel. */
+.pf-pillar p {
+  position: relative;
+  margin-top: 2.6em;
+  padding: 2.2em 2em;
+  background: var(--pf-panel);
+  color: var(--pf-panel-ink);
+  line-height: 1.75;
+  min-height: 15em;
+}
+
+.pf-pillar p::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 2px;
+  height: 2.6em;
+  background: var(--pf-red);
+  translate: -50% 0;
+}
+
+.pf-pillar p::after {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 0.5em);
+  left: 50%;
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  background: var(--pf-red);
+  translate: -50% 0;
+}
+
+.pf-pillar-alt p::before,
+.pf-pillar-alt p::after {
+  background: #141414;
+}
+
+/* Dark: stacked rows, each led by a red slash, as in Profile example 1. */
+[data-theme='dark'] .pf-pillars {
+  grid-template-columns: 1fr;
+  gap: 2.4em;
+}
+
+[data-theme='dark'] .pf-pillar {
+  position: relative;
+  align-items: stretch;
+  padding-inline-start: 9em;
+}
+
+[data-theme='dark'] .pf-pillar::before {
+  content: '';
+  position: absolute;
+  inset-block: -0.6em;
+  inset-inline-start: 0;
+  width: 11em;
+  background: var(--pf-red);
+  clip-path: polygon(55% 0, 100% 0, 45% 100%, 0 100%);
+}
+
+[dir='rtl'][data-theme='dark'] .pf-pillar::before {
+  clip-path: polygon(0 0, 45% 0, 100% 100%, 55% 100%);
+}
+
+[data-theme='dark'] .pf-pill {
+  align-self: flex-start;
+  min-width: 0;
+  padding: 0 0 0.25em;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  text-align: start;
+  box-shadow: inset 0 -2px 0 var(--pf-red);
+}
+
+[data-theme='dark'] .pf-pillar p {
+  margin-top: 0.6em;
+  min-height: 0;
+  padding: 1.1em 1.6em;
+}
+
+[data-theme='dark'] .pf-pillar p::before,
+[data-theme='dark'] .pf-pillar p::after {
+  display: none;
+}
+
+/* -------------------------------------------------------------- why choose */
+
+.pf-s-why .pf-body {
+  gap: 3em;
+}
+
+.pf-why {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+}
+
+.pf-why-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7em;
+  text-align: center;
+}
+
+.pf-why-item .pf-badge {
+  width: 4.6em;
+  height: 4.6em;
+  margin-bottom: 0.8em;
+}
+
+.pf-why-item h3 {
+  color: var(--pf-red);
+  font-size: 1.12em;
+  font-weight: 800;
+}
+
+.pf-why-item p {
+  color: var(--pf-soft);
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+/* Dark: left-aligned and staggered, every other column dropped. */
+[data-theme='dark'] .pf-why-item {
+  align-items: flex-start;
+  text-align: start;
+}
+
+[data-theme='dark'] .pf-why-item:nth-child(even) {
+  margin-top: 4.5em;
+}
+
+[data-theme='dark'] .pf-why-item h3 {
+  color: #fff;
+}
+
+/* --------------------------------------------------------------- categories */
+
+.pf-s-categories .pf-body {
+  gap: 2.6em;
+}
+
+.pf-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4em;
+}
+
+.pf-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6em;
+  text-align: center;
+}
+
+.pf-category-thumb {
+  position: relative;
+  width: 11em;
+  aspect-ratio: 1;
+  margin-bottom: 0.8em;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 0.45em solid #fff;
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.pf-category-thumb img {
+  object-fit: cover;
+}
+
+.pf-category h3 {
+  color: var(--accent);
+  font-size: 1.35em;
+  font-weight: 800;
+}
+
+.pf-category p {
+  color: var(--pf-soft);
+  font-size: 0.95em;
+}
+
+[data-theme='dark'] .pf-category-thumb {
+  width: 14em;
+  aspect-ratio: 16 / 11;
+  border-radius: 0;
+  border: 0.3em solid var(--accent);
+  box-shadow: none;
+  transform: skewX(-10deg);
+}
+
+[data-theme='dark'] .pf-category-thumb img {
+  transform: skewX(10deg) scale(1.15);
+}
+
+/* -------------------------------------------------------- category intro */
+
+.pf-s-intro .pf-body {
+  align-items: center;
+  gap: 2em;
+}
+
+.pf-intro-title {
+  padding: 0.35em 2.2em 0.45em;
+  margin-top: -3em;
+  border-radius: 0 0 1.4em 1.4em;
+  background: var(--accent);
+  color: #fff;
+  font-size: 2.6em;
+  font-weight: 900;
+}
+
+.pf-intro-body {
+  max-width: 62em;
+  text-align: justify;
+  font-size: 1.04em;
+  line-height: 1.75;
+}
+
+[dir='rtl'] .pf-intro-body {
+  line-height: 2;
+}
+
+.pf-intro-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6em;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.pf-intro-photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.6em;
+  background: #fff;
+}
+
+.pf-intro-photo img {
+  object-fit: cover;
+}
+
+/* Dark: the reference's half-and-half split — copy on ink, photos on white. */
+[data-theme='dark'] .pf-s-intro .pf-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  align-items: start;
+  column-gap: 3em;
+  padding-inline-end: 0;
+  padding-block: 0 4.4em;
+}
+
+[data-theme='dark'] .pf-intro-title {
+  margin: 3em 0 0;
+  padding: 0 0 0.25em;
+  border-radius: 0;
+  background: none;
+  color: var(--accent);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+[data-theme='dark'] .pf-intro-body {
+  grid-column: 1;
+  font-size: 0.98em;
+}
+
+[data-theme='dark'] .pf-intro-photos {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  grid-template-columns: 1fr;
+  height: 100%;
+  padding: 2em;
+  gap: 1.2em;
+  background: #fff;
+}
+
+/* ------------------------------------------------------------ product list */
+
+.pf-s-list .pf-body {
+  gap: 1.4em;
+}
+
+.pf-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 1.1em 1.6em;
+  flex: 1;
+  min-height: 0;
+  padding-inline: 4em;
+}
+
+.pf-product {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid var(--pf-card-line);
+  border-radius: 0.6em;
+  background: var(--pf-card);
+  color: #141414;
+  font-size: 0.82em;
+}
+
+.pf-product-name {
+  padding: 0.5em 0.9em;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.pf-product-photo {
+  position: relative;
+  min-height: 5em;
+  background: var(--tile);
+}
+
+.pf-product-photo img {
+  object-fit: contain;
+}
+
+.pf-product-details {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6em 0.9em 0.7em;
+  font-size: 0.86em;
+  line-height: 1.45;
+}
+
+.pf-product-details span:last-child {
+  margin-top: 0.15em;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.pf-product:hover .pf-product-name {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------- locations */
+
+.pf-s-locations .pf-body {
+  align-items: center;
+  gap: 1.4em;
+}
+
+.pf-map {
+  position: relative;
+  width: min(100%, 52em);
+  aspect-ratio: 780 / 400;
+  margin-top: 1em;
+}
+
+.pf-map img {
+  width: 100%;
+  height: 100%;
+}
+
+[data-theme='dark'] .pf-map img {
+  filter: brightness(0.32);
+}
+
+.pf-pin {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.pf-pin-dot {
+  position: absolute;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background: var(--pf-red);
+  translate: -50% -50%;
+  box-shadow: 0 0 0 0.45em rgb(227 38 43 / 22%);
+}
+
+[dir='rtl'] .pf-pin-dot {
+  translate: 50% -50%;
+}
+
+/* The tag hangs off a leader line: above the pin for London, below for Riyadh. */
+.pf-pin-tag {
+  position: absolute;
+  inset-inline-start: -2em;
+  bottom: 3.4em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15em;
+  width: max-content;
+  font-size: 0.85em;
+  line-height: 1.3;
+}
+
+.pf-pin-tag::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  inset-inline-start: 2.35em;
+  width: 1px;
+  height: 3.4em;
+  background: var(--pf-red);
+}
+
+[data-pin='sa'] .pf-pin-tag {
+  bottom: auto;
+  top: 3.4em;
+}
+
+[data-pin='sa'] .pf-pin-tag::after {
+  top: auto;
+  bottom: 100%;
+}
+
+.pf-pin-role {
+  order: -1;
+  padding: 0.15em 0.9em;
+  margin-bottom: 0.2em;
+  background: var(--pf-red);
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: 800;
+  clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
+}
+
+.pf-pin-tag strong {
+  font-size: 1.05em;
+}
+
+.pf-pin-tag span:last-child {
+  color: var(--pf-soft);
+}
+
+/* ----------------------------------------------------------------- contact */
+
+.pf-s-contact .pf-body {
+  justify-content: center;
+  gap: 2.4em;
+  padding-inline-start: 9em;
+}
+
+.pf-contact-title {
+  font-size: 3.6em;
+  font-weight: 900;
+}
+
+.pf-contact-title em {
+  color: var(--pf-red);
+  font-style: normal;
+}
+
+.pf-contact-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.35em;
+}
+
+.pf-contact-lines li {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.pf-contact-lines svg {
+  width: 1.1em;
+  height: 1.1em;
+  color: var(--pf-red);
+}
+
+[dir='rtl'] .pf-contact-lines a {
+  text-align: end;
+}
+
+[data-theme='dark'] .pf-s-contact .pf-body {
+  padding-inline-start: 62%;
+}
+
+/* ------------------------------------------------------------ small screens */
+
+/* Below tablet width a slide stops being a fixed picture: it keeps the deck's
+   look but lets its content set the height, so nothing is shrunk to unreadable. */
+@media (max-width: 760px) {
+  .pf-slide {
+    aspect-ratio: auto;
+    min-height: 62vw;
+  }
+
+  .pf-body {
+    position: relative;
+    inset: auto;
+    padding: 2.4em 1.6em 4em;
+    font-size: 13px;
+  }
+
+  .pf-folio {
+    font-size: 12px;
+  }
+
+  .pf-pillars,
+  .pf-why,
+  .pf-categories,
+  .pf-intro-photos,
+  [data-theme='dark'] .pf-s-intro .pf-body {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-why,
+  .pf-categories {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pf-products {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    padding-inline: 0;
+  }
+
+  .pf-product-photo {
+    aspect-ratio: 4 / 3;
+  }
+
+  .pf-intro-photos {
+    flex: none;
+  }
+
+  .pf-intro-photo {
+    aspect-ratio: 16 / 10;
+  }
+
+  .pf-hallmarks {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  [data-theme='dark'] .pf-why-item:nth-child(even) {
+    margin-top: 0;
+  }
+
+  [data-theme='dark'] .pf-intro-photos {
+    grid-row: auto;
+    grid-column: 1;
+  }
+
+  [data-theme='dark'] .pf-s-intro .pf-body {
+    padding: 2.4em 1.6em 4em;
+  }
+
+  .pf-s-contact .pf-body,
+  [data-theme='dark'] .pf-s-contact .pf-body {
+    padding-inline-start: 1.6em;
+  }
+
+  [data-theme='dark'] .pf-s-contact .pf-photo,
+  [data-theme='dark'] .pf-s-cover .pf-photo {
+    opacity: 0.35;
+  }
+
+  .pf-pin-tag {
+    font-size: 0.7em;
+  }
+}
+
+/* ------------------------------------------------------------------- print */
+
+/* One slide per landscape A4 sheet, edge to edge. */
+@page pf {
+  size: 297mm 210mm;
+  margin: 0;
+}
+
+@media print {
+  .pf-toolbar {
+    display: none !important;
+  }
+
+  .pf-page {
+    display: block;
+  }
+
+  .pf-deck {
+    display: block;
+  }
+
+  .pf-slide {
+    page: pf;
+    width: 297mm;
+    height: 210mm;
+    aspect-ratio: auto;
+    border-radius: 0;
+    box-shadow: none;
+    break-after: page;
+  }
+
+  .pf-slide:last-child {
+    break-after: auto;
+  }
+}
