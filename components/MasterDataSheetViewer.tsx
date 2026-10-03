@@ -3,6 +3,7 @@
 import {useState, useEffect, useRef, useCallback} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Logo from './Logo';
 
 export type MasterSheetLabels = {
   eyebrow: string;
@@ -297,9 +298,12 @@ export default function MasterDataSheetViewer({labels, locale, variant = 'featur
             </div>
 
             <div className="master-sheet-frame-footer">
-              <div className="frame-meta">
-                <span className="brand-tag">LOGX® MASTER SHEET</span>
-                <span className="meta-sub">High-Resolution Technical Vector & Matrix</span>
+              <div className="frame-brand">
+                <Logo tone="light" size="1.9rem" />
+                <div className="frame-meta">
+                  <span className="brand-tag">MASTER SHEET</span>
+                  <span className="meta-sub">High-Resolution Technical Vector & Matrix</span>
+                </div>
               </div>
               <span className="frame-hint">{labels.inspectHint}</span>
             </div>
@@ -322,8 +326,8 @@ export default function MasterDataSheetViewer({labels, locale, variant = 'featur
           <header className="master-modal-hud">
             <div className="hud-title-col">
               <div className="hud-brand">
-                <span className="brand-dot" />
-                <strong>LOGX CONNECTIVITY SOLUTIONS</strong>
+                <Logo tone="light" size="1.6rem" />
+                <strong>CONNECTIVITY SOLUTIONS</strong>
               </div>
               <span className="hud-desc">{labels.title}</span>
             </div>
