@@ -90,8 +90,7 @@ p {
    internally, but must still sit at the start edge of an RTL page. Forcing
    `direction: ltr` makes `text-align: start` resolve to left, so re-align. */
 [dir='rtl'] .product-code,
-[dir='rtl'] .detail-source dd,
-[dir='rtl'] .hero-note strong {
+[dir='rtl'] .detail-source dd {
   text-align: right;
 }
 
@@ -161,69 +160,8 @@ p {
 }
 
 /* Full-bleed band inside a constrained page shell. */
-.bleed {
-  margin-inline: calc(50% - 50vw);
-  padding-inline: max(24px, calc(50vw - var(--shell) / 2));
-}
 
 /* ------------------------------------------------------------------ header */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  background: rgb(255 255 255 / 92%);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-}
-
-.site-header::after {
-  content: '';
-  display: block;
-  height: 3px;
-  background: var(--brand);
-}
-
-.header-inner {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-}
-
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.main-nav a {
-  color: var(--ink-soft);
-  padding-block: 6px;
-  border-bottom: 2px solid transparent;
-  transition: color 0.18s ease, border-color 0.18s ease;
-}
-
-.main-nav a:hover {
-  color: var(--ink);
-}
-
-.main-nav a[aria-current='page'] {
-  color: var(--ink);
-  border-bottom-color: var(--brand);
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
 .language-switch {
   border: 1px solid var(--line-strong);
@@ -401,14 +339,8 @@ p {
 
 /* Show hamburger, hide desktop nav on mobile */
 @media (max-width: 720px) {
-  .main-nav {
-    display: none;
-  }
 
   /* Hide the desktop language switch — it's duplicated inside the drawer */
-  .header-actions > .language-switch {
-    display: none;
-  }
 
   .nav-hamburger {
     display: flex;
@@ -483,28 +415,6 @@ p {
 
 /* --------------------------------------------------------------------- hero */
 
-.hero {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(32px, 5vw, 72px);
-  align-items: center;
-  padding-block: clamp(48px, 7vw, 92px) clamp(40px, 6vw, 72px);
-}
-
-.hero h1 {
-  font-size: clamp(2.6rem, 5.4vw, 4.5rem);
-  margin: 0 0 22px;
-  max-width: 15ch;
-}
-
-.hero-subtitle {
-  color: var(--ink-soft);
-  font-size: 1.08rem;
-  line-height: 1.7;
-  max-width: 52ch;
-  margin: 0;
-}
-
 .action-row {
   display: flex;
   flex-wrap: wrap;
@@ -512,167 +422,11 @@ p {
   margin-top: 32px;
 }
 
-.hero-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 36px;
-  margin-top: 44px;
-  padding-top: 28px;
-  border-top: 1px solid var(--line);
-}
-
-.hero-stats div {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.hero-stats strong {
-  font-size: 1.7rem;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-}
-
-.hero-stats span {
-  color: var(--ink-faint);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
 /* Three square product shots plus a brand tile, so the grid reads as designed
    rather than as three photos that happened to be cropped.
    The square comes from the container, not the items: `aspect-ratio` on a
    stretched grid item is circular (the row sizes to the item, the item sizes
    to the row) and collapses the implicit rows, so the tiles would overlap. */
-.hero-collage {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  aspect-ratio: 1;
-  gap: 12px;
-}
-
-.hero-collage figure {
-  position: relative;
-  min-height: 0;
-  margin: 0;
-  overflow: hidden;
-  background: var(--tile);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-}
-
-.hero-collage img {
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.hero-collage figure:hover img {
-  transform: scale(1.04);
-}
-
-.hero-note {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 14px;
-  min-height: 0;
-  padding: 22px;
-  background: var(--ink);
-  color: #fff;
-  border-radius: var(--radius-lg);
-}
-
-.hero-note .brand-logo {
-  --logo-height: 1.4rem;
-}
-
-.hero-note p {
-  margin: 0;
-  color: rgb(255 255 255 / 72%);
-  font-size: 0.78rem;
-  line-height: 1.6;
-}
-
-.hero-note strong {
-  display: block;
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  direction: ltr;
-  text-align: start;
-}
-
-/* ------------------------------------------------------------- category grid */
-
-.category-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.category-tile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.category-tile:hover {
-  border-color: var(--line-strong);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
-}
-
-.category-tile-image {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  background: var(--tile);
-  overflow: hidden;
-}
-
-.category-tile-image img {
-  object-fit: contain;
-  padding: 22px;
-  transition: transform 0.35s ease;
-}
-
-.category-tile:hover .category-tile-image img {
-  transform: scale(1.04);
-}
-
-.category-tile-body {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 20px 22px 22px;
-  border-top: 1px solid var(--line);
-}
-
-.category-tile-body strong {
-  font-size: 1.18rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.category-tile-body span {
-  color: var(--ink-faint);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
 
 /* -------------------------------------------------------------- product card */
 
@@ -1290,20 +1044,6 @@ p {
   gap: 12px;
 }
 
-.button-datasheet {
-  gap: 10px;
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 0.86rem;
-}
-
-.button-datasheet small {
-  color: var(--ink-faint);
-  font-size: 0.72rem;
-  font-weight: 600;
-  direction: ltr;
-}
-
 .pdf-badge {
   display: inline-flex;
   align-items: center;
@@ -1767,157 +1507,6 @@ p {
   }
 }
 
-/* ---------------------------------------------------------------- proof band */
-
-.proof-band {
-  background: var(--ink);
-  color: #fff;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  padding-block: 40px;
-  border-radius: var(--radius-lg);
-}
-
-.proof-band > div {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-inline: 8px;
-  border-inline-end: 1px solid rgb(255 255 255 / 14%);
-}
-
-.proof-band > div:last-child {
-  border-inline-end: 0;
-}
-
-.proof-band strong {
-  color: #fff;
-  font-size: 2.1rem;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-
-.proof-band span {
-  color: rgb(255 255 255 / 70%);
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-
-/* ------------------------------------------------ brand pillars & slogan strip */
-
-.brand-pillars-strip {
-  background: var(--tile);
-  border-block: 1px solid var(--line);
-  padding-block: 36px;
-  margin-block: 20px 48px;
-}
-
-.brand-pillars-inner {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 36px;
-  align-items: center;
-}
-
-.brand-slogan-box {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding-inline-end: 28px;
-  border-inline-end: 2px solid var(--brand);
-}
-
-.brand-slogan-tag {
-  color: var(--brand);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.brand-slogan-title {
-  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
-  font-weight: 800;
-  line-height: 1.25;
-  margin: 0;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-}
-
-.brand-pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.brand-pillar-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 16px 18px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.brand-pillar-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--line-strong);
-  box-shadow: var(--shadow-sm);
-}
-
-.pillar-icon-badge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius);
-  background: var(--brand-wash);
-  color: var(--brand);
-}
-
-.pillar-card-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.pillar-card-text strong {
-  font-size: 0.94rem;
-  font-weight: 800;
-  color: var(--ink);
-}
-
-.pillar-card-text p {
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-  line-height: 1.5;
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .brand-pillars-inner {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .brand-slogan-box {
-    border-inline-end: none;
-    border-block-end: 2px solid var(--brand);
-    padding-inline-end: 0;
-    padding-block-end: 16px;
-  }
-
-  .brand-pillars-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ------------------------------------------------ why choose LOGX section */
 
 .why-logx-section {
@@ -2034,89 +1623,6 @@ p {
   }
 }
 
-/* ------------------------------------------------ global footprint strip */
-
-.global-footprint-strip {
-  margin-top: 56px;
-  background: var(--tile);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 36px 36px 40px;
-}
-
-.global-footprint-head {
-  margin-bottom: 24px;
-}
-
-.global-footprint-head h2 {
-  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
-  margin: 0;
-}
-
-.global-hubs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.global-hub-card {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 20px 22px;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.global-hub-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--line-strong);
-  box-shadow: var(--shadow-sm);
-}
-
-.global-hub-card.is-regional {
-  border-color: var(--brand);
-  background: linear-gradient(135deg, var(--paper) 0%, var(--brand-wash) 100%);
-}
-
-.hub-flag {
-  font-size: 2rem;
-  line-height: 1;
-}
-
-.hub-info {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.hub-role {
-  color: var(--brand);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.hub-info strong {
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--ink);
-}
-
-.hub-info small {
-  color: var(--ink-soft);
-  font-size: 0.8rem;
-}
-
-@media (max-width: 900px) {
-  .global-hubs-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ----------------------------------------------------------------- contact CTA */
 
 .contact-cta {
@@ -2139,50 +1645,6 @@ p {
 }
 
 /* --------------------------------------------------------------------- about */
-
-.about-hero {
-  max-width: 780px;
-  padding-block: 40px 56px;
-}
-
-.about-hero h1 {
-  font-size: clamp(2.4rem, 5.4vw, 4rem);
-  margin-bottom: 22px;
-}
-
-.about-hero > p:last-child {
-  color: var(--ink-soft);
-  font-size: 1.12rem;
-  line-height: 1.75;
-  max-width: 60ch;
-  margin: 0;
-}
-
-.about-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 36px;
-  border-top: 1px solid var(--line);
-  padding-top: 32px;
-}
-
-.about-index {
-  color: var(--brand);
-  font-size: 0.74rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-}
-
-.about-columns h2 {
-  font-size: 1.2rem;
-  margin: 18px 0 12px;
-}
-
-.about-columns p {
-  color: var(--ink-soft);
-  line-height: 1.75;
-  margin: 0;
-}
 
 .about-gallery {
   display: grid;
@@ -2610,16 +2072,9 @@ p {
 /* ---------------------------------------------------------------- responsive */
 
 @media (max-width: 1024px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
 
   /* The hero stacks here, so cap the collage rather than stretching it across
      the full column and making each tile enormous. */
-  .hero-collage {
-    max-width: 520px;
-    margin-inline: auto;
-  }
 
   .footer-inner {
     grid-template-columns: 1fr 1fr;
@@ -2631,29 +2086,9 @@ p {
 }
 
 @media (max-width: 860px) {
-  .category-strip,
-  .about-columns {
-    grid-template-columns: 1fr;
-  }
 
   .detail-grid {
     grid-template-columns: 1fr;
-  }
-
-  .proof-band {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .proof-band > div {
-    border-inline-end: 0;
-    border-bottom: 1px solid rgb(255 255 255 / 14%);
-    padding-bottom: 18px;
-  }
-
-  .proof-band > div:last-child {
-    border-bottom: 0;
-    padding-bottom: 0;
   }
 }
 
@@ -2663,20 +2098,7 @@ p {
     width: min(100% - 32px, var(--shell));
   }
 
-  .header-inner {
-    min-height: 66px;
-    gap: 12px;
-  }
-
-  .main-nav {
-    gap: 14px;
-    font-size: 0.66rem;
-  }
-
   /* "About" is the first thing to go when the bar runs out of room. */
-  .main-nav a:nth-child(3) {
-    display: none;
-  }
 
   .language-switch {
     padding: 7px 10px;
@@ -2724,13 +2146,6 @@ p {
   }
 
   /* Only the two destinations that matter survive on the narrowest screens. */
-  .main-nav a:nth-child(1) {
-    display: none;
-  }
-
-  .main-nav {
-    gap: 12px;
-  }
 }
 
 /* ------------------------------------------------ product detail enhancements */
@@ -3058,9 +2473,8 @@ p {
     print-color-adjust: exact;
   }
 
-  .site-header,
   .site-footer,
-  .ds-toolbar {
+.ds-toolbar {
     display: none !important;
   }
 
@@ -3670,23 +3084,9 @@ p {
     max-height: 74vh;
   }
 }
-
-/* ========================================================================== */
 /* LOGX NETWORK — Global Professional Upgrade (2025)                          */
-/* ========================================================================== */
 
 /* --------------------------------------------------------- button-ghost */
-
-.button-ghost {
-  border-color: var(--line-strong);
-  color: var(--ink-soft);
-  background: transparent;
-}
-
-.button-ghost:hover {
-  border-color: var(--ink);
-  color: var(--ink);
-}
 
 .button-sm {
   min-height: 38px;
@@ -3871,192 +3271,11 @@ p {
   color: var(--brand);
 }
 
-/* --------------------------------------------------------- awards / numbers banner */
-
-.numbers-banner {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  background: var(--ink);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  margin-top: 56px;
-}
-
-.number-cell {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 36px 20px;
-  border-inline-end: 1px solid rgb(255 255 255 / 10%);
-  text-align: center;
-  transition: background 0.22s ease;
-}
-
-.number-cell:last-child {
-  border-inline-end: 0;
-}
-
-.number-cell:hover {
-  background: rgb(255 255 255 / 4%);
-}
-
-.number-cell strong {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-
-.number-cell strong em {
-  font-style: normal;
-  color: var(--brand);
-}
-
-.number-cell span {
-  font-size: 0.76rem;
-  color: rgb(255 255 255 / 60%);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  max-width: 14ch;
-}
-
-@media (max-width: 860px) {
-  .numbers-banner {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .number-cell {
-    border-block-end: 1px solid rgb(255 255 255 / 10%);
-  }
-
-  .number-cell:nth-child(2) {
-    border-inline-end: 0;
-  }
-
-  .number-cell:last-child {
-    border-block-end: 0;
-  }
-
-  .number-cell:nth-last-child(2) {
-    border-block-end: 0;
-  }
-}
-
-@media (max-width: 500px) {
-  .numbers-banner {
-    grid-template-columns: 1fr;
-  }
-
-  .number-cell {
-    border-inline-end: 0;
-  }
-}
-
 /* --------------------------------------------------------- hero enhancement */
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px 6px 8px;
-  margin-bottom: 18px;
-  background: var(--brand-wash);
-  border: 1px solid rgb(211 19 27 / 22%);
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--brand);
-}
-
-.hero-badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--brand);
-  animation: pulse-dot 2s ease-in-out infinite;
-}
 
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.6; transform: scale(0.85); }
-}
-
-/* --------------------------------------------------------- trusted-by logos strip */
-
-.trusted-strip {
-  margin-top: 56px;
-  padding: 28px 36px;
-  background: var(--tile);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
-}
-
-.trusted-label {
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.trusted-divider {
-  width: 1px;
-  height: 28px;
-  background: var(--line-strong);
-  flex-shrink: 0;
-}
-
-.trusted-logos {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  flex: 1;
-}
-
-.trusted-logo-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  padding: 10px 16px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--paper);
-  transition: border-color 0.18s ease, transform 0.18s ease;
-}
-
-.trusted-logo-item:hover {
-  border-color: var(--line-strong);
-  transform: translateY(-2px);
-}
-
-.trusted-logo-item strong {
-  font-size: 0.76rem;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  color: var(--ink);
-}
-
-.trusted-logo-item span {
-  font-size: 0.62rem;
-  color: var(--ink-faint);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
 }
 
 /* --------------------------------------------------------- section-value cards (about) */
@@ -4210,65 +3429,6 @@ p {
   }
 }
 
-/* --------------------------------------------------------- hero brand strip (decorative) */
-
-.hero-brand-strip {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 32px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-}
-
-.hero-brand-strip-label {
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  white-space: nowrap;
-}
-
-.hero-brand-strip-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.hero-brand-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 12px;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--ink-soft);
-  letter-spacing: 0.04em;
-}
-
-.hero-brand-tag::before {
-  content: '';
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--brand);
-  flex-shrink: 0;
-}
-
-/* --------------------------------------------------------- contact page offices enhanced */
-
-.contact-offices-enhanced {
-  margin-top: 64px;
-}
-
-.contact-offices-enhanced .section-heading {
-  margin-bottom: 28px;
-}
-
 /* --------------------------------------------------------- responsive fixes */
 
 @media (max-width: 860px) {
@@ -4278,18 +3438,6 @@ p {
 
   .cert-badges {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .trusted-strip {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 20px;
-  }
-
-  .trusted-divider {
-    width: 40px;
-    height: 1px;
   }
 }
 
@@ -4302,10 +3450,6 @@ p {
     margin-top: 32px;
   }
 }
-
-/* ==========================================================================
-   LOGX CATALOGUE & PROFILE DESIGN SYSTEM (FROM PDF SPEC)
-   ========================================================================== */
 
 /* --------------------------------------------------------- Constellation Mesh */
 
@@ -4323,20 +3467,8 @@ p {
   object-fit: cover;
 }
 
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
 /* Keep the mesh behind the photo collage; across the headline it reads as
    lines struck through the type. */
-.hero .constellation-mesh-wrap {
-  mask-image: linear-gradient(to right, transparent 40%, #000 75%);
-}
-
-[dir='rtl'] .hero .constellation-mesh-wrap {
-  mask-image: linear-gradient(to left, transparent 40%, #000 75%);
-}
 
 /* --------------------------------------------------------- Headings & Common */
 
@@ -4531,162 +3663,6 @@ p {
   }
 }
 
-/* --------------------------------------------------------- Circular Category Vignettes (Page 6 & 7) */
-
-.category-vignettes-section {
-  position: relative;
-  margin-top: 80px;
-  padding: 56px 36px 40px;
-  background: var(--tile);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-}
-
-.vignettes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 36px;
-}
-
-.vignette-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 32px 24px 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
-  position: relative;
-}
-
-.vignette-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--brand);
-  box-shadow: 0 16px 36px -12px rgba(211, 19, 27, 0.12);
-}
-
-.vignette-circle-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.vignette-circle {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  border: 4px solid var(--brand);
-  padding: 8px;
-  position: relative;
-  overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.vignette-card:hover .vignette-circle {
-  transform: scale(1.04);
-}
-
-.vignette-img {
-  border-radius: 50%;
-  object-fit: cover;
-  padding: 4px;
-}
-
-.vignette-tag-pill {
-  position: absolute;
-  bottom: -8px;
-  padding: 4px 14px;
-  border-radius: 999px;
-  font-size: 0.68rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  white-space: nowrap;
-}
-
-.vignette-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.vignette-title {
-  font-size: 1.28rem;
-  font-weight: 800;
-  margin: 0 0 10px;
-  color: var(--ink);
-}
-
-.vignette-desc {
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-  line-height: 1.65;
-  margin: 0 0 18px;
-  min-height: 4.8em;
-}
-
-.vignette-highlights {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.vignette-chip {
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  background: var(--tile);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  color: var(--ink-soft);
-}
-
-.vignette-action {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  margin-top: auto;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-}
-
-.vignette-link {
-  width: 100%;
-  justify-content: center;
-}
-
-.vignette-count {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--ink-faint);
-  letter-spacing: 0.04em;
-}
-
-@media (max-width: 980px) {
-  .vignettes-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .vignette-desc {
-    min-height: unset;
-  }
-}
-
 /* --------------------------------------------------------- Brand Hallmarks (Page 3 & 5) */
 
 .brand-hallmarks-strip {
@@ -4874,107 +3850,6 @@ p {
 
 @media (max-width: 600px) {
   .why-logx-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* --------------------------------------------------------- Brand Pillars Strip */
-
-.brand-pillars-strip {
-  background: var(--ink);
-  color: #ffffff;
-  padding: 48px 0;
-  margin-top: 56px;
-}
-
-.brand-pillars-inner {
-  max-width: var(--shell);
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.brand-slogan-box {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.brand-slogan-tag {
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--brand);
-}
-
-.brand-slogan-title {
-  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  margin: 0;
-  line-height: 1.2;
-  color: #ffffff;
-}
-
-.brand-pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.brand-pillar-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.brand-pillar-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--brand);
-}
-
-.pillar-icon-badge {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius);
-  background: rgba(211, 19, 27, 0.2);
-  color: var(--brand);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pillar-card-text strong {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #ffffff;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.pillar-card-text p {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.5;
-  margin: 0;
-}
-
-@media (max-width: 900px) {
-  .brand-pillars-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .brand-pillars-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -5585,7 +4460,6 @@ body {
   overflow-x: clip;
 }
 
-.hero,
 .catalog-intro,
 .contact-page,
 .about-hero-enhanced {
@@ -5595,7 +4469,6 @@ body {
 
 /* The grid spans the viewport but the content keeps the shell width; html's
    `overflow-x: clip` swallows the overhang. */
-.hero::before,
 .catalog-intro::before,
 .contact-page::before,
 .about-hero-enhanced::before {
@@ -5617,91 +4490,13 @@ body {
   height: 380px;
 }
 
-.hero {
-  overflow: visible;
-}
-
-.hero::before {
-  inset-block: -40px 0;
-  mask-image: radial-gradient(ellipse 70% 90% at 72% 45%, #000 30%, transparent 78%);
-}
-
-[dir='rtl'] .hero::before {
-  mask-image: radial-gradient(ellipse 70% 90% at 28% 45%, #000 30%, transparent 78%);
-}
-
 /* Warm light behind the product collage, so the photos sit on something. */
-.hero::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset-block-start: 8%;
-  inset-inline-end: -6%;
-  width: 58%;
-  aspect-ratio: 1;
-  background: radial-gradient(circle, var(--glow), transparent 62%);
-  pointer-events: none;
-}
-
-.hero-collage figure {
-  box-shadow: var(--shadow-md);
-}
-
-/* ------------------------------------------------------ ink: slogan band */
-
-.brand-pillars-strip {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse 45% 120% at 0% 50%, rgb(211 19 27 / 28%), transparent 70%),
-    var(--bg-fibre),
-    linear-gradient(160deg, #1b1b1b, var(--ink) 55%, #0d0d0d);
-  border-block: 1px solid #000;
-}
-
-[dir='rtl'] .brand-pillars-strip {
-  background:
-    radial-gradient(ellipse 45% 120% at 100% 50%, rgb(211 19 27 / 28%), transparent 70%),
-    var(--bg-fibre),
-    linear-gradient(200deg, #1b1b1b, var(--ink) 55%, #0d0d0d);
-}
 
 /* A lit edge where the band meets the page. */
-.brand-pillars-strip::before {
-  content: '';
-  position: absolute;
-  inset-inline: 0;
-  inset-block-start: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--brand) 30%, transparent 70%);
-  opacity: 0.85;
-}
-
-.brand-pillar-card {
-  background: rgb(255 255 255 / 4%);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-}
 
 /* ------------------------------------------- content panels on the page */
 
 /* Category panel: a patch-panel face of port dots fading down the card. */
-.category-vignettes-section {
-  isolation: isolate;
-  overflow: hidden;
-  background: var(--paper);
-}
-
-.category-vignettes-section::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: radial-gradient(circle, rgb(20 20 20 / 13%) 1.2px, transparent 1.6px) 0 0 / 18px 18px;
-  mask-image: linear-gradient(to bottom, #000, transparent 45%);
-  pointer-events: none;
-}
 
 /* Mission and why-LOGX: drafting grid tucked into one corner. */
 .mission-commitment-section,
@@ -5822,21 +4617,6 @@ body {
 }
 
 /* Stacked hero: the collage is now below the copy, so the light follows it. */
-@media (max-width: 1024px) {
-  .hero::after {
-    inset-block: auto -4%;
-    inset-inline: 0;
-    width: 100%;
-    aspect-ratio: auto;
-    height: 55%;
-    background: radial-gradient(ellipse 60% 50% at 50% 50%, var(--glow), transparent 70%);
-  }
-
-  .hero::before,
-  [dir='rtl'] .hero::before {
-    mask-image: linear-gradient(to bottom, #000 40%, transparent);
-  }
-}
 
 @media (max-width: 760px) {
   :root {

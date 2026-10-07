@@ -1,6 +1,6 @@
-// Turns the original LOGX product photographs into clean, uniform catalogue
-// assets: EXIF-rotated, white-balanced against their own backdrop, trimmed of
-// dead space and padded to a square on white.
+// Turns original LOGX product photographs and clean product illustrations into
+// uniform catalogue assets. Illustrations replace retail packaging and tangled
+// cable photos where the shoot has no usable unpackaged product view.
 //
 //   npm run build:images
 //
@@ -269,13 +269,25 @@ async function main() {
     manifest[family] = [];
     for (let position = 0; position < sources.length; position++) {
       const sourceName = sources[position];
-      if (!available.has(sourceName)) {
+      const isArtwork = sourceName.startsWith('@artwork/');
+      const isOpenSource = sourceName.startsWith('@open-source/');
+      if (!isArtwork && !isOpenSource && !available.has(sourceName)) {
         console.warn(`  ! ${family}[${position}] -> "${sourceName}" is not in the source folder`);
         missing++;
         continue;
       }
       const name = `${family}-${String(position + 1).padStart(2, '0')}.webp`;
-      await processPhoto(path.join(SRC, sourceName), path.join(OUT, name), {
+      const sourcePath = isArtwork
+        ? path.join(ROOT, 'scripts', 'product-art', sourceName.slice('@artwork/'.length))
+        : isOpenSource
+          ? path.join(ROOT, 'docs', 'open-source-images', sourceName.slice('@open-source/'.length))
+          : path.join(SRC, sourceName);
+      if (isArtwork && !fs.existsSync(sourcePath)) {
+        console.error(`  ! ${family}[${position}] -> artwork "${sourceName}" is missing`);
+        missing++;
+        continue;
+      }
+      await processPhoto(sourcePath, path.join(OUT, name), {
         rotation: rotations[sourceName] ?? 0,
         crop: crops[sourceName]
       });

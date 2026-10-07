@@ -7,10 +7,10 @@ type ProductCardProps = {
   locale: Locale;
   viewLabel: string;
   /** Set on the handful of cards above the fold so they are not lazy-loaded. */
-  priority?: boolean;
+  preload?: boolean;
 };
 
-export default function ProductCard({product, locale, viewLabel, priority}: ProductCardProps) {
+export default function ProductCard({product, locale, viewLabel, preload}: ProductCardProps) {
   const [cover] = product.images;
 
   return (
@@ -22,7 +22,7 @@ export default function ProductCard({product, locale, viewLabel, priority}: Prod
             alt={product.name[locale]}
             fill
             sizes="(max-width: 720px) 45vw, (max-width: 1024px) 30vw, 250px"
-            priority={priority}
+            preload={preload}
           />
         ) : null}
       </div>

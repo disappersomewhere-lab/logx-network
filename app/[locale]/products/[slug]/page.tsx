@@ -3,8 +3,9 @@ import {getTranslations, setRequestLocale} from 'next-intl/server';
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import ProductGallery from '@/components/ProductGallery';
-import ProductCard from '@/components/ProductCard';
-import {catalog, getProduct, relatedProducts, type Locale} from '@/lib/catalog';
+import LineCard from '@/components/LineCard';
+import {catalog, getProduct, type Locale} from '@/lib/catalog';
+import {relatedGroups, siblingsOf} from '@/lib/groups';
 import {alternatesFor, contact, mailto} from '@/lib/site';
 import {formatBytes} from '@/lib/format';
 import {datasheetFor} from '@/lib/datasheets';
@@ -50,7 +51,8 @@ export default async function ProductPage({params}: Props) {
 
   const t = await getTranslations();
   const language = locale as Locale;
-  const related = relatedProducts(product);
+  const siblings = siblingsOf(product);
+  const related = relatedGroups(product);
   const family = contentFor(product.partNumber);
   const hasSheet = Boolean(family);
   const pdf = datasheetFor(product.partNumber);
@@ -218,20 +220,57 @@ export default async function ProductPage({params}: Props) {
         </div>
       </div>
 
+      {siblings.length > 1 ? (
+        <section className="variants" aria-labelledby="variants-title">
+          <h2 id="variants-title">{t('productDetail.variants')}</h2>
+          <p>{t('productDetail.variantsHint')}</p>
+          <ul className="variants-list">
+            {siblings.map((item) =>
+              item.slug === product.slug ? (
+                <li key={item.slug}>
+                  <span className="variants-current" aria-current="page">
+                    <span className="variants-code">{item.partNumber}</span>
+                    <span className="variants-name">{item.name[language]}</span>
+                    <span className="variants-state">{t('productDetail.viewing')}</span>
+                  </span>
+                </li>
+              ) : (
+                <li key={item.slug}>
+                  <Link href={`/${locale}/products/${item.slug}`}>
+                    <span className="variants-code">{item.partNumber}</span>
+                    <span className="variants-name">{item.name[language]}</span>
+                    <span className="variants-state" aria-hidden="true">
+                      →
+                    </span>
+                  </Link>
+                </li>
+              )
+            )}
+          </ul>
+        </section>
+      ) : null}
+
       {related.length ? (
         <section className="section-block">
           <div className="section-heading">
-            <h2>{t('productDetail.related')}</h2>
+            <h2>{t('productDetail.relatedLines')}</h2>
           </div>
           <div className="product-grid">
-            {related.map((item) => (
-              <ProductCard
-                key={item.slug}
-                product={item}
-                locale={language}
-                viewLabel={t('catalog.view')}
-              />
-            ))}
+            {related.map((group) => {
+              const several = group.products.length > 1;
+              return (
+                <LineCard
+                  key={group.key}
+                  href={`/${locale}/products/${group.lead.slug}`}
+                  image={group.cover}
+                  title={group.title[language]}
+                  code={several ? undefined : group.lead.partNumber}
+                  range={several ? group.range?.[language] : null}
+                  parts={several ? t('catalog.lineParts', {count: group.products.length}) : null}
+                  cta={several ? t('catalog.viewLine') : t('catalog.view')}
+                />
+              );
+            })}
           </div>
         </section>
       ) : null}

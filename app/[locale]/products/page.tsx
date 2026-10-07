@@ -7,7 +7,7 @@ import {alternatesFor} from '@/lib/site';
 
 type Props = {
   params: Promise<{locale: string}>;
-  searchParams: Promise<{category?: string}>;
+  searchParams: Promise<{category?: string; q?: string}>;
 };
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
@@ -23,7 +23,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
 export default async function ProductsPage({params, searchParams}: Props) {
   const {locale} = await params;
   setRequestLocale(locale);
-  const {category} = await searchParams;
+  const {category, q} = await searchParams;
   const t = await getTranslations({locale});
 
   return (
@@ -46,10 +46,14 @@ export default async function ProductsPage({params, searchParams}: Props) {
         </div>
       </div>
 
+      {/* Keyed on the address so a header search made while already on this
+          page remounts the browser with the new term. */}
       <CatalogBrowser
+        key={`${category ?? ''}|${q ?? ''}`}
         products={catalog}
         locale={locale as Locale}
         initialCategory={isCategory(category) ? category : undefined}
+        initialQuery={q?.slice(0, 80)}
         labels={{
           all: t('catalog.all'),
           search: t('catalog.searchPlaceholder'),

@@ -134,8 +134,8 @@ export const deckCategories: {
       en: 'Our components bring order and efficiency to every network. The range includes toolless CAT6 and CAT6A keystone jacks, 86-type faceplates, 24- and 48-port keystone patch panels, 1U and 2U metal cable managers, RJ45 plugs and boots, SFP media converters, a rack-mount PDU and a complete installation tool kit: everything needed to terminate, patch and manage a clean, organized installation.',
       ar: 'تضفي مكوّناتنا التنظيم والكفاءة على كل شبكة. وتشمل المجموعة مقابس Keystone من فئتي CAT6 وCAT6A تُركَّب دون أدوات، وأوجه قياس 86، ولوحات توصيل Keystone بسعة 24 و48 منفذاً، ومنظّمات كابلات معدنية 1U و2U، وقوابس RJ45 وأغطيتها، ومحوّلات وسائط SFP، ووحدة توزيع طاقة للخزانة، وحقيبة أدوات تركيب متكاملة: كل ما تحتاجه لإنهاء التوصيلات وتنظيمها في تمديد نظيف ومرتّب.'
     },
-    thumb: '/profile/category-components.webp',
-    photos: ['/profile/category-components.webp', '/products/photos/keystone-cat6a-01.webp']
+    thumb: '/products/photos/patch-panel-48-01.webp',
+    photos: ['/products/photos/patch-panel-48-01.webp', '/products/photos/keystone-cat6a-01.webp']
   }
 ];
 

@@ -76,7 +76,9 @@ rotation, decides whether the shot sits on a seamless backdrop or in-situ, and t
 carries two per-photo corrections:
 
 - `rotations` — extra rotation for originals shot on their side or upside down, so the
-  printed LOGX reads horizontally.
+  printed LOGX reads horizontally. After a re-shoot, check each bag against a 0/90/180/270
+  contact sheet of the EXIF-oriented original; a value carried over from the old shoot can
+  leave the logo upside down.
 - `crops` — a fractional crop for in-situ shots, framing the product so the warehouse behind
   it falls outside the frame. A cropped photo is fitted and padded rather than re-cropped
   square, which would zoom into a fragment of a wide subject like the PDU.
@@ -94,6 +96,28 @@ folder fails the run rather than silently leaving a product without photography.
 The originals are large and stay out of the repository (see `.gitignore`) — the processed
 WebP files are committed, so a clone builds without them. You only need the source folder to
 regenerate the imagery.
+
+### Product lines and where photographs appear
+
+Parts that are one product in different sizes share a **product line**
+([lib/groups.ts](lib/groups.ts)): twelve patch-cord lengths are one card with a "12 part
+numbers" badge, not twelve cards with the same picture. The catalogue shows lines by default
+(with a toggle to every part number), and a product page lists its line's part numbers in a
+table instead of repeating the photograph as "related" cards. `coverOverride` picks the frame
+that stands for a line when its first part's own frame is weak.
+
+The home page shows each line at most once: the hero spends one, and `pickLines` deals the
+rest to the systems tabs around it. Scene photographs (hero, systems) come from the catalogue
+artwork in `public/profile/` or a real LOGX shot; nothing generic is shown as a LOGX product.
+
+### Site chrome
+
+[components/SiteHeader.tsx](components/SiteHeader.tsx) is a utility bar over a sticky main bar
+with a Products mega menu and a search drawer; the mega-menu shortcuts are in
+[lib/nav.ts](lib/nav.ts) and each one opens the catalogue filtered to a category and
+pre-filled with a search term in that language. The home page's story hero is
+[components/HeroCarousel.tsx](components/HeroCarousel.tsx). Styles for both, and for the home
+modules, are in [app/site.css](app/site.css), loaded after `globals.css`.
 
 ### Company profile
 

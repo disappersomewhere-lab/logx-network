@@ -6,7 +6,14 @@
     "about": "About",
     "contact": "Contact",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "skip": "Skip to content",
+    "search": "Search products",
+    "searchPlaceholder": "Search part number or product…",
+    "searchSubmit": "Search",
+    "closeSearch": "Close search",
+    "allProducts": "View the full catalog",
+    "partCount": "{count} part numbers"
   },
   "footer": {
     "tagline": "Structured cabling, fiber optic distribution and rack infrastructure — supplied as one connected range.",
@@ -126,11 +133,86 @@
     "stats": {
       "parts": "part numbers",
       "families": "product families",
-      "tested": "Fluke-tested copper"
+      "tested": "Fluke-tested copper",
+      "lines": "product lines",
+      "offices": "offices · UK & KSA"
     },
     "featured": {
       "eyebrow": "Across the range",
       "title": "One product line per system."
+    },
+    "carousel": {
+      "label": "Highlights",
+      "prev": "Previous slide",
+      "next": "Next slide",
+      "pause": "Pause slideshow",
+      "play": "Play slideshow",
+      "goTo": "Go to slide {n}"
+    },
+    "slides": {
+      "network": {
+        "text": "A connected physical layer engineered in London, stocked centrally in Riyadh."
+      },
+      "rack": {
+        "eyebrow": "Accessories",
+        "title": "Everything between the cable and the rack.",
+        "text": "Keystone patch panels, cable managers, faceplates and rack power — selected to terminate, organise and protect every run.",
+        "cta": "Browse accessories"
+      }
+    },
+    "statement": {
+      "eyebrow": "About LOGX NETWORK",
+      "link": "More about LOGX"
+    },
+    "systems": {
+      "browse": "Browse {system}",
+      "parts": "{count} part numbers",
+      "highlights": {
+        "fiber": [
+          "OS2 single-mode",
+          "OM3 multimode",
+          "LC duplex",
+          "Low insertion loss"
+        ],
+        "copper": [
+          "CAT6 U/UTP",
+          "CAT6A U/UTP & S/FTP",
+          "100% Fluke tested",
+          "305 m boxes & cords"
+        ],
+        "accessories": [
+          "Keystone patch panels",
+          "Keystone jacks",
+          "Faceplates",
+          "Cable managers"
+        ]
+      }
+    },
+    "library": {
+      "eyebrow": "Resources",
+      "title": "Everything you need to specify LOGX.",
+      "open": "Open",
+      "master": {
+        "tag": "Master data sheet",
+        "title": "The full range on a single sheet.",
+        "text": "All {categories} product categories and {parts} part numbers laid out as one printable reference, built for consultants and project managers.",
+        "cta": "Open the data sheet"
+      },
+      "profile": {
+        "tag": "Company profile",
+        "title": "Who we are and what we make.",
+        "text": "The LOGX NETWORK profile and catalogue — mission, standards and the full range — as a page and a PDF.",
+        "cta": "Read the profile"
+      },
+      "sheets": {
+        "tag": "Datasheets",
+        "title": "Per-part technical datasheets.",
+        "text": "Specifications, ordering tables and compliance for each product line, ready to download as PDF.",
+        "cta": "Browse datasheets"
+      }
+    },
+    "standards": {
+      "eyebrow": "Engineered to rigorous international standards"
     }
   },
   "catalog": {
@@ -145,12 +227,18 @@
     "view": "View product",
     "emptyTitle": "Nothing matches that search.",
     "emptyBody": "Try a part number such as LXC6UUPVG305, or clear the filters to see the full range.",
-    "clearFilter": "← View all categories"
+    "clearFilter": "← View all categories",
+    "viewLine": "View product line",
+    "display": "Display",
+    "byLine": "Product lines",
+    "byPart": "All part numbers",
+    "lineParts": "{count, plural, one {# part number} other {# part numbers}}",
+    "lineMatches": "{count, plural, one {# match} other {# matches}}"
   },
   "categories": {
     "copper": "Copper cabling",
     "fiber": "Fiber optic",
-    "accessories": "Racks & accessories"
+    "accessories": "Accessories"
   },
   "proof": {
     "tested": "of copper cable ships Fluke channel tested",
@@ -205,7 +293,11 @@
     "featuresHighlights": "Features & Highlights",
     "quickSpecs": "Quick Specs",
     "brandOrigin": "HQ: London, United Kingdom",
-    "officialDatasheet": "Official Verified Datasheet"
+    "officialDatasheet": "Official Verified Datasheet",
+    "variants": "Part numbers in this product line",
+    "variantsHint": "The same product in a different size or variant.",
+    "viewing": "Viewing",
+    "relatedLines": "More from the range"
   },
   "about": {
     "eyebrow": "The LOGX standard",

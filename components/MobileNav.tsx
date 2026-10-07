@@ -4,16 +4,18 @@ import {useState, useEffect, useRef} from 'react';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 
-type NavItem = {href: string; label: string};
+export type NavItem = {href: string; label: string; children?: {href: string; label: string}[]};
 
 type MobileNavProps = {
   items: NavItem[];
+  /** Primary action, pinned to the foot of the drawer. */
+  cta?: {href: string; label: string};
   langSwitch: {href: string; label: string | React.ReactNode; lang: string};
   menuLabel: string;
   closeLabel: string;
 };
 
-export default function MobileNav({items, langSwitch, menuLabel, closeLabel}: MobileNavProps) {
+export default function MobileNav({items, cta, langSwitch, menuLabel, closeLabel}: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const menuRef = useRef<HTMLDivElement>(null);
@@ -85,18 +87,34 @@ export default function MobileNav({items, langSwitch, menuLabel, closeLabel}: Mo
       >
         <nav className="mobile-menu-nav" aria-label={menuLabel}>
           {items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={pathname === item.href ? 'page' : undefined}
-              onClick={() => setOpen(false)}
-            >
-              {item.label}
-            </Link>
+            <div className="mobile-menu-group" key={item.href}>
+              <Link
+                href={item.href}
+                aria-current={pathname === item.href ? 'page' : undefined}
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+              {item.children?.map((child) => (
+                <Link
+                  key={child.href}
+                  href={child.href}
+                  className="mobile-menu-child"
+                  onClick={() => setOpen(false)}
+                >
+                  {child.label}
+                </Link>
+              ))}
+            </div>
           ))}
         </nav>
 
         <div className="mobile-menu-foot">
+          {cta ? (
+            <Link href={cta.href} className="button button-primary mobile-menu-cta" onClick={() => setOpen(false)}>
+              {cta.label}
+            </Link>
+          ) : null}
           <Link
             href={langSwitch.href}
             className="language-switch"

@@ -8,11 +8,13 @@ import BrandHallmarks from '@/components/BrandHallmarks';
 import {alternatesFor, offices} from '@/lib/site';
 import {catalog, categories} from '@/lib/catalog';
 
+// LOGX retail packaging, in frames the home page does not use, so no
+// photograph repeats across the two pages.
 const SHOWCASE = [
-  '/products/photos/fiber-panel-24-01.webp',
-  '/products/photos/patch-panel-48-01.webp',
+  '/products/photos/faceplate-01.webp',
   '/products/photos/keystone-cat6-01.webp',
-  '/products/photos/brand-packaging-01.webp'
+  '/products/photos/patch-panel-24-01.webp',
+  '/products/photos/pigtail-om3-01.webp'
 ];
 
 const VALUES = [
