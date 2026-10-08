@@ -14,7 +14,8 @@
 
 export const families = {
   "cat6-cable": ["@artwork/bulk-cable-cat6.svg"],
-  "cat6a-cable": ["@artwork/bulk-cable-cat6a.svg"],
+  "cat6-reference": ["@artwork/bulk-cable-cat6-reference.webp"],
+  "cat6a-cable": ["@artwork/cat6a-u-utp-box.png"],
   "cat6a-sftp-cable": ["@artwork/bulk-cable-cat6a-sftp.svg"],
   "patch-cord-cat6-short": ["@open-source/pexels-ethernet-connector-white.jpg"],
   "patch-cord-cat6-half": ["@open-source/pexels-ethernet-connector-white.jpg"],
@@ -64,13 +65,12 @@ export const rotations = {
 
 /**
  * Crop applied before anything else, as [left, top, width, height] fractions
- * of the source. Used on the in-situ photographs so the product fills the frame
- * and the warehouse behind it falls outside the crop, which is honest where a
- * background cutout is not: these products are dark, and the blurred racking
- * behind them contains regions darker still, so no luminance threshold
- * separates the two without eating the product or keeping half the shelf.
+ * of the source. Used on the in-situ photographs to keep their real setting
+ * while removing distractions, and on the supplied CAT6A image to remove its
+ * dark screenshot border.
  */
 export const crops = {
+  '@artwork/cat6a-u-utp-box.png': [6 / 455, 11 / 342, 441 / 455, 293 / 342],
   // Stops short of the bottom edge: a shoe is in frame below the connectors.
   'fiber D 4 port.jpeg': [0.03, 0.02, 0.8, 0.91],
   'fiber D 8 port.jpeg prot.jpeg': [0.175, 0.15, 0.635, 0.83],
@@ -123,13 +123,24 @@ const rules = [
   [/^LGX-PDU/, 'pdu']
 ];
 
+const representativePhotos = {
+  LXC6ASFPVG305: 'cat6-reference'
+};
+
 export function familyFor(partNumber) {
   const key = String(partNumber).trim();
   const hit = rules.find(([pattern]) => pattern.test(key));
   return hit ? hit[1] : null;
 }
 
+export function hasRepresentativePhoto(partNumber) {
+  return Object.hasOwn(representativePhotos, String(partNumber).trim());
+}
+
 export function imagesFor(partNumber) {
+  const representativeFamily = representativePhotos[String(partNumber).trim()];
+  if (representativeFamily) return [`/products/photos/${representativeFamily}-01.webp`];
+
   const family = familyFor(partNumber);
   if (!family) return [];
   return families[family].map(

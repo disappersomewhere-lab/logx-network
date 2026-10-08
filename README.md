@@ -93,9 +93,16 @@ line rather than a mismatched label. Every run writes `data/photo-sources.json` 
 which original file produced which asset, and a mapped file that is missing from the source
 folder fails the run rather than silently leaving a product without photography.
 
-The originals are large and stay out of the repository (see `.gitignore`) — the processed
-WebP files are committed, so a clone builds without them. You only need the source folder to
-regenerate the imagery.
+The CAT6A U/UTP bulk-cable product uses the supplied product photo committed at
+`scripts/product-art/cat6a-u-utp-box.png`. The CAT6A S/FTP product uses the committed CAT6
+photo only as a clearly labelled reference because no exact S/FTP photo is available; it is
+omitted from that product's structured data and must not be presented as an exact product
+photo.
+
+The large original photo shoot stays outside the repository (see `.gitignore`). Compact
+artwork and supplied product-photo sources under `scripts/product-art/` are committed, as
+are the processed WebP files, so a clone can build the site without the original photo folder.
+That folder is only needed to regenerate the full image library.
 
 ### Product lines and where photographs appear
 

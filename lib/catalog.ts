@@ -20,6 +20,8 @@ export type Product = {
   summary: Localized;
   specs: Spec[];
   images: string[];
+  /** The image is a clearly labelled reference and not this exact product. */
+  representativeImage?: boolean;
   /** 1200x630 JPEG card for link previews, shared across the product family. */
   ogImage: string;
   /** Verbatim description from the LOGX price list. */

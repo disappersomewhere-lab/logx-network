@@ -75,6 +75,10 @@ export const deckCopy = {
   contactAccent: {en: 'Us', ar: 'معنا'},
 
   lengths: {en: 'Lengths', ar: 'الأطوال'},
+  representativePhoto: {
+    en: 'Representative CAT6 photo; not the exact CAT6A product.',
+    ar: 'صورة CAT6 توضيحية؛ ليست صورة منتج CAT6A نفسه.'
+  },
   partNumber: {en: 'P/N', ar: 'رقم القطعة'},
   variants: {en: 'part numbers', ar: 'أرقام قطع'}
 } as const satisfies Record<string, unknown>;
@@ -205,6 +209,9 @@ export function productCardsFor(category: ProductCategory, locale: Locale): Prod
       );
     } else {
       details.push(`${deckCopy.partNumber[locale]}: ${first.partNumber}`);
+    }
+    if (products.some((product) => product.representativeImage)) {
+      details.push(deckCopy.representativePhoto[locale]);
     }
 
     return {

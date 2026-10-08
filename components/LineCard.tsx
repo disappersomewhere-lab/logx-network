@@ -9,6 +9,9 @@ export type LineCardData = {
   code?: string;
   /** Size / variant range, for a line with several parts. */
   range?: string | null;
+  /** Whether the line cover is illustrative for at least one included part. */
+  representativeImage?: boolean;
+  representativeImageLabel?: string;
   /** "12 part numbers" — present only when the line has more than one. */
   parts?: string | null;
   cta: string;
@@ -31,6 +34,8 @@ export default function LineCard({
   title,
   code,
   range,
+  representativeImage,
+  representativeImageLabel,
   parts,
   cta,
   preload,
@@ -39,7 +44,18 @@ export default function LineCard({
   return (
     <Link href={href} className="product-card line-card">
       <div className="product-card-image">
-        {image ? <Image src={image} alt={title} fill sizes={sizes} preload={preload} /> : null}
+        {image ? (
+          <Image
+            src={image}
+            alt={representativeImage && representativeImageLabel ? representativeImageLabel : title}
+            fill
+            sizes={sizes}
+            preload={preload}
+          />
+        ) : null}
+        {representativeImage && representativeImageLabel ? (
+          <span className="representative-image-badge">{representativeImageLabel}</span>
+        ) : null}
         {parts ? <span className="line-card-badge">{parts}</span> : null}
       </div>
       <div className="product-card-body">

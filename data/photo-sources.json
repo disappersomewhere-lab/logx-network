@@ -5,9 +5,15 @@
       "output": "/products/photos/cat6-cable-01.webp"
     }
   ],
+  "cat6-reference": [
+    {
+      "source": "@artwork/bulk-cable-cat6-reference.webp",
+      "output": "/products/photos/cat6-reference-01.webp"
+    }
+  ],
   "cat6a-cable": [
     {
-      "source": "@artwork/bulk-cable-cat6a.svg",
+      "source": "@artwork/cat6a-u-utp-box.png",
       "output": "/products/photos/cat6a-cable-01.webp"
     }
   ],

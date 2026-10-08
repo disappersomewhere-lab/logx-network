@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import {useTranslations} from 'next-intl';
 import type {Locale, Product} from '@/lib/catalog';
 
 type ProductCardProps = {
@@ -11,6 +12,7 @@ type ProductCardProps = {
 };
 
 export default function ProductCard({product, locale, viewLabel, preload}: ProductCardProps) {
+  const t = useTranslations('catalog');
   const [cover] = product.images;
 
   return (
@@ -19,11 +21,14 @@ export default function ProductCard({product, locale, viewLabel, preload}: Produ
         {cover ? (
           <Image
             src={cover}
-            alt={product.name[locale]}
+            alt={product.representativeImage ? t('representativeImage') : product.name[locale]}
             fill
             sizes="(max-width: 720px) 45vw, (max-width: 1024px) 30vw, 250px"
             preload={preload}
           />
+        ) : null}
+        {product.representativeImage ? (
+          <span className="representative-image-badge">{t('representativeImage')}</span>
         ) : null}
       </div>
       <div className="product-card-body">

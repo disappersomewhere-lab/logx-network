@@ -7,9 +7,19 @@ type ProductGalleryProps = {
   images: string[];
   alt: string;
   thumbLabel: string;
+  representativeImage?: boolean;
+  representativeImageLabel?: string;
+  representativeImageNote?: string;
 };
 
-export default function ProductGallery({images, alt, thumbLabel}: ProductGalleryProps) {
+export default function ProductGallery({
+  images,
+  alt,
+  thumbLabel,
+  representativeImage,
+  representativeImageLabel,
+  representativeImageNote
+}: ProductGalleryProps) {
   const [active, setActive] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -72,6 +82,9 @@ export default function ProductGallery({images, alt, thumbLabel}: ProductGallery
             sizes="(max-width: 860px) 92vw, 560px"
             priority
           />
+          {representativeImage && representativeImageLabel ? (
+            <span className="representative-image-badge">{representativeImageLabel}</span>
+          ) : null}
           {/* Zoom hint overlay */}
           <div className="gallery-zoom-hint" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -82,6 +95,11 @@ export default function ProductGallery({images, alt, thumbLabel}: ProductGallery
             </svg>
           </div>
         </div>
+        {representativeImage && representativeImageNote ? (
+          <p className="representative-image-note" role="note">
+            {representativeImageNote}
+          </p>
+        ) : null}
 
         {/* Counter badge */}
         {images.length > 1 && (

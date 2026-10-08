@@ -11,7 +11,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import {familyFor, imagesFor, ogImageFor} from './photo-map.mjs';
+import {familyFor, hasRepresentativePhoto, imagesFor, ogImageFor} from './photo-map.mjs';
 import {PRICE_LIST, readRows} from './price-list.mjs';
 
 const ROOT = path.join(import.meta.dirname, '..');
@@ -527,6 +527,7 @@ function main() {
       summary,
       specs: [...specs, spec('Part number', 'رقم القطعة', partNumber, partNumber)],
       images,
+      ...(hasRepresentativePhoto(partNumber) ? {representativeImage: true} : {}),
       ogImage: ogImageFor(partNumber),
       raw
     });

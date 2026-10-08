@@ -136,6 +136,8 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       lines: lines.map((group) => ({
         href: `/${locale}/products/${group.lead.slug}`,
         image: group.cover,
+        representativeImage: group.representativeImage,
+        representativeImageLabel: t('catalog.representativeImage'),
         title: group.title[language],
         code: group.products.length === 1 ? group.lead.partNumber : undefined,
         range: group.range?.[language],

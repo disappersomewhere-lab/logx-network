@@ -142,7 +142,22 @@ export default async function DatasheetPage({params}: Props) {
           <aside className="ds-side">
             {photo ? (
               <figure className="ds-photo">
-                <Image src={photo} alt={product.name.en} fill sizes="260px" priority />
+                <Image
+                  src={photo}
+                  alt={
+                    product.representativeImage
+                      ? 'Representative CAT6 cable photo, not the exact CAT6A product'
+                      : product.name.en
+                  }
+                  fill
+                  sizes="260px"
+                  priority
+                />
+                {product.representativeImage ? (
+                  <span className="ds-photo-representative">
+                    Representative photo: CAT6 cable, not this CAT6A product
+                  </span>
+                ) : null}
               </figure>
             ) : null}
 

@@ -247,8 +247,9 @@
       }
     ],
     "images": [
-      "/products/photos/cat6a-sftp-cable-01.webp"
+      "/products/photos/cat6-reference-01.webp"
     ],
+    "representativeImage": true,
     "ogImage": "/products/photos/cat6a-sftp-cable-og.jpg",
     "raw": "Logx CAT6A S/FTP LAN CABLE(305M) COPPER CABLE 0.54MM, CATEGORY 6A, 4 PAIR, S/FTP,"
   },

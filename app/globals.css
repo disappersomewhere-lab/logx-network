@@ -460,6 +460,29 @@ p {
   overflow: hidden;
 }
 
+.representative-image-badge {
+  position: absolute;
+  z-index: 2;
+  inset-block-start: 10px;
+  inset-inline-start: 10px;
+  max-width: calc(100% - 20px);
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 94%);
+  color: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.representative-image-note {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
 .product-card-image img {
   object-fit: contain;
   padding: 6px;
@@ -737,6 +760,10 @@ p {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   overflow: hidden;
+}
+
+.gallery-main .representative-image-badge {
+  pointer-events: none;
 }
 
 .gallery-main img {
@@ -1306,6 +1333,20 @@ p {
 .ds-photo img {
   object-fit: contain;
   padding: 6pt;
+}
+
+.ds-photo-representative {
+  position: absolute;
+  z-index: 1;
+  inset-inline: 2pt;
+  inset-block-end: 2pt;
+  padding: 2pt 3pt;
+  background: rgb(255 255 255 / 94%);
+  color: var(--ds-ink);
+  font-size: 5.5pt;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
 }
 
 /* tables */

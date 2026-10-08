@@ -187,6 +187,8 @@ export default function CatalogBrowser({
                             key={line.key}
                             href={`/${locale}/products/${lead.slug}`}
                             image={line.cover}
+                            representativeImage={line.representativeImage}
+                            representativeImageLabel={t('representativeImage')}
                             title={line.title[locale]}
                             code={several ? undefined : lead.partNumber}
                             range={several ? line.range?.[locale] : null}

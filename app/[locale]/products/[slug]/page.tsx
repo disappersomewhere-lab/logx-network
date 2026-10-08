@@ -66,7 +66,7 @@ export default async function ProductPage({params}: Props) {
     sku: product.partNumber,
     mpn: product.partNumber,
     brand: {'@type': 'Brand', name: 'LOGX NETWORK'},
-    image: product.images,
+    ...(!product.representativeImage && product.images.length ? {image: product.images} : {}),
     ...(pdf
       ? {
           subjectOf: {
@@ -96,8 +96,15 @@ export default async function ProductPage({params}: Props) {
       <div className={product.images.length ? 'detail-grid' : 'detail-grid detail-grid-solo'}>
         <ProductGallery
           images={product.images}
-          alt={product.name[language]}
+          alt={
+            product.representativeImage
+              ? t('catalog.representativeImage')
+              : product.name[language]
+          }
           thumbLabel={t('productDetail.viewPhoto')}
+          representativeImage={product.representativeImage}
+          representativeImageLabel={t('catalog.representativeImage')}
+          representativeImageNote={t('productDetail.representativeImageNote')}
         />
 
         <div className="detail-copy">
@@ -263,6 +270,8 @@ export default async function ProductPage({params}: Props) {
                   key={group.key}
                   href={`/${locale}/products/${group.lead.slug}`}
                   image={group.cover}
+                  representativeImage={group.representativeImage}
+                  representativeImageLabel={t('catalog.representativeImage')}
                   title={group.title[language]}
                   code={several ? undefined : group.lead.partNumber}
                   range={several ? group.range?.[language] : null}

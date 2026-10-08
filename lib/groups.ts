@@ -17,6 +17,7 @@ export type ProductGroup = {
   lead: Product;
   /** The photograph that stands for the whole line on a card. */
   cover?: string;
+  representativeImage: boolean;
   products: Product[];
   title: Localized;
   /** Short range line such as "1 m – 100 m"; null when the line has one part. */
@@ -168,6 +169,7 @@ export const productGroups: ProductGroup[] = (() => {
       category: lead.category,
       lead,
       cover: coverOverride[key] ?? lead.images[0],
+      representativeImage: products.some((product) => product.representativeImage),
       products,
       title: products.length > 1 && text ? text.title : lead.name,
       range: rangeFor(text, products)
