@@ -99,6 +99,9 @@ photo only as a clearly labelled reference because no exact S/FTP photo is avail
 omitted from that product's structured data and must not be presented as an exact product
 photo.
 
+The CAT6 U/UTP bulk-cable product uses original LOGX catalogue artwork from
+`scripts/product-art/bulk-cable-cat6.svg`, depicting the 305 m pull box and the cable.
+
 The large original photo shoot stays outside the repository (see `.gitignore`). Compact
 artwork and supplied product-photo sources under `scripts/product-art/` are committed, as
 are the processed WebP files, so a clone can build the site without the original photo folder.

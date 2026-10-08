@@ -1,20 +1,138 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
   <defs>
-    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#f2f4f6"/></linearGradient>
-    <linearGradient id="jacket" x2="0" y2="1"><stop stop-color="#aeb4bc"/><stop offset=".48" stop-color="#737b85"/><stop offset="1" stop-color="#4e5660"/></linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%"><feGaussianBlur stdDeviation="15"/></filter>
+    <linearGradient id="surface" x2="0" y2="1">
+      <stop stop-color="#fbfcfd"/>
+      <stop offset="1" stop-color="#edf0f3"/>
+    </linearGradient>
+    <linearGradient id="boxFront" x2="0" y2="1">
+      <stop stop-color="#fff"/>
+      <stop offset="1" stop-color="#e8edf2"/>
+    </linearGradient>
+    <linearGradient id="boxSide" x2="1" y2="0">
+      <stop stop-color="#e0e5ea"/>
+      <stop offset="1" stop-color="#bfc8d1"/>
+    </linearGradient>
+    <linearGradient id="boxTop" x2="0" y2="1">
+      <stop stop-color="#235a96"/>
+      <stop offset="1" stop-color="#143c6a"/>
+    </linearGradient>
+    <linearGradient id="blueBand" x2="0" y2="1">
+      <stop stop-color="#2263a7"/>
+      <stop offset="1" stop-color="#164576"/>
+    </linearGradient>
+    <linearGradient id="cable" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#d1d4d7"/>
+      <stop offset=".32" stop-color="#858b91"/>
+      <stop offset=".58" stop-color="#c4c8cb"/>
+      <stop offset="1" stop-color="#686e74"/>
+    </linearGradient>
+    <linearGradient id="cableLight" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#eceeef"/>
+      <stop offset=".48" stop-color="#aeb3b7"/>
+      <stop offset="1" stop-color="#626970"/>
+    </linearGradient>
+    <linearGradient id="sideCable" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#555c63"/>
+      <stop offset=".45" stop-color="#c1c5c8"/>
+      <stop offset="1" stop-color="#737a80"/>
+    </linearGradient>
+    <linearGradient id="copper" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#f5ce8c"/>
+      <stop offset=".45" stop-color="#bd7840"/>
+      <stop offset="1" stop-color="#83502f"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <pattern id="cardGrain" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M0 7.5H8" stroke="#fff" stroke-opacity=".08"/>
+    </pattern>
   </defs>
-  <rect width="1000" height="1000" rx="36" fill="url(#bg)"/>
-  <ellipse cx="500" cy="720" rx="310" ry="58" fill="#26313d" opacity=".13" filter="url(#shadow)"/>
-  <g fill="none" stroke-linecap="round">
-    <ellipse cx="492" cy="470" rx="325" ry="235" stroke="#404751" stroke-width="40"/>
-    <ellipse cx="492" cy="470" rx="325" ry="235" stroke="url(#jacket)" stroke-width="30"/>
-    <ellipse cx="492" cy="470" rx="276" ry="195" stroke="#424952" stroke-width="38"/>
-    <ellipse cx="492" cy="470" rx="276" ry="195" stroke="url(#jacket)" stroke-width="28"/>
-    <ellipse cx="492" cy="470" rx="228" ry="155" stroke="#424952" stroke-width="36"/>
-    <ellipse cx="492" cy="470" rx="228" ry="155" stroke="url(#jacket)" stroke-width="27"/>
+
+  <rect width="1000" height="1000" rx="32" fill="url(#surface)"/>
+  <ellipse cx="522" cy="815" rx="380" ry="55" fill="#172536" opacity=".15" filter="url(#shadow)"/>
+
+  <g aria-label="CAT6 cable carton">
+    <path d="M155 282 385 194 806 253 560 318Z" fill="url(#boxTop)"/>
+    <path d="M560 318 806 253 806 690 560 758Z" fill="url(#boxSide)"/>
+    <path d="M155 282 560 318 560 758 155 718Z" fill="url(#boxFront)"/>
+    <path d="M155 282 560 318 806 253" fill="none" stroke="#fff" stroke-opacity=".72" stroke-width="3"/>
+    <path d="M560 318V758" stroke="#77818a" stroke-opacity=".46" stroke-width="3"/>
+
+    <path d="M180 321 535 352V416L180 384Z" fill="url(#blueBand)"/>
+    <path d="M180 321 535 352V360L180 329Z" fill="#fff" opacity=".12"/>
+    <text x="206" y="363" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="3">LOGX</text>
+    <text x="206" y="384" fill="#d8e8f8" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600" letter-spacing="2.7">NETWORK</text>
+    <path d="M425 344 510 352" stroke="#fff" stroke-opacity=".24" stroke-width="2"/>
+
+    <text x="190" y="478" fill="#192735" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="800" letter-spacing="-3">CAT6</text>
+    <text x="194" y="518" fill="#283b4e" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" letter-spacing="1.4">U/UTP LAN CABLE</text>
+    <path d="M194 537H490" stroke="#aab5bf" stroke-width="2"/>
+    <text x="194" y="563" fill="#536271" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing=".35">4 PAIR  ·  24 AWG  ·  SOLID COPPER</text>
+
+    <g transform="translate(205 595)">
+      <circle cx="17" cy="17" r="15" fill="#fff" stroke="#c4cbd1" stroke-width="2"/>
+      <path d="M17 8v10l7 4" fill="none" stroke="#28649c" stroke-width="2.5" stroke-linecap="round"/>
+      <text x="44" y="15" fill="#33485b" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing=".6">305 METRES</text>
+      <text x="44" y="35" fill="#75818b" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="1.1">PULL BOX</text>
+    </g>
+    <g transform="translate(205 650)">
+      <path d="M0 0h255" stroke="#d5dbe0" stroke-width="2"/>
+      <text x="0" y="25" fill="#75818b" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="1.2">HORIZONTAL DATA CABLING</text>
+    </g>
+
+    <path d="M583 394 781 341V394L583 449Z" fill="#eff2f4" opacity=".78"/>
+    <path d="M623 416 741 385" stroke="#fff" stroke-opacity=".6" stroke-width="3"/>
+    <text x="621" y="458" fill="#526171" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="1">CAT6</text>
+    <text x="621" y="482" fill="#6c7781" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing=".8">U/UTP CABLE</text>
+    <rect x="666" y="294" width="65" height="19" rx="9.5" transform="rotate(-15 666 294)" fill="#243444" opacity=".92"/>
+    <path d="M596 716 779 667" stroke="#fff" stroke-opacity=".38" stroke-width="2"/>
+
+    <path d="M155 282 560 318V758L155 718Z" fill="url(#cardGrain)"/>
   </g>
-  <path d="M490 705 C550 745 625 756 702 738" fill="none" stroke="#525a64" stroke-width="28" stroke-linecap="round"/><path d="M490 700 C550 740 625 751 702 733" fill="none" stroke="#aeb4bc" stroke-width="18" stroke-linecap="round"/>
-  <g transform="translate(720 734) rotate(-12)"><ellipse cx="0" cy="0" rx="39" ry="31" fill="#48515b"/><ellipse cx="0" cy="0" rx="29" ry="23" fill="#202832"/><path d="M-20-9q9-8 18 0t18 0M-20 2q9-8 18 0t18 0M-20 13q9-8 18 0t18 0" fill="none" stroke="#4a89c6" stroke-width="5"/><path d="M-20-13q9 8 18 0t18 0M-20-2q9 8 18 0t18 0M-20 9q9 8 18 0t18 0" fill="none" stroke="#e59b4a" stroke-width="4"/></g>
-  <circle cx="494" cy="470" r="4" fill="#fff" opacity=".6"/>
+
+  <ellipse cx="742" cy="746" rx="220" ry="34" fill="#1c2935" opacity=".22" filter="url(#softShadow)"/>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" aria-label="Grey U/UTP cable coil">
+    <ellipse cx="742" cy="565" rx="202" ry="151" stroke="#545b63" stroke-width="33"/>
+    <ellipse cx="742" cy="559" rx="202" ry="151" stroke="url(#cable)" stroke-width="26"/>
+    <ellipse cx="742" cy="557" rx="178" ry="130" stroke="#4e555d" stroke-width="31"/>
+    <ellipse cx="742" cy="551" rx="178" ry="130" stroke="url(#cableLight)" stroke-width="24"/>
+    <ellipse cx="742" cy="550" rx="154" ry="109" stroke="#50575e" stroke-width="29"/>
+    <ellipse cx="742" cy="544" rx="154" ry="109" stroke="url(#cable)" stroke-width="22"/>
+    <ellipse cx="742" cy="543" rx="130" ry="88" stroke="#4d545b" stroke-width="27"/>
+    <ellipse cx="742" cy="537" rx="130" ry="88" stroke="url(#cableLight)" stroke-width="20"/>
+    <ellipse cx="742" cy="537" rx="106" ry="67" stroke="#525960" stroke-width="24"/>
+    <ellipse cx="742" cy="531" rx="106" ry="67" stroke="url(#cable)" stroke-width="17"/>
+    <path d="M890 619C909 675 901 720 858 744c-47 27-111 11-151 3" stroke="#4b525a" stroke-width="28"/>
+    <path d="M890 613C909 669 901 714 858 738c-47 27-111 11-151 3" stroke="url(#cable)" stroke-width="20"/>
+    <path d="M867 702C900 735 927 754 953 748" stroke="#535b63" stroke-width="29"/>
+    <path d="M867 696C900 729 927 748 953 742" stroke="url(#cableLight)" stroke-width="21"/>
+    <path d="M882 704C911 732 936 746 949 743" stroke="#fff" stroke-opacity=".34" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(951 746) rotate(-14)">
+    <path d="M-8-18C4-18 14-14 21-8V8C14 14 4 18-8 18Z" fill="#414951"/>
+    <ellipse cx="-8" cy="0" rx="13" ry="19" fill="#69717a" stroke="#3e454d" stroke-width="3"/>
+    <ellipse cx="-10" cy="0" rx="8" ry="13" fill="#b4b9be"/>
+    <g fill="none" stroke-linecap="round" stroke-width="4">
+      <path d="M-12-8C-3-13 3-12 11-8M-12-3C-3-8 3-7 11-3" stroke="#2470a8"/>
+      <path d="M-12-2C-3-7 3-6 11-2M-12 3C-3-2 3-1 11 3" stroke="#d97935"/>
+      <path d="M-12 4C-3-1 3 0 11 4M-12 9C-3 4 3 5 11 9" stroke="#49804d"/>
+      <path d="M-12 10C-3 5 3 6 11 10M-12 15C-3 10 3 11 11 15" stroke="#805b42"/>
+    </g>
+    <g fill="#dfe4e8">
+      <circle cx="-9" cy="-7" r="1.8"/>
+      <circle cx="-9" cy="0" r="1.8"/>
+      <circle cx="-9" cy="7" r="1.8"/>
+      <circle cx="-9" cy="14" r="1.8"/>
+    </g>
+  </g>
+
+  <path d="M140 849H820" stroke="#d4dbe1" stroke-width="2"/>
+  <circle cx="128" cy="849" r="4" fill="#cf2028"/>
+  <text x="837" y="854" fill="#798691" font-family="Arial, Helvetica, sans-serif" font-size="11" letter-spacing="2">CAT6  /  U/UTP</text>
 </svg>
